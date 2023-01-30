@@ -14,6 +14,9 @@ See: https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.No
 function build_my_distribution(distribution_type::Type{Normal}; 
     μ::Float64 = 0.0, σ::Float64 = 1.0)::Normal
 
+    # check: σ ≥ 0
+    # ...
+
     # initialize -
     distribution_model = Normal(μ, σ)
 
@@ -33,6 +36,9 @@ See: https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.La
 function build_my_distribution(distribution_type::Type{Laplace}; 
     μ::Float64 = 0.0, σ::Float64 = 1.0)::Laplace
 
+    # check: σ ≥ 0
+    # ...
+
     # initialize -
     distribution_model = Laplace(μ, σ)
 
@@ -51,6 +57,9 @@ See: https://juliastats.org/Distributions.jl/stable/univariate/#Base.rand-Tuple{
 """
 function sample_my_distribution(distribution::ContinuousUnivariateDistribution; 
     number_of_samples::Int64=100)::Array{Float64,1}
+
+    # check: number_of_samples ≥ 1
+    # ...
 
     # return -
     return rand(distribution, number_of_samples);
