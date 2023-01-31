@@ -1,11 +1,17 @@
-# set a variable -
+# set a *global* variable -
 x = 120.1 # set a variable
 
-# define a function -
+"""
+    test_function(x::Float64) -> Nothing
+
+Prints the value of the argument that is passed in.
+
+println defined in Base: https://docs.julialang.org/en/v1/base/io-network/#Base.println
+"""
 function test_function(x::Float64)
     
     # change the value of x -
-    x = 2*x;
+    # x = 2*x;
     
     # what value was passed in -
     println("What is the value of x = $(x) inside test_function")
