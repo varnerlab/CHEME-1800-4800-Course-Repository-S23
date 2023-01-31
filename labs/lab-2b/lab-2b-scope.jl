@@ -21,4 +21,4 @@ end
 println("What is the global value of x = $(x)")
 
 # call test function -
-test_function(64.6)
+y = test_function(64.6)
