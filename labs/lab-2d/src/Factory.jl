@@ -9,12 +9,12 @@ end
     build_student_array(number_of_students::Int64; max_number_of_students::Int64 = 10000) -> Array{Student,1}
 
 Build an array of Students initialized with random information.
-The sid field is a random integer in the range 1:max_number_of_students
+The sid field is a random integer in the range 1:max_sid
 The netid field is a random string generated using UUIDs.uuid4
 
 See: https://docs.julialang.org/en/v1/stdlib/UUIDs/#UUIDs.uuid4
 """
-function build_student_array(number_of_students::Int64; max_number_of_students::Int64 = 10000)::Array{Student,1}
+function build_student_array(number_of_students::Int64; max_sid::Int64 = 10000)::Array{Student,1}
 
     # check: number_of_students>0
     # ...
@@ -24,7 +24,7 @@ function build_student_array(number_of_students::Int64; max_number_of_students::
     for i ∈ 1:number_of_students
         
         # build a student object -
-        sid = rand(1:max_number_of_students)
+        sid = rand(1:max_sid)
         netid = string(UUIDs.uuid4());
         local_student_model = build_student_object(sid = sid, netid=netid);
 
