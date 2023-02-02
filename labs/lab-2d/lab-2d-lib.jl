@@ -4,7 +4,8 @@ include("Include.jl")
 # finish the find_student_index function that returns the index of the student with a specified sid and netid
 # don't forget to write the docstring
 # what should the return type be?
-function find_student_index(students::Array{Student}; sid::Int64=0, netid::String="abc123")
+function find_student_index(students::Array{Student,1}; 
+    sid::Int64=0, netid::String="abc123")::Union{Int64, Nothing}
 
     # initialize -
     student_index = nothing; # default: we don't know which student we are looking for
@@ -17,8 +18,9 @@ function find_student_index(students::Array{Student}; sid::Int64=0, netid::Strin
         test_student = students[i];
 
         # if statement: does test_student have the same sid and netid that was passed? 
-        # impl me ...
-    
+        if (test_student.sid == sid && test_student.netid == netid)
+            student_index = i;
+        end
     end
 
 
@@ -31,5 +33,19 @@ end
 # b) Pick a random student index (test_index) and grab that student model from the array 
 # c) Pass the student array and the values for sid and netid from the random student into the find_student_index function
 # d) If the impl is correct, the index returned from your function should be the test_index
+
+# a)
+test_std_array = build_student_array(1000);
+
+# b) rand_index = 576;
+rand_index = 7
+test_std = test_std_array[rand_index];
+
+
+# c) pass values -
+test_idx = find_student_index(test_std_array; sid = -1, netid = "abc123");
+
+# d) Same?
+test_idx == rand_index
 
 

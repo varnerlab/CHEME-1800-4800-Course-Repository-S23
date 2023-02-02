@@ -1,7 +1,19 @@
 """
-    Implement me
+    build_student_model(; sid::Int64 = 0, netid::String="abc123") -> Student
+
+kjHdlohasdljhasldkjhasljk
 """
 function build_student_model(; sid::Int64 = 0, netid::String="abc123")::Student
+
+    # create -
+    student = Student();
+    student.sid = sid;
+    student.netid = netid;
+
+    #$@show student
+
+    # return -
+    return student;
 end
 
 
@@ -25,8 +37,8 @@ function build_student_array(number_of_students::Int64; max_sid::Int64 = 10000):
         
         # build a student object -
         sid = rand(1:max_sid)
-        netid = string(UUIDs.uuid4());
-        local_student_model = build_student_object(sid = sid, netid=netid);
+        netid = string(UUIDs.uuid4())
+        local_student_model = build_student_model(sid = sid, netid=netid);
 
         # add to the array -
         student_array[i] = local_student_model
