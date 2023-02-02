@@ -1,6 +1,4 @@
 # Principles of Computational Thinking for Engineers
-
-## Description
 Engineering practice increasingly relies on computational tools and data analysis approaches. This one-semester course introduces computational thinking into engineering analysis. We integrate data science and statistics, artificial intelligence, and mathematical modeling approaches into the context of contemporary problems in the design and analysis of processes, products, and systems. The course is agnostic to platforms and tools; we’ll focus on paradigms, not syntax. However, we’ll use the [Julia programming language](https://julialang.org) and its associated toolchain when transitioning from idea to implementation. Course assignments use data sets and examples to develop fluency and understanding of real-life problems. In addition, we’ll use cloud computing resources for course materials, assignments, and projects. Weekly labs provide guided practice on the computer, with teaching staff present. 
 
 ### Time, place and website
