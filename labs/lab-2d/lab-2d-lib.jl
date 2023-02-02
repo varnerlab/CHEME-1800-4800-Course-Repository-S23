@@ -41,7 +41,6 @@ test_std_array = build_student_array(1000);
 rand_index = 7
 test_std = test_std_array[rand_index];
 
-
 # c) pass values -
 test_idx = find_student_index(test_std_array; sid = -1, netid = "abc123");
 
