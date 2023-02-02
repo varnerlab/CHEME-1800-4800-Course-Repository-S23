@@ -16,10 +16,10 @@ Upon completion of this course, students will be able to:
 
 ### Topics
 Lectures are organized into units, each having roughly four weeks of class time
-* [Unit 1: Technical computing basics](https://varnerlab.github.io/CHEME-1800-Computing-Book/unit-1-basics/basics-landing.md)
-* [Unit 2: Data, Algorithms, and Linear Algebra](https://varnerlab.github.io/CHEME-1800-Computing-Book/unit-2-data/data-landing.md)
-* [Unit 3: The Learning Problem: Models, Learning, and Optimization](https://varnerlab.github.io/CHEME-1800-Computing-Book/unit-3-learning/learning-landing.md)
-* [Unit 4: The Decision Problem: Probability, Random Process, and Decisions](https://varnerlab.github.io/CHEME-1800-Computing-Book/unit-4-decisions/decisions-landing.md)
+* [Unit 1: Technical computing basics](https://varnerlab.github.io/CHEME-1800-Computing-Book/unit-1-basics/basics-landing.html)
+* [Unit 2: Data, Algorithms, and Linear Algebra](https://varnerlab.github.io/CHEME-1800-Computing-Book/unit-2-data/data-landing.html)
+* [Unit 3: The Learning Problem: Models, Learning, and Optimization](https://varnerlab.github.io/CHEME-1800-Computing-Book/unit-3-learning/learning-landing.html)
+* [Unit 4: The Decision Problem: Probability, Random Process, and Decisions](https://varnerlab.github.io/CHEME-1800-Computing-Book/unit-4-decisions/decisions-landing.html)
 
 ### Schedule
 The lecture, lab and problem set schedule can be viewed at (requires Cornell login): [https://cornell.box.com/s/dwv40d6f6em33djv98bcsf2gk767hamk](https://cornell.box.com/s/dwv40d6f6em33djv98bcsf2gk767hamk)
