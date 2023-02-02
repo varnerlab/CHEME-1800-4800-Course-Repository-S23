@@ -1,6 +1,6 @@
 ## Lab-2d: Structs and conditional evaluation statements
 
-## Objective
+### Objective
 The objective of `lab-2d` is to give you practice with [Structs](https://docs.julialang.org/en/v1/base/base/#struct), [functions](https://docs.julialang.org/en/v1/base/base/#function) and [conditional evaluation statements, e.g., if-else statements](https://docs.julialang.org/en/v1/manual/control-flow/#man-conditional-evaluation) in [Julia](https://docs.julialang.org/en/v1/). 
 
 In `lab-2b`, you will create a collection of `Student` models and write a search function to find the index of a particular student in the collection.
