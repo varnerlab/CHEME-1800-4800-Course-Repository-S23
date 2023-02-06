@@ -77,12 +77,22 @@ function insertion_sort(arr::Array{Float64,1})::Array{Float64,1}
 
     # main -
     for i ∈ 2:N
+
+        # grab the key element -
         key = arr[i]
-        j = i - 1
+
+        # inner while loop
+        j = i - 1 # set inner index j -
         while j >= 1 && arr[j] > key
+            
+            # swap -
             arr[j+1] = arr[j]
-            j -= 1
+
+            # decrement inner index 
+            j = j - 1
         end
+
+        # set the key
         arr[j+1] = key
     end
 
