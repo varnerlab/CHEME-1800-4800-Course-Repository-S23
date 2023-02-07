@@ -1,3 +1,6 @@
+"""
+    encrypt(plaintext::String) -> Dict{Int64,String}
+"""
 function encrypt(plaintext::String)::Dict{Int64,String}
 
     # initialize -
@@ -8,7 +11,7 @@ function encrypt(plaintext::String)::Dict{Int64,String}
     encryption_model = _build(DNAEncryptionKey);
     encryptionkey = encryption_model.encryptionkey;
 
-    # main - iterate through upper case -
+    # main - iterate through upper case of the plaintext string
     for c ∈ uppercase(plaintext)
 
         # encrypt -
@@ -22,6 +25,9 @@ function encrypt(plaintext::String)::Dict{Int64,String}
     return message
 end
 
+"""
+    decrypt(encrypteddata::Dict{Int64,String}) -> String
+"""
 function decrypt(encrypteddata::Dict{Int64,String})::String
 
     # initialize -
