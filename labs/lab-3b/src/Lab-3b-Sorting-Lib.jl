@@ -48,10 +48,14 @@ function bubble_sort(arr::Array{Float64,1})::Array{Float64,1}
         for j ∈ 1:N-i
             if arr[j] > arr[j+1]
 
+                #println("(i,j) = ($(i),$(j)) before $(arr)")
+
                 # swap that values at j and j+1
                 tmp = arr[j]
                 arr[j] = arr[j+1]
                 arr[j+1] = tmp
+
+                #println("(i,j) = ($(i),$(j)) after $(arr)")
 
                 # fancy impl (but harder to understand)
                 # arr[j], arr[j+1] = arr[j+1], arr[j] # check: what is this line doing?

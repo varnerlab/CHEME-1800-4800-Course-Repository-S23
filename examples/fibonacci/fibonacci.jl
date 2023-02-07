@@ -70,4 +70,5 @@ function fibonacci_for_loop(n::Int64)::Array{Int64,1}
 
     # return -
     return sequence
-end 
+end
+
