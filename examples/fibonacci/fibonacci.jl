@@ -12,9 +12,9 @@ function fibonacci_while_loop(n::Int64)::Dict{Int64, Int64}
     # n >= 0
 
     # initilize -
-    fibonacci_seq::Dict{Int64,Int64} = Dict{Int64, Int64}()
-    should_loop_continue::Bool = true
-    i::Int64 = 0;
+    fibonacci_seq = Dict{Int64, Int64}()
+    should_loop_continue = true
+    i = 0;
 
     # main loop 
     while (should_loop_continue == true)
