@@ -1,0 +1,4 @@
+name = "MyDNACryptographyPackage"
+uuid = "51ca4ac6-3b8f-400d-9f50-0c12641148e2"
+authors = ["Jeffrey Varner <jdv27@cornell.edu>"]
+version = "0.1.0"
