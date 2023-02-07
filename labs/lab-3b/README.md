@@ -8,5 +8,5 @@ The objective of `lab-3b` is to give you practice with understanding and analyzi
 * [Insertion sort](https://www.youtube.com/watch?v=nKzEJWbkPbQ) performs shift operations to sort a random list into ascending order. The worst-case time complexity of [Insertion sort](https://www.youtube.com/watch?v=nKzEJWbkPbQ) is $\mathcal{O}(n^2)$, where $n$ is the number of elements in the unsorted list.
 
 ### Tasks
+1. Break up into groups and explain/analyze the [Bubble sort](https://www.youtube.com/watch?v=uJLwnsLn0_Q) implementation.
 1. Sort a set of random vectors of length `l = 2, 4, 8, 16, 32, 64, 128, 256` created using the `rand()` command. Record the mean and standard deviation of the execution time for the `bubble_sort` algorithm as a function of the length of the array using the [BenchmarkTools](https://github.com/JuliaCI/BenchmarkTools.jl) package. 
-1. Sort a set of random vectors of length `l = 2, 4, 8, 16, 32, 64, 128, 256` created using the `rand()` command. Record the mean and standard deviation of the execution time for the `insertion_sort` algorithm as a function of the length of the array using the [BenchmarkTools](https://github.com/JuliaCI/BenchmarkTools.jl) package. 
