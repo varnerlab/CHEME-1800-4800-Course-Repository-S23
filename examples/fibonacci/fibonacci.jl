@@ -72,3 +72,10 @@ function fibonacci_for_loop(n::Int64)::Array{Int64,1}
     return sequence
 end
 
+
+function fibonacci_for_loop_dict(n::Int64)::Dict{Int64,Int64}
+
+    # implement a fibonacci function that uses a for loop to compute the fibonacci sequence. 
+    # The fibonacci sequence is stored in a dictionary. Inside the for loop use an if else to check for the 0, 1 cases
+
+end
