@@ -78,4 +78,22 @@ function fibonacci_for_loop_dict(n::Int64)::Dict{Int64,Int64}
     # implement a fibonacci function that uses a for loop to compute the fibonacci sequence. 
     # The fibonacci sequence is stored in a dictionary. Inside the for loop use an if else to check for the 0, 1 cases
 
+    # initialize -
+    fibonacci_seq = Dict{Int64, Int64}()
+
+    # main loop -
+    for i ∈ 0:n
+        
+        # conditional logic: hardcode 0, 1 else gets all other cases
+        if (i == 0)
+            fibonacci_seq[i] = 0; 
+        elseif (i == 1)
+            fibonacci_seq[i] = 1;
+        else
+            fibonacci_seq[i] = fibonacci_seq[i-1] + fibonacci_seq[i-2]
+        end
+    end
+
+    # return -
+    return fibonacci_seq
 end
