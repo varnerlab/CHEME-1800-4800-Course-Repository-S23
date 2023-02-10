@@ -1,4 +1,4 @@
-## Problem set 1: Introduction to DNA Cryptography 
+## Problem Set 1: Introduction to DNA Cryptography 
 DNA cryptography is a form of cryptography that uses the principles of genetics and biochemistry to store and transmit information. It involves encoding a digital message into the DNA molecule, synthesizing the encoded DNA, and decoding the information using DNA sequencing technology. 
 
 In DNA cryptography, each character is translated into the four chemical bases (A, C, G, and T) that make up the DNA molecule. The mapping between characters and a unique three-base pair codon is encoded in an encryption key. The DNA encryption key used in this study was taken from:
