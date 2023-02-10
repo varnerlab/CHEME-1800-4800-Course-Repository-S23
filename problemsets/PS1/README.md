@@ -22,7 +22,9 @@ In DNA cryptography, each character is translated into the four chemical bases (
 
 #### Notes on the GitHub repository
 * Each student on the problem set team must be a collaborator on the problem set GitHub repository. 
-* The problem set repository must have a `README.md` file that describes the problem set, lists the team members, and the contributions of each team to completing the problem set.
+* The problem set repository should include a `README.md` file that describes the problem set, lists the team members, and the contributions of each team to completing the problem set.
+* Help with setting up a GitHub repository: [How to set up a GitHub repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository).
+* Help with GitHub markdown: [Help with markdown syntax for your README.md file](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
 
 
