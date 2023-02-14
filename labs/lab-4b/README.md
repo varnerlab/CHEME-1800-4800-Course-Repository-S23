@@ -7,6 +7,9 @@ Unlike the previous sorting approaches we explored, e.g., [Bubble sort](https://
 ### Algorithm
 [Quicksort](https://en.wikipedia.org/wiki/Quicksort) is an efficient, general-purpose recursive sorting algorithm for arrays originally [published in 1961](https://doi.org/10.1145/366622.366644). Quicksort uses a divide-and-conquer paradigm in which a `pivot` element is selected from the array; then, the array is partitioned into two subarrays containing smaller and larger elements than the pivot element (the divide step). Finally, each subarray is then recursively sorted (the conquer step).
 
+The time-complexity of [Quicksort](https://en.wikipedia.org/wiki/Quicksort) depends strongly on the value of the pivot element. The worst-case time-complexity will be $\mathcal{O}(n^2)$, however, on average we'd expect
+[Quicksort](https://en.wikipedia.org/wiki/Quicksort) to run in $\mathcal{O}(n\cdot\log(n))$. 
+
 
 
 ### Tasks

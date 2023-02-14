@@ -1,11 +1,11 @@
 """
-    quick_sort(arr::Array{Float64,1}) -> Array{Float64,1}
+    quicksort(arr::Array{T,1}) -> Array{T,1} where T <: Number
 """
-function quicksort(arr::Array{Float64,1})::Array{Float64,1}
+function quicksort(arr::Array{T,1})::Array{T,1} where T <: Number
     
     # initialize -
-    smaller_array = Array{Float64,1}()
-    larger_array = Array{Float64,1}()
+    smaller_array = Array{T,1}()
+    larger_array = Array{T,1}()
 
     # Base case: if we only have element, return the array
     if length(arr) <= 1
@@ -30,6 +30,9 @@ function quicksort(arr::Array{Float64,1})::Array{Float64,1}
                 push!(larger_array, x);
             end
         end
+
+        # show the user what is going on ...
+        # println("small: $(smaller_array) pivot: $(pivot) large: $(larger_array)")
 
         # return: this line creates (and returns) an array with the smaller part, the pivot and the larger part
         return [quicksort(smaller_array); pivot; quicksort(larger_array)]
