@@ -1,4 +1,5 @@
-## Lab-4d: Working with text data files. Ham or Spam?
+## Lab-4d: Working with text data files. Movie reviews and sentiment analysis
 
 ### Data
-The data set we'll use is taken from the [Spam or Ham competition on Kaggle](https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset?resource=download). We've changed the column labels to 'label' and 'message' (from 'v1' and 'v2') and removed the last three empty columns.
+We'll use the [Cornell movie review v2.0 data set](http://www.cs.cornell.edu/people/pabo/movie-review-data). This data set contains 1000 positive and 1000 negative processed reviews. Introduced in [Pang/Lee ACL 2004](https://aclanthology.org/P04-1035/).
+

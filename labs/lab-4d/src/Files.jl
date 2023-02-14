@@ -1,8 +1,13 @@
-function load_csv_file(path::String)::DataFrame
+
+"""
+    load_review_file(path::String) -> Dict{Int,String}
+"""
+function load_review_file(path::String)::Dict{Int,String}
     
     # check: is path legit?
     # ...
 
-    # use the built-in read function 
-    return CSV.read(path, DataFrame);
+    # initialize -
+    sentences = Dict{Int, String}()
+
 end
