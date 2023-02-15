@@ -1,4 +1,5 @@
 """
+    compute_bag_of_words(sentences::Dict{Int,String}) -> Dict{String,Int}
 """
 function compute_bag_of_words(sentences::Dict{Int,String})::Dict{String,Int}
 
@@ -7,11 +8,11 @@ function compute_bag_of_words(sentences::Dict{Int,String})::Dict{String,Int}
     bag_of_words = Dict{String,Int}()
 
     # process each sentence -
-    for i ∈ 0:(number_of_sentences - 1)
+    for (index, sentence) ∈ sentences
         
         # grab a sentence -
-        sentence = sentences[i];
-        clean_sentence = replace(sentence, "."=>"", "," => "")
+        clean_sentence = replace(sentence, "."=>"", "," =>"", 
+            "\""=>"", ":"=>"", "("=>"", ")" => "", "?"=>"")
         
         # split -
         words = split(clean_sentence, " ");
@@ -23,6 +24,9 @@ function compute_bag_of_words(sentences::Dict{Int,String})::Dict{String,Int}
             end
         end
     end
+
+    # remove ""
+    delete!(bag_of_words, "")
 
     # return -
     return bag_of_words;
@@ -43,4 +47,41 @@ function frequency(bow::Dict{String, Int}; multiplier::Number = 100.0)::Dict{Str
 
     # return -
     return frequency_dictionary;
+end
+
+
+function words(bow::Dict{String,T})::Array{String,1} where T <: Number
+
+    # initialize -
+    list_of_words = Array{String,1}()
+
+    for (word,value) ∈ bow
+        push!(list_of_words, word)
+    end
+
+    # sort -
+    return sort!(list_of_words)
+end
+
+
+"""
+    maximum(bow::Dict{String,T}) -> Pair{String,T} where T <: Number
+"""
+function maximum(bow::Dict{String,T}; exclude::Set{String} = Set{String}())::Pair{String,T} where T <: Number
+
+    # initialize -
+    max_value = 0.0
+    max_word = nothing
+
+    for (word,value) ∈ bow
+
+        if (in(word,exclude) == false && value>max_value)
+            
+            # grab the value and word -
+            max_value = value
+            max_word = word
+        end
+    end
+
+    return max_word => max_value
 end
