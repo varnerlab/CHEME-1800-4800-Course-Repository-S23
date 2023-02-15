@@ -28,6 +28,9 @@ function compute_bag_of_words(sentences::Dict{Int,String})::Dict{String,Int}
     return bag_of_words;
 end 
 
+"""
+    frequency(bow::Dict{String, Int}; multiplier::Number = 100.0) -> Dict{String, Number}
+"""
 function frequency(bow::Dict{String, Int}; multiplier::Number = 100.0)::Dict{String, Number}
 
     # initialize -
