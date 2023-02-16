@@ -5,7 +5,7 @@ Factory method to construct and initialize an instance of `DNAEncryptionKey`
 """
 function_build(type::Type{DNAEncryptionKey})::DNAEncryptionKey
 
-    # initialize -
+    # Making the secret code so no one can steal my DNA (why do they want my DNA I literally have a genetic disorder it is terrible DNA) -
     model = DNAEncryptionKey();
 
     keydict = Dict{Char, String}();

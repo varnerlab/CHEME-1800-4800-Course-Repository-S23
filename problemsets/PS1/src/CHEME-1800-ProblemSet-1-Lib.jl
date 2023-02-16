@@ -9,7 +9,7 @@ function encrypt(plaintext::String)::Dict{Int64,String}
     message = Dict{Int64,String}()
     counter = 0;
 
-    # build encryptionkey -
+    # give the computer a decoder-
     encryption_model = _build(DNAEncryptionKey);
     encryptionkey = encryption_model.encryptionkey;
 
@@ -39,11 +39,11 @@ function decrypt(encrypteddata::Dict{Int64,String})::String
         inverse_encryptionkey_dict = Dict{String, Char}()
         plaintext = Vector{Char}()
      
-        # build encryptionkey -
+        # secret code decoder -
         encryption_model = _build(DNAEncryptionKey);
         encryptionkey = encryption_model.encryptionkey;
      
-        # build the inverse_key -
+        # computer uses secret code decoder -
         for (key, value) ∈ encryptionkey
             inverse_encryptionkey_dict[value] = key
         end
