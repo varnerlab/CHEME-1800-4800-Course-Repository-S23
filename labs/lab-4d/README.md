@@ -12,6 +12,6 @@ We'll use the [Cornell movie review v2.0 data set](http://www.cs.cornell.edu/peo
 ### Tasks
 1. Break up into groups and finish implementing the `load_review_file` function in `Files.jl`. The `load_review_file` function reads a text file and returns each line as an entry in a dictionary. 
 1. Load the `cv002_15918.txt` file in the positive reviews directory. 
-1. Analyze the word frequency for `cv002_15918.txt`.
+1. Analyze the word frequency for `cv002_15918.txt`:
     * Finish implementing the `compute_bag_of_words` function in the `Compute.jl` file. The `compute_bag_of_words` function returns a dictionary with the words as keys and the counts as values.
     * Use the `frequency` function in the `Compute.jl` file to compute the frequency of word use. 
