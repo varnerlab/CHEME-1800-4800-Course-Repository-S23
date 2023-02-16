@@ -3,7 +3,7 @@
     readfile(path::String, delim::Char=','; keyindex::Int64 = 1) -> Tuple{Array{String,1}, Dict{String,Array{Number,1}}}
 """
 function readfile(path::String; 
-    delim::Char=',',keyindex::Int64 = 1)::Tuple{Array{String,1}, Dict{String, Array{Number,1}}}
+    delim::Char=',',keyindex::Int64 = 1)::Tuple{Array{String,1}, Dict{Int, Array{Number,1}}}
     
     # check: is the path arg legit?
     # ....
@@ -11,7 +11,7 @@ function readfile(path::String;
     # initialize
     counter = 1
     header = Array{String,1}()
-    data = Dict{String,Array{Float64,1}}()
+    data = Dict{Int,Array{Float64,1}}()
 
     # main -
     open(path, "r") do io # open a stream to the file
@@ -41,7 +41,7 @@ function readfile(path::String;
 
                 # do not add bad keys -
                 if (isempty(keyfield) == false)
-                    data[keyfield] = tmp;
+                    data[parse(Int,keyfield)] = tmp;
                 end
             end
         end
