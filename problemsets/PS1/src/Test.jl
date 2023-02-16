@@ -3,5 +3,5 @@ include("Include.jl")
 
 plaintext = "No steal DNA pls"
 
-d=encrypt(plaintect)
+d=encrypt(plaintext)
 test=decrypt(d)
