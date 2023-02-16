@@ -18,6 +18,11 @@ function load_review_file(path::String)::Dict{Int,String}
             # Impl me -
             # write code to store the lines of text in the sentences dictionary
 
+            # grab the sentence -
+            sentences[counter] = line;
+        
+            # update the counter -
+            counter = counter + 1;
         end
     end
 
