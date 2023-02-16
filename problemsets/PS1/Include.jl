@@ -1,8 +1,9 @@
 # setup paths -
-const _ROOT = pwd()
+const _ROOT = pwd();
 const _PATH_TO_SRC = joinpath(_ROOT, "src")
 
 # load other external packages -
+using BenchmarkTools
 # ...
 
 # load my codes -
