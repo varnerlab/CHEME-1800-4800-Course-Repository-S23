@@ -15,3 +15,4 @@ We'll use the [Cornell movie review v2.0 data set](http://www.cs.cornell.edu/peo
 1. Analyze the word frequency for `cv002_15918.txt`:
     * Finish implementing the `compute_bag_of_words` function in the `Compute.jl` file. The `compute_bag_of_words` function returns a dictionary with the words as keys and the counts as values.
     * Use the `frequency` function in the `Compute.jl` file to compute the frequency of word use. 
+1. Let's look at what words are important using the `maximum` function in `Compute.jl`

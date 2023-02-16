@@ -15,11 +15,9 @@ function load_review_file(path::String)::Dict{Int,String}
     open(path, "r") do io # open a stream to the file
         for line in eachline(io) # read each line from the stream
             
-            # grab the sentence -
-            sentences[counter] = line;
-        
-            # update the counter -
-            counter = counter + 1;
+            # Impl me -
+            # write code to store the lines of text in the sentences dictionary
+
         end
     end
 

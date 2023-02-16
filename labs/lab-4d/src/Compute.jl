@@ -4,7 +4,6 @@
 function compute_bag_of_words(sentences::Dict{Int,String})::Dict{String,Int}
 
     # initialize -
-    number_of_sentences = length(sentences);
     bag_of_words = Dict{String,Int}()
 
     # process each sentence -
@@ -15,18 +14,18 @@ function compute_bag_of_words(sentences::Dict{Int,String})::Dict{String,Int}
             "\""=>"", ":"=>"", "("=>"", ")" => "", "?"=>"")
         
         # split -
-        words = split(clean_sentence, " ");
-        for word ∈ words
-            if (haskey(bag_of_words, word) == false)
-                bag_of_words[word] = 1;
-            else
-                bag_of_words[word] += 1
-            end
-        end
+        words = split(clean_sentence, " "); # this call produces an array of words in this sentence -
+        
+        # Impl me -
+        # Fill up the bag_of_words dictionary. 
+        # The keys should be the individual words, and the values should be their count
+
     end
 
-    # remove ""
-    delete!(bag_of_words, "")
+    # remove items from the bag -
+    if (haskey(bag_of_words, "") == true)
+        delete!(bag_of_words, "")
+    end
 
     # return -
     return bag_of_words;
