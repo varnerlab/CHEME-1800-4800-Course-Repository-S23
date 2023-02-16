@@ -1,1 +1,4 @@
-encode(plaintext = "cool dna and stuff")
+# include -
+include("Include.jl")
+
+plaintext = "No steal DNA pls"
