@@ -10,7 +10,7 @@ The objectives of `lab-4d` are to familiarize students with working with text do
 We'll use the [Cornell movie review v2.0 data set](http://www.cs.cornell.edu/people/pabo/movie-review-data) as our corpus. This data set was introduced and analyzed in [Pang/Lee ACL 2004](https://aclanthology.org/P04-1035/). This data set contains 1000 positive and 1000 negative processed reviews.
 
 ### Tasks
-1. Break up into groups and finish implementing the `load_review_file` function in `Files.jl`.
+1. Break up into groups and finish implementing the `load_review_file` function in `Files.jl`. The `load_review_file` function reads a text file and returns each line as an entry in a dictionary. 
 1. Load the `cv002_15918.txt` file in the positive reviews directory. 
 1. Analyze the word frequency for `cv002_15918.txt` by implementing the `compute_bag_of_words` function in the `Compute.jl` file and then computing the usage frequency using the `frequency` function in the `Compute.jl` file.
 
