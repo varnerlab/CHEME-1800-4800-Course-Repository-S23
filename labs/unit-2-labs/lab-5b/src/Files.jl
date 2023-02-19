@@ -1,8 +1,8 @@
 
 """
-    load_review_file(path::String) -> Dict{Int,String}
+    read_reaction_file(path::String) -> Dict{Int,String}
 """
-function load_review_file(path::String)::Dict{Int,String}
+function read_reaction_file(path::String)::Dict{Int,String}
     
     # check: is path legit?
     # ...
@@ -16,13 +16,9 @@ function load_review_file(path::String)::Dict{Int,String}
         for line in eachline(io) # read each line from the stream
             
             # Impl me -
-            # write code to store the lines of text in the sentences dictionary
+            # load, and split reactions
 
-            # grab the sentence -
-            sentences[counter] = line;
-        
-            # update the counter -
-            counter = counter + 1;
+
         end
     end
 
