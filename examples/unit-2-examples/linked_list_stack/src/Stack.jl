@@ -2,8 +2,13 @@
 Node type for the linked list stack implementation
 """
 mutable struct Node
+    
+    # data
     value::Char
     next::Union{Nothing, Node}
+
+    # constructor -
+    Node() = new();
 end
 
 """
@@ -19,7 +24,13 @@ end
 Implements the push! operation for our linked list stack 
 """
 function push!(stack::Stack, value::Char)
-    new_node = Node(value, stack.head)
+    
+    # create a new node -
+    new_node = Node()
+    new_node.value = value;
+    new_node.next = stack.head;
+
+    # set the head ot the stack to the new node 
     stack.head = new_node
 end
 

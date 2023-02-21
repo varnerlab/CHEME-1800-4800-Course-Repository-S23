@@ -5,7 +5,7 @@ include("Include.jl")
 s = Stack(nothing);
 
 # add characters to the stack -
-text = "I love my roomba!"
+text = "Roomba!"
 char_array = collect(text);
 for c ∈ char_array
     push!(s,c)
