@@ -1,6 +1,6 @@
 
 """
-    read_reaction_file(path::String) -> Dict{Int,String}
+    read_reaction_file(path::String) -> Dict{String, MyKeggReaction}
 """
 function read_reaction_file(path::String)::Dict{String, MyKeggReaction}
     
@@ -22,7 +22,21 @@ function read_reaction_file(path::String)::Dict{String, MyKeggReaction}
             # a) ignore the comments, check out the contains function: https://docs.julialang.org/en/v1/base/strings/#Base.contains
             # b) records are comma delimited. Check out the split functions: https://docs.julialang.org/en/v1/base/strings/#Base.split
             # c) from the data in each reacord, we need to build a MyKeggReaction object. Each reaction object should be stored in the reactions dict with the name as the key
-            
+            if (contains(line,"#") == false)
+
+                fields = split(line, ','); # splits around the ','
+
+                # grab the fields -
+                name = string(fields[1]);
+                reactant = string(fields[2]);
+                product = string(fields[3]);
+
+                # build - 
+                model = build(MyKeggReaction, name, reactant, product);
+
+                # store -
+                reactions[name] = model;
+            end
 
         end
     end

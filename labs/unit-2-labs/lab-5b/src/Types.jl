@@ -13,5 +13,5 @@ mutable struct MyKeggReaction <: AbstractKeggReaction
     products::String
 
     # constructor
-    KeggReaction() = new()
+    MyKeggReaction() = new()
 end
