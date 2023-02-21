@@ -6,5 +6,4 @@ const _PATH_TO_SRC = joinpath(_ROOT, "src")
 using DataStructures
 
 # load my codes -
-include(joinpath(_PATH_TO_SRC, "Stack.jl"))
-include(joinpath(_PATH_TO_SRC, "Queue.jl"))
+include(joinpath(_PATH_TO_SRC, "StacksAndQueues.jl"))
