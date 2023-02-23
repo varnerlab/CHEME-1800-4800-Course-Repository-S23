@@ -18,6 +18,6 @@ __Fields__:
 1. Implement the `read_reaction_file` method in `Files.jl`. This function should return a `Dict` with the names as keys and instances of the `MyKeggReaction` type as the value.
 
 #### Part 2: Process the data in the reaction file records
-1. Analyze the behavior of the `recursive_reaction_parser` and `_recursive_reaction_parser` functions in `Parser.jl` using a simple text input such as `CAT+DOG`.
-1. Test the `recursive_reaction_parser` function on different reaction phrases.
+1. Analyze the behavior of the `recursive_reaction_parser` and `_recursive_reaction_parser` functions in `Parser.jl` using a simple text input such as `CAT+DOG`. A valuable technique to understand what is going on is constructing a tree that models the function calls, i.e., a call tree. 
+1. Test the `recursive_reaction_parser` function on different reaction phrases from Part 1.
 

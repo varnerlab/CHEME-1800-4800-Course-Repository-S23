@@ -37,7 +37,6 @@ function read_reaction_file(path::String)::Dict{String, MyKeggReaction}
                 # store -
                 reactions[name] = model;
             end
-
         end
     end
 
