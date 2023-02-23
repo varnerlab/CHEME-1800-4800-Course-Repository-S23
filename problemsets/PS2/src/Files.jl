@@ -1,6 +1,6 @@
 
 """
-    read_compound_file(path::String) -> Dict{String, MyChemicalCompoundModel}
+    read_compounds_file(path::String) -> Dict{String, MyChemicalCompoundModel}
 
 TODO: Describe what this function is doing, the args and the what is contained in the data that is returned.
 """
