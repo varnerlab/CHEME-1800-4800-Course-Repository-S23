@@ -1,0 +1,5 @@
+# Grpah Traversal Algorithms 
+We’ll implement approaches to accessing the data in trees and graphs in this repository. In particular, we’ll explore the following:
+
+* Depth-first graph traversal is a graph traversal algorithm that visits vertices by exploring as far as possible along each branch before backtracking. Depth-first starts at a source vertex and explores the graph depth-first, visiting every vertex reachable from the source. This algorithm is often implemented using recursion but can also be implemented iteratively using a stack.
+* Breadth-first graph traversal is a graph traversal algorithm that visits vertices in order of their distance from a source vertex. Breadth-first starts at a source vertex and explores all the vertices at the same level before moving on to vertices at the next level. This algorithm is often implemented using a queue to keep track of the vertices to be visited.
