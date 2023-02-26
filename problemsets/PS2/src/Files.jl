@@ -27,8 +27,6 @@ function read_compounds_file(path::String)::Dict{String, MyChemicalCompoundModel
             # c) records are comma delimited. Check out the split functions: https://docs.julialang.org/en/v1/base/strings/#Base.split
             # d) from the data in each reacord, we need to build a MyChemicalCompoundModel object. Each compound object should be stored in the compound dict with the name as the key
             
-
-            end
         end
     end
 
