@@ -1,4 +1,4 @@
-function readedgefile(path::String)::Dict{Int64, Pair{String,String}}
+function readedgefile(path::String; delim::Char = ',')::Dict{Int64, Pair{String,String}}
     
     # check: is path legit?
     # in production we would check this path, assume ok for now
@@ -15,7 +15,7 @@ function readedgefile(path::String)::Dict{Int64, Pair{String,String}}
             if (contains(line, "#") == false)
                 
                 # split -
-                fields = split(line, '\t');
+                fields = split(line, delim);
                 if (isempty(fields) == false)
                     
                     # add record to dict -
