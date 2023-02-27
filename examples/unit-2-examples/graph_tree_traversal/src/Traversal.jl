@@ -23,10 +23,42 @@ function depthfirst(graph::T) where T <: AbstractGraphModel
     # initialize -
     𝒱 = graph.children
     visited = Set{String}()
-    number_of_nodes = length(𝒱)
 
     # main loop -
     for (v,c) ∈ 𝒱
         _depthfirst(graph, v, visited)
+    end
+end
+
+function breadthfirst(graph::T, start::String) where T <: AbstractGraphModel
+
+    # initialize 
+    visited = Set{String}()
+    queue = Queue{String}()
+
+    # add start to visited, and the queue -
+    push!(visited, start)
+    enqueue!(queue, start)
+
+    # main loop 
+    while (isempty(queue) == false)
+        
+        # grab the next node
+        current = dequeue!(queue)
+
+        # get the children of the current node 
+        if (haskey(graph.children, current) == true)
+            children = graph.children[current];
+            for c ∈ children
+                if (in(c, visited) == false)
+                    push!(visited, c)
+                    enqueue!(queue, c)
+                end
+            end
+
+            println("current = $(current), children q = $(queue)")
+        else
+            println("Leaf $(current)")
+        end
     end
 end
