@@ -30,11 +30,12 @@ function depthfirst(graph::T) where T <: AbstractGraphModel
     end
 end
 
-function breadthfirst(graph::T, start::String) where T <: AbstractGraphModel
+function breadthfirst(graph::T, start::String)::Queue where T <: AbstractGraphModel
 
     # initialize 
     visited = Set{String}()
     queue = Queue{String}()
+    path = Queue{String}()
 
     # add start to visited, and the queue -
     push!(visited, start)
@@ -45,7 +46,8 @@ function breadthfirst(graph::T, start::String) where T <: AbstractGraphModel
         
         # grab the next node
         current = dequeue!(queue)
-
+        enqueue!(path, current)
+        
         # get the children of the current node 
         if (haskey(graph.children, current) == true)
             children = graph.children[current];
@@ -56,9 +58,12 @@ function breadthfirst(graph::T, start::String) where T <: AbstractGraphModel
                 end
             end
 
-            println("current = $(current), children q = $(queue)")
+            println("visiting node = $(current). Nodes to be proq = $(queue)")
         else
             println("Leaf $(current)")
         end
     end
+
+    # return the path -
+    return path
 end
