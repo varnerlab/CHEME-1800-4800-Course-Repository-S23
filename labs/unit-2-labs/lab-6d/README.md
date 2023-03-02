@@ -26,4 +26,5 @@ The [Graph. jl](https://juliagraphs.org/Graphs.jl/dev/) and [SNAPDatasets.jl](ht
 1. Instantiate a graph from the [High-energy physics citation network](https://snap.stanford.edu/data/cit-HepPh.html) data, and compute the shortest path between node `1` and all other nodes.
 
 ### Additional resources
-* [The Bellman–Ford algorithm](https://en.wikipedia.org/wiki/Bellman–Ford_algorithm) computes the shortest paths from a single source vertex to all other vertices in a weighted digraph. It is slower than [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) for the same problem but more versatile, as it can handle graphs in which some of the edge weights are negative numbers.  
+* [The Bellman–Ford algorithm](https://en.wikipedia.org/wiki/Bellman–Ford_algorithm) computes the shortest paths from a single source vertex to all other vertices in a weighted digraph. It is slower than [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) for the same problem but more versatile, as it can handle graphs in which some of the edge weights are negative numbers. 
+* Interested in trees and graphs? Check out [CS2850](https://www.cs.cornell.edu/courses/cs2850/2022fa/). It’s a super cool course. 

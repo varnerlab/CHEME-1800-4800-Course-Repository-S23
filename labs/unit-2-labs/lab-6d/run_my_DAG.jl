@@ -27,9 +27,9 @@ edge_dictionary = readedgefile(path_to_edge_file; delim=',')
 # W = weight(G);
 # W = weight(G; wfunc = (i,j) ->
 #     if (i == 2 && j == 4)
-#         return 10.0
+#         return 1.0
 #     elseif (i == 4 && j == 6)
-#         return 5.0
+#         return 1.0
 #     else
 #         return 1.0
 #     end
@@ -38,5 +38,5 @@ edge_dictionary = readedgefile(path_to_edge_file; delim=',')
 # compute the shortest path between the 0 and all the other nodes
 # ds = dijkstra_shortest_paths(G, 1, W; allpaths = true, trackvertices = true)
 
-# to see the paths: ds.dists
+# to see the paths: ds.dists, to see the parents ds.parents
 # ds.dists
