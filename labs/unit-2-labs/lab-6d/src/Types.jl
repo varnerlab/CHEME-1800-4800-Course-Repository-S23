@@ -1,7 +1,7 @@
 abstract type MyAbstractGraphType end
 
 
-mutable struct MyStarGraphMdel <: MyAbstractGraphType
+mutable struct MyStarGraphModel <: MyAbstractGraphType
 
     # data 
     number_of_vertices::Int64
