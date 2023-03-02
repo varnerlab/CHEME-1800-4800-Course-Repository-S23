@@ -37,3 +37,39 @@ end
 function build(model::MyBinaryTreeModel)
     return binary_tree(model.height)
 end
+
+function build(type::Type{MyAdjacencyGraphModel}, edges::Dict{Int64, Pair{T, T}}; base::Int64 = 0)::MyAdjacencyGraphModel where T 
+
+    # initialize 
+    number_of_edges = length(edges);
+    children = Dict{T, Array{T, 1}}()
+    
+    # main -
+    for j ∈ 0:(number_of_edges - 1)
+        
+        # grab an edge -
+        edge = edges[j]
+
+        # grab the vertices -
+        start_vertex = edge.first + base
+        stop_vertex = edge.second + base
+        if (haskey(children, start_vertex) == false)
+            
+            # create -
+            tmp_array = Array{Int64,1}()
+            push!(tmp_array, stop_vertex);
+
+            # store -
+            children[start_vertex] = tmp_array;
+        else
+
+            # grab the array -
+            tmp_array = children[start_vertex];
+            push!(tmp_array,stop_vertex);
+            children[start_vertex] = tmp_array;
+        end
+    end
+
+    # build a model with the children
+    return MyAdjacencyGraphModel{Int64}(children);
+end

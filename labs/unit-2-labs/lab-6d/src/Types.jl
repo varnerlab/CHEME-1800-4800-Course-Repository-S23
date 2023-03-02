@@ -1,5 +1,5 @@
 abstract type MyAbstractGraphType end
-
+abstract type AbstractGraphRepresentationModel end
 
 mutable struct MyStarGraphModel <: MyAbstractGraphType
 
@@ -26,4 +26,15 @@ mutable struct MyBinaryTreeModel <: MyAbstractGraphType
 
     # constructor 
     MyBinaryTreeModel() = new()
+end
+
+mutable struct MyAdjacencyGraphModel{T}
+
+    # data -
+    children::Dict{T, Array{T,1}}
+
+    # constructor
+    function MyAdjacencyGraphModel{T}(children::Dict{T, Array{T,1}}) where T <: Any
+        return new(children)
+    end
 end

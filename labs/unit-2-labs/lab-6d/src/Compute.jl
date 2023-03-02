@@ -2,6 +2,11 @@ function _default_weight_function(i::Int, j::Int)::Float64
     return 1.0;
 end
 
+"""
+    adjacency(graph::SimpleGraph) -> Dict{Int64, Array{Int64,1}}
+
+Adjacency compute the adjacency dictionary for a SimpleGraph
+"""
 function adjacency(graph::SimpleGraph)::Dict{Int64, Array{Int64,1}}
     
     # initialize 
@@ -25,8 +30,13 @@ function adjacency(graph::SimpleGraph)::Dict{Int64, Array{Int64,1}}
     return adjdict;
 end
 
+"""
+    weight(graph::T; wfunc::Function = _default_weight_function)::AbstractMatrix where T <: Union{SimpleGraph, SimpleDiGraph}
 
-function weight(graph::T; wfunc::Function = _default_weight_function)::AbstractMatrix where T <: Union{SimpleGraph, SimpleDiGraph}
+Computes a weight matrix for the input graph, where the weight between node i and j is calculated in the user defined wfunc
+"""
+function weight(graph::T; 
+    wfunc::Function = _default_weight_function)::AbstractMatrix where T <: Union{SimpleGraph, SimpleDiGraph}
 
     # initialize 
     number_of_vertices = nv(graph); # how many nodes do we have?
@@ -43,10 +53,13 @@ function weight(graph::T; wfunc::Function = _default_weight_function)::AbstractM
 
         # update the W matrix 
         W[i,j] = wfunc(i,j)
-        W[j,i] = wfunc(i,j)
+        
+        # if we have an undirected graph, the W matrix must be same above and below the diag
+        if (isa(graph,SimpleGraph) == true)
+            W[j,i] = wfunc(i,j)
+        end
     end
 
     # return the W matrix
     return W
 end
-
