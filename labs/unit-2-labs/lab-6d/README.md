@@ -10,7 +10,7 @@ A graph is the tuple $\mathcal{G} = \left(\mathcal{V},\mathcal{E}, \mathcal{W} \
 * The quantity $\mathcal{W}$ denotes the edge weights in graph $\mathcal{G}$. If the graph $\mathcal{G}$ is _unweighted_, then all weights held in $\mathcal{W}$ are equal to `1`.
 
 ### What is the shortest path, and Dijkstra's algorithm?
-[Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) computes the shortest paths between vertices in a weighted graph with non-negative weights), which may represent, for example, road networks or social connections. 
+[Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) computes the shortest paths between vertices in a weighted graph with non-negative weights, which may represent, for example, road networks or social connections. 
 
 Let's watch a quick video about how [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) works: [link to YouTube video](https://www.youtube.com/watch?v=EFg3u_E6eHU). 
 
@@ -22,6 +22,8 @@ The [Graph. jl](https://juliagraphs.org/Graphs.jl/dev/) and [SNAPDatasets.jl](ht
 1. Run the `run_my_DAG.jl` script, which creates (and analyzes) the directed acyclic graph (DAG) we discussed in the lecture. 
     1. Discuss each commented code block and discuss what is going on.
     1. Implement different edge weighting schemes using the `weight` function in `Compute. jl`.
-1. Discuss the [Stanford Large Network Dataset Collection](https://snap.stanford.edu/data/index.html) site. 
+1. Discuss/review the [Stanford Large Network Dataset Collection](https://snap.stanford.edu/data/index.html) site. 
 1. Instantiate a graph from the [High-energy physics citation network](https://snap.stanford.edu/data/cit-HepPh.html) data, and compute the shortest path between node `1` and all other nodes.
 
+### Additional resources
+* [The Bellman–Ford algorithm](https://en.wikipedia.org/wiki/Bellman–Ford_algorithm) computes the shortest paths from a single source vertex to all other vertices in a weighted digraph. It is slower than [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) for the same problem but more versatile, as it can handle graphs in which some of the edge weights are negative numbers.  
