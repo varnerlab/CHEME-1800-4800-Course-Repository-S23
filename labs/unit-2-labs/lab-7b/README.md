@@ -17,7 +17,8 @@ Today, we'll consider the reaction scheme:
 which is encoded in the `/data/Test.net` file.
 
 ### Prerequisites
-No external packages are required for `lab 7b`.
+* No external packages are required for `lab 7b`.
+* In linear algebra, a transpose is an operation that flips a matrix over its diagonal. The transpose of an m-by-n matrix $\mathbf{A}$ is denoted as $\mathbf{A}^{T}$ and is an n-by-m matrix. The [transpose](https://docs.julialang.org/en/v1/stdlib/LinearAlgebra/#Base.transpose) operation is implemented by the `transpose` function.
 
 ### Tasks
 1. Start the Julia in the `lab-7b` folder with the `--project=.` argument
@@ -30,4 +31,4 @@ No external packages are required for `lab 7b`.
     1. What does $\bar{\mathbf{S}}\bar{\mathbf{S}}^{T}$ remind you of? (Hint: it's something to do with a graph).
 
 ## Additional resources
-* [Graphviz.org](https://graphviz.org): Graphviz is open source graph visualization software. Graph visualization is a way of representing structural information as diagrams of abstract graphs and networks. 
+* [Graphviz.org](https://graphviz.org): Graphviz is open source graph visualization software. Graph visualization is a way of representing structural information as diagrams of abstract graphs and networks.
