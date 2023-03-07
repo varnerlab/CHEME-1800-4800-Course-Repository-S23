@@ -18,7 +18,7 @@ which is encoded in the `/data/Test.net` file.
 
 ### Prerequisites
 * No external packages are required for `lab 7b`.
-* In linear algebra, a transpose is an operation that flips a matrix over its diagonal. The transpose of an m-by-n matrix $\mathbf{A}$ is denoted as $\mathbf{A}^{T}$ and is an n-by-m matrix. The [transpose](https://docs.julialang.org/en/v1/stdlib/LinearAlgebra/#Base.transpose) operation is implemented by the `transpose` function.
+* In linear algebra, a transpose is an operation that flips a matrix over its diagonal. The transpose of an m-by-n matrix $\mathbf{A}$ is denoted as $\mathbf{A}^{T}$ and is an n-by-m matrix. The [transpose](https://docs.julialang.org/en/v1/stdlib/LinearAlgebra/#Base.transpose) operation is implemented by the `transpose` function in [Julia](https://julialang.org).
 
 ### Tasks
 1. Start the Julia in the `lab-7b` folder with the `--project=.` argument
