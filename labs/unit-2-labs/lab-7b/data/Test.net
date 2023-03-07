@@ -1,2 +1,4 @@
-R1,2*A,B,false
-R2,B,5*C,true
+# name, reactants, products, reversible
+R1,A1+x,B+y,false
+R2,B,P,false
+R3,A2+y,C+x,false

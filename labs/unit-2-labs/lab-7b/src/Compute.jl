@@ -59,14 +59,8 @@ function multiply(matrix::Array{Float64,2}, vector::Array{Float64,1}; right::Boo
     if (right == true)  # compute the right product
         
         # See Algorithm 5: https://varnerlab.github.io/CHEME-1800-Computing-Book/unit-2-data/vectors-matricies-nla.html#algo-right-multiplication-matrix-vector
-        
-        # initialize
-        y = zeros(m);
-        for i ∈ 1:m
-            for j ∈ 1:n
-                y[i] = y[i] + matrix[i,j]*vector[j]
-            end
-        end
+        # Implement me
+
     else  # compute the left product
 
         # See Algorithm 6: https://varnerlab.github.io/CHEME-1800-Computing-Book/unit-2-data/vectors-matricies-nla.html#algo-left-multiplication-matrix-vector
@@ -101,18 +95,8 @@ function multiply(A::Array{Float64,2}, B::Array{Float64,2})::Array{Float64,2}
     C = Array{Float64,2}(undef, RA, CB)
     tmp = Dict{Int64,Array{Float64,1}}()
 
-    # do the math
-    for i ∈ 1:CB
-        tmp[i] = multiply(A,B[:,i]);
-    end
-
-    # assemble
-    for i ∈ 1:CB
-        col = tmp[i];
-        for j ∈ 1:RA
-            C[j,i] = col[j]
-        end
-    end
+    # look at the M x M figure and try to develop a code
+    # Implement me
 
     # return the product
     return C
@@ -121,7 +105,7 @@ end
 """
     binary(matrix::Array{Float64,2}) -> Array{Float64,2}
 
-
+Converts an floating point array to its binary form (all non-zero values -> 1.0)
 """
 function binary(matrix::Array{Float64,2})::Array{Float64,2}
 

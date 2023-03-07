@@ -14,6 +14,8 @@ Today, we'll consider the reaction scheme:
 
 ![alt text](./figs/Fig-FBA-ToyNetwork.png)
 
+which is encoded in the `/data/Test.net` file.
+
 ### Prerequisites
 No external packages are required for `lab 7b`.
 
@@ -26,3 +28,6 @@ No external packages are required for `lab 7b`.
 1. __Duration__ (10 minutes): Compute the matrix-matrix product $\bar{\mathbf{S}}\bar{\mathbf{S}}^{T}$ for the test reaction network 
 `Test.net`, where $\bar{\mathbf{S}}$ denotes the `binary stoichiometric array`. 
     1. What does $\bar{\mathbf{S}}\bar{\mathbf{S}}^{T}$ remind you of? (Hint: it's something to do with a graph).
+
+## Additional resources
+* [Graphviz.org](https://graphviz.org): Graphviz is open source graph visualization software. Graph visualization is a way of representing structural information as diagrams of abstract graphs and networks. 
