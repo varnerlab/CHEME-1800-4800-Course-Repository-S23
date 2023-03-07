@@ -10,9 +10,11 @@ The stoichiometric matrix $\mathbf{S}$ is a rectangular array holding the stoich
 No external packages need to be installed for `lab 7b`.
 
 ### Tasks
-1. __Duration__: 05 minutes. Break up into teams and familiarize yourself with the files and functions in `lab 7b` (skip `Factory.jl`). 
-1. __Duration__: 15 minutes. Complete the implementation of the `multiply` method that computes the right-matrix vector product in `Compute.jl`. 
+1. Start the Julia in the `lab-7b` folder with the `--project=.` argument
+1. __Duration__: 05 minutes. Break up into teams and familiarize yourself with the files and functions in `lab-7b` (skip `Factory.jl`). 
+1. __Duration__: 10 minutes. Complete the implementation of the `multiply` method which computes the right-matrix vector product in `Compute.jl`. 
 1. __Duration__: 20 minutes. Complete the implementation of the matrix-matrix product `multiply` method in `Compute.jl`
-1. __Duration__: 05 minutes. Load the stoichiometric matrix, and compute the binary stoichiometric matrix using the 
+1. __Duration__: 05 minutes. Load the stoichiometric matrix, and compute the binary stoichiometric matrix using the `binary` function
 1. __Duration__: 10 minutes. Compute the matrix-matrix product $\bar{\mathbf{S}}\bar{\mathbf{S}}^{T}$ for the test reaction network 
-`Test.net`, where $\bar{\mathbf{S}}$ denotes the `binary stoichiometric array`. What does $\bar{\mathbf{S}}\bar{\mathbf{S}}^{T}$ remind you of? (Hint: it's something to do with a graph).
+`Test.net`, where $\bar{\mathbf{S}}$ denotes the `binary stoichiometric array`. 
+    1. What does $\bar{\mathbf{S}}\bar{\mathbf{S}}^{T}$ remind you of? (Hint: it's something to do with a graph).
