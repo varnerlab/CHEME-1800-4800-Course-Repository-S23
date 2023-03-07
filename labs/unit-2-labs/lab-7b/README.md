@@ -14,4 +14,4 @@ No external packages need to be installed for `lab 7b`.
 1. __Duration__: 15 minutes. Complete the implementation of the `scalar_multiplication` function in `Compute.jl`. 
 1. __Duration__: 20 minutes. Complete the implementation of the `right_matrix_vector_product` function in `Compute.jl`
 1. __Duration__: 10 minutes. Compute the matrix-matrix product $\bar{\mathbf{S}}^{T}\bar{\mathbf{S}}$ for the test reaction network 
-`Test.net`, where $\bar\mathbf{S}$ denotes the `binary stoichiometric array`. What does $\bar{\mathbf{S}}^{T}\bar{\mathbf{S}}$ remind you of? (Hint: it's something to do with a graph).
+`Test.net`, where $\bar{\mathbf{S}}$ denotes the `binary stoichiometric array`. What does $\bar{\mathbf{S}}^{T}\bar{\mathbf{S}}$ remind you of? (Hint: it's something to do with a graph).
