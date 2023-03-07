@@ -11,6 +11,7 @@ The stoichiometric matrix $\mathbf{S}$ is a rectangular array holding the stoich
 * If $\sigma_{ir}<0$ then species $i$ is _consumed_ by reaction $r$, i.e., species $i$ is a reactant of reaction $r$.
 
 Today, we'll consider the reaction scheme:
+
 ![alt text](./figs/Fig-FBA-ToyNetwork.png)
 
 ### Prerequisites
