@@ -7,4 +7,4 @@ path_to_test_file = joinpath(_PATH_TO_DATA, "Test.net")
 reactions = readreactionfile(path_to_test_file)
 
 # build model -
-model = build(MyStoichiometricNetworkModel,reactions; expand = true)
+model = build(MyStoichiometricNetworkModel,reactions; expand = false)
