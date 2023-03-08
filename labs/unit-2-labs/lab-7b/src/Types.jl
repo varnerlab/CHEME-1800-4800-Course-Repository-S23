@@ -17,6 +17,9 @@ mutable struct MyChemicalReaction <: AbstractChemicalReaction
     MyChemicalReaction() = new()
 end
 
+"""
+fill me in
+"""
 mutable struct MyStoichiometricNetworkModel
 
     # data -
