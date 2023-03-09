@@ -1,5 +1,5 @@
 ## Lab 7d: Development of an iterative linear solver
-The objective of `lab-7d` is to familarize students with the development of iterative linear algebraic equation solvers and the solution of a typical chemical engineering application, namely, steady state species mole balances. 
+The objective of `lab-7d` is to familiarize students with the development of iterative linear algebraic equation solvers and the solution of a typical chemical engineering application, namely, steady state species mole balances. 
 
 ### Background
 Iterative methods work by improving an initial guess of the solution until a desired level of accuracy is achieved. Commonly used iterative methods include Jacobi's method and the Gauss-Seidel method.
@@ -11,7 +11,7 @@ $$
 \hat{x}_{i,k+1}=\frac{1}{a_{ii}}\bigl(b_{i}-\sum_{j=1,i}^{n}a_{ij}\hat{x}_{j,k}\bigr)\qquad{i=1,2,\cdots,n}
 $$
 
-In the Jacobi method, the estimate for all variables from the previous iteration is used, and we wait to update the solution until we have processed all $i=1,2,\cdots,n$ equations. We continue to iterate until the estimated solution does not change.
+In the Jacobi method, the estimate for all variables from the previous iteration is used, and we wait to update the solution until we have processed all $i=1,2,\cdots,n$ equations. We continue to iterate until the estimated solution stays the same.
 
 #### Gauss-Seidel method
 The Gauss-Seidel method __live updates__ the best estimate of $x_{i}$ _during_ the processing of equations $i=1,\cdots,n$:
@@ -20,7 +20,7 @@ $$
 \hat{x}_{i,k+1}=\frac{1}{a_{ii}}\bigl(b_{i}-\sum_{j=1}^{i-1}a_{ij}\hat{x}_{j,k+1}-\sum_{j=i+1}^{n}a_{ij}\hat{x}_{j,k}\bigr)\qquad{i=1,2,\cdots,n}
 $$
 
-The Gauss-Seidel update procedure generally leads to better convergence properties than the Jacobi method. We continue to iterate until the estimated solution does not change.
+The Gauss-Seidel update procedure generally leads to better convergence properties than the Jacobi method. We continue to iterate until the estimated solution stays the same.
 
 ### Prerequisites
 * The [IterativeSolvers.jl](https://github.com/JuliaLinearAlgebra/IterativeSolvers.jl) package must be installed using the [Julia package manager included in the standard library](https://docs.julialang.org/en/v1/stdlib/Pkg/).
@@ -29,7 +29,7 @@ The Gauss-Seidel update procedure generally leads to better convergence properti
 1. Start the Julia in the `lab-7d` folder with the `--project=.` argument
 1. Install the [IterativeSolvers.jl](https://github.com/JuliaLinearAlgebra/IterativeSolvers.jl) package using `package mode`.
 1. __Duration__ (05 minutes): Break up into teams and familiarize yourself with the files and functions in `lab-7d`. 
-1. __Duration__ (20 minutes): Implement the `_gauss_seidel_iteration_solver` function by wrapping a call to the [gauss_seidel](https://iterativesolvers.julialinearalgebra.org/dev/linear_systems/stationary/#IterativeSolvers.gauss_seidel). This is a `buy` versus `build` decision. We can use exsiting code, or write it ourselves. This is why [Open Source Software](https://en.wikipedia.org/wiki/Open-source_software) is so __important!__
+1. __Duration__ (20 minutes): Implement the `_gauss_seidel_iteration_solver` function by wrapping a call to the [gauss_seidel](https://iterativesolvers.julialinearalgebra.org/dev/linear_systems/stationary/#IterativeSolvers.gauss_seidel). This is a `buy` versus `build` decision. We can use existing code or write it ourselves. This is why [Open Source Software](https://en.wikipedia.org/wiki/Open-source_software) is so __important!__
 1. __Duration__ (10 minutes): Use the `Jacobi method` to solve the $3\times{3}$ with system matrix $\mathbf{A}$:
 
 $$
