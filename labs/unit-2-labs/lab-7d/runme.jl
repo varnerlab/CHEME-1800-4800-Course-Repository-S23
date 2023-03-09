@@ -16,10 +16,10 @@ b = [
     71.4    ;
 ];
 
-# run JacobiIterationSolver -
+# Step 5: run JacobiIterationSolver with the test system
 # x_jacobi = solve(JacobiIterationSolver(), A, b, zeros(3));
 
-# run the GaussSeidelIterationSolver -
+# Step 6: run the GaussSeidelIterationSolver with the test system
 # x_gs = solve(GaussSeidelIterationSolver(), A, b, zeros(3));
 
 
