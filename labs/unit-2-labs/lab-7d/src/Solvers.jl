@@ -42,13 +42,8 @@ end
 function _gauss_seidel_iteration_solver(A::Array{Float64,2}, b::Array{Float64,1}, xₒ::Array{Float64,1},
     tolerance::Float64, maxiter::Int64)::Array{Float64,1}
 
-    # initialize
-    (number_of_rows, number_of_cols) = size(A);
-    x̂ = xₒ # set the current best answer to the initial guess that was passed
-    should_we_stop = false
-
     # return -
-    return x̂;
+    return gauss_seidel(A,b; maxiter = maxiter)
 end
 
 
