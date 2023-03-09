@@ -5,25 +5,37 @@ The objective of `lab-7d` is to familarize students with the development of iter
 Iterative methods work by improving an initial guess of the solution until a desired level of accuracy is achieved. Commonly used iterative methods include Jacobi's method and the Gauss-Seidel method.
 
 #### Jacobi's method
-Jacobi's method __batch updates__ the estimate of $x_{i}$ at the _end_ of each iteration. Let the estimate of the value of $x_{i}$ at iteration k be $\hat{x}_{i,k}$. Then, the solution estimate at the next iteration $\hat{x}_{i,k+1}$ is given by:
+Jacobi's method __batch updates__ the estimate of $x_{i}$ at the _end_ of each iteration $k$:
 
 $$
 \hat{x}_{i,k+1}=\frac{1}{a_{ii}}\bigl(b_{i}-\sum_{j=1,i}^{n}a_{ij}\hat{x}_{j,k}\bigr)\qquad{i=1,2,\cdots,n}
 $$
 
-In the Jacobi method, the estimate for all variables from the previous iteration is used, and we wait to update the solution until we have processed all $i=1,2,\cdots,n$ equations. We continue to iterate until the change in the estimated solution does not change, i.e., the _distance_ between the solution estimated at $k$ and $k+1$ is below some specified tolerance. 
+In the Jacobi method, the estimate for all variables from the previous iteration is used, and we wait to update the solution until we have processed all $i=1,2,\cdots,n$ equations. We continue to iterate until the estimated solution does not change.
 
 #### Gauss-Seidel method
-The Gauss-Seidel method __live updates__ the best estimate of $\hat{x}_{i}$ _during_ the processing of equations $i=1,\cdots,n$. The Gauss-Seidel update procedure generally leads to better convergence properties than the Jacobi method. Let the estimate for variable $i$ at iteration $k$ be $\hat{x}_{i,k}$. Then, the solution estimate at the next iteration $\hat{x}_{i,k+1}$ is given by:
+The Gauss-Seidel method __live updates__ the best estimate of $x_{i}$ _during_ the processing of equations $i=1,\cdots,n$:
 
 $$
 \hat{x}_{i,k+1}=\frac{1}{a_{ii}}\bigl(b_{i}-\sum_{j=1}^{i-1}a_{ij}\hat{x}_{j,k+1}-\sum_{j=i+1}^{n}a_{ij}\hat{x}_{j,k}\bigr)\qquad{i=1,2,\cdots,n}
 $$
 
-We continue to iterate until the change in the estimated solution does not change, i.e., the _distance_ between the solution estimated at $k$ and $k+1$ is below some specified tolerance. 
+The Gauss-Seidel update procedure generally leads to better convergence properties than the Jacobi method. We continue to iterate until the estimated solution does not change.
 
 ### Prerequisites
-* No external packages are required for `lab-7d`.
+* The [IterativeSolvers.jl](https://github.com/JuliaLinearAlgebra/IterativeSolvers.jl) package must be installed using the [Julia package manager included in the standard library](https://docs.julialang.org/en/v1/stdlib/Pkg/).
 
 ### Tasks
-Fill me in.
+1. Start the Julia in the `lab-7d` folder with the `--project=.` argument
+1. Install the [IterativeSolvers.jl](https://github.com/JuliaLinearAlgebra/IterativeSolvers.jl) package using `package mode`.
+1. __Duration__ (05 minutes): Break up into teams and familiarize yourself with the files and functions in `lab-7d`. 
+1. __Duration__ (20 minutes): Implement the `_gauss_seidel_iteration_solver` function by wrapping a call to the [gauss_seidel](https://iterativesolvers.julialinearalgebra.org/dev/linear_systems/stationary/#IterativeSolvers.gauss_seidel). This is a `buy` versus `build` decision. We can use exsiting code, or write it ourselves. This is why [Open Source Software](https://en.wikipedia.org/wiki/Open-source_software) is so __important!__
+1. __Duration__ (20 minutes): Run an example system with the matrix:
+
+$$
+\mathbf{A} = \begin{bmatrix}
+3.0 & -0.3 & -0.2 \\
+0.1 & 7.0 & -0.3 \\
+0.3 & -0.2 & 10.0 \\
+\end{bmatrix}
+$$
