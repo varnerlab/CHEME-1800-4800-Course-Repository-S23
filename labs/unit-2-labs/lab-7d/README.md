@@ -60,4 +60,4 @@ $$
 1. __Duration__ (10 minutes): Use the `Gauss-Seidel method` to solve the `test system`. Do we get the same answer as the `Jacobi method`?
 
 1. __Pathological case__ (05 minutes): Solve a random $3\times{3}$ system using either the `Jacobi` or `Gauss-Seidel` methods. Generate the ramdom system using the call `A = rand(3,3)` and `b = rand(3)`. 
-	1. Before you try to solve, check for existence by computing `det(A)`. Should this system have a solution?
+	1. Before solving, check for existence by computing `det(A)`. Should this system have a solution?
