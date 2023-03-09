@@ -20,7 +20,7 @@ $$
 \hat{x}_{i,k+1}=\frac{1}{a_{ii}}\bigl(b_{i}-\sum_{j=1}^{i-1}a_{ij}\hat{x}_{j,k+1}-\sum_{j=i+1}^{n}a_{ij}\hat{x}_{j,k}\bigr)\qquad{i=1,2,\cdots,n}
 $$
 
-The Gauss-Seidel update procedure generally leads to better convergence properties than the Jacobi method. We continue to iterate until the estimated solution stays the same.
+The Gauss-Seidel update procedure generally leads to better convergence properties than the Jacobi method. 
 
 ### Prerequisites
 * The [IterativeSolvers.jl](https://github.com/JuliaLinearAlgebra/IterativeSolvers.jl) package must be installed using the [Julia package manager included in the standard library](https://docs.julialang.org/en/v1/stdlib/Pkg/).
