@@ -54,7 +54,7 @@ $$
     . This is a `buy` versus `build` decision. We can use existing code or write it ourselves. This is why [Open Source Software](https://en.wikipedia.org/wiki/Open-source_software) is so __important!__
 
 1. __Duration__ (10 minutes): Use the `Jacobi method` to solve the `test system`. 
-    1. Should we expect a solution to exist? (check: compute `det(A)`).
+    1. Should we expect a solution to exist? check: compute `det(A)`.
     1. How can we tell if we have a good solution?
 
 1. __Duration__ (10 minutes): Use the `Gauss-Seidel method` to solve the `test system`. Do we get the same answer as the `Jacobi method`?
