@@ -50,7 +50,7 @@ $$
 1. Start the Julia in the `lab-7d` folder with the `--project=.` argument
 1. Install the [IterativeSolvers.jl](https://github.com/JuliaLinearAlgebra/IterativeSolvers.jl) package using `package mode`.
 1. __Duration__ (05 minutes): Break up into teams and familiarize yourself with the files and functions in `lab-7d`. 
-1. __Duration__ (15 minutes): Implement the `_gauss_seidel_iteration_solver` function by wrapping a call to the [gauss_seidel](https://iterativesolvers.julialinearalgebra.org/dev/linear_systems/stationary/#IterativeSolvers.gauss_seidel) function in the [IterativeSolvers.jl](https://github.com/JuliaLinearAlgebra/IterativeSolvers.jl) package. 
+1. __Duration__ (10 minutes): Implement the `_gauss_seidel_iteration_solver` function by wrapping a call to the [gauss_seidel](https://iterativesolvers.julialinearalgebra.org/dev/linear_systems/stationary/#IterativeSolvers.gauss_seidel) function in the [IterativeSolvers.jl](https://github.com/JuliaLinearAlgebra/IterativeSolvers.jl) package. 
     . This is a `buy` versus `build` decision. We can use existing code or write it ourselves. This is why [Open Source Software](https://en.wikipedia.org/wiki/Open-source_software) is so __important!__
 
 1. __Duration__ (10 minutes): Use the `Jacobi method` to solve the `test system`. 
