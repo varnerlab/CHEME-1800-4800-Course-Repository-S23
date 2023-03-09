@@ -22,6 +22,7 @@ $$
 
 The Gauss-Seidel update procedure generally leads to better convergence properties than the Jacobi method. 
 
+### Test case:
 Today's lets consider the $3\times{3}$ `test system` with system matrix $\mathbf{A}$:
 
 $$
@@ -45,7 +46,7 @@ $$
 ### Prerequisites
 * The [IterativeSolvers.jl](https://github.com/JuliaLinearAlgebra/IterativeSolvers.jl) package must be installed using the [Julia package manager included in the standard library](https://docs.julialang.org/en/v1/stdlib/Pkg/).
 
-### Tasks
+### Tasks:
 1. Start the Julia in the `lab-7d` folder with the `--project=.` argument
 1. Install the [IterativeSolvers.jl](https://github.com/JuliaLinearAlgebra/IterativeSolvers.jl) package using `package mode`.
 1. __Duration__ (05 minutes): Break up into teams and familiarize yourself with the files and functions in `lab-7d`. 
