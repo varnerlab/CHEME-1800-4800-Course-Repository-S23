@@ -14,4 +14,4 @@ S = model.S;
 S̄ = binary(S);
 
 # compute the MAM
-MAM = S̄*transpose(S̄);
+MAM = S̄*transpose(S̄) - Matrix{Float64}(I,size(S̄,1),size(S̄,1))

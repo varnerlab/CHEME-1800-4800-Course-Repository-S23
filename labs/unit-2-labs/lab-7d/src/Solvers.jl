@@ -3,39 +3,35 @@ function _jacobi_iteration_solver(A::Array{Float64,2}, b::Array{Float64,1}, xₒ
     tolerance::Float64, maxiter::Int64)::Array{Float64,1}
 
     # initialize
-    (number_of_rows, number_of_cols) = size(A);
+    (number_of_cols) = size(A,1);
     x̂ = xₒ                      # set the current best answer to the initial guess that was passed
     ϵ = Inf;                    # initial error is Inf
-    should_we_stop = false      # loop flag
-    loop_counter = 1;
-
+ 
     # main -
-    while (should_we_stop == false)
+    for _ ∈ 1:maxiter
         
         # initialize tmp solution
         x′ = zeros(number_of_cols)
-        for j ∈ 1:number_of_cols
+        for i ∈ 1:number_of_cols
+            
             s = 0;
-            for k ∈ 1:number_of_cols
-                if (j != k)
-                    s = s + A[j,k]*x̂[k]
+            for j ∈ 1:number_of_cols
+                if (i != j)
+                    s += A[i,j]*x̂[j]
                 end
             end
             
             # calculate new x value
-            x′[j] = (1/A[j,j])*(b[j] - s);
+            x′[i] = (1/A[i,i])*(b[i] - s);
         end
 
         # update the flag -
         ϵ = norm(x′ - x̂)
-        if (ϵ < tolerance || loop_counter > maxiter)
-            # update our solution 
-            x̂ = x′
-            
-            # we have hit our tolerance, or run out of iterations
-            should_we_stop = true
+        if (ϵ < tolerance)
+            # the solution 
+            return x′
         else
-            x̂ = x′
+            x̂ = x′; # update the solution
         end
     end
 
