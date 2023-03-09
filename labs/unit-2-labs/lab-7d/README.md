@@ -23,7 +23,7 @@ $$
 The Gauss-Seidel update procedure generally leads to better convergence properties than the Jacobi method. 
 
 ### Test case:
-Today's lets consider the $3\times{3}$ `test system` with system matrix $\mathbf{A}$:
+Consider a $3\times{3}$ `test system` with a system matrix $\mathbf{A}$:
 
 $$
 \mathbf{A} = \begin{bmatrix}
