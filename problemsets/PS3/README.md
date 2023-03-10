@@ -13,10 +13,10 @@ where $\kappa$ denotes the first-order rate constant governing the rate of decay
 Discretize the concentration balance using a [forward finte difference](https://en.wikipedia.org/wiki/Finite_difference) approximation of the time derivatrive:
 
 $$
-C_{A,j+1} = C_{A,j} - h\kappa{C_{A,j}}\qquad{j=0,2,\mathcal{T}}
+C_{A,j+1} = C_{A,j} - h\kappa{C_{A,j}}\qquad{j=0,2,T}
 $$
 
-where $h$ denotes the time step-size, and $C_{A,\star}$ denotes the concentration of $A$ at time-step $\star$. Starting with $j=0$, construct a $\mathcal{T}\times\mathcal{T}$ matrix where each rows is a seperate time-step:
+where $h$ denotes the time step-size, and $C_{A,\star}$ denotes the concentration of $A$ at time-step $\star$. Starting with $j=0$, construct a $T\times{T}$ matrix where each rows is a seperate time-step:
 
 $$
 \begin{pmatrix}
