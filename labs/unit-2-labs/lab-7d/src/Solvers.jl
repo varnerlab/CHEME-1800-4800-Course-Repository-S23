@@ -44,7 +44,7 @@ function _gauss_seidel_iteration_solver(A::Array{Float64,2}, b::Array{Float64,1}
 
     # Step 4: Check out the documentation for IterativeSolvers.jl
     # see: https://iterativesolvers.julialinearalgebra.org/stable/
-
+    return gauss_seidel(A,b; maxiter = maxiter)
 end
 
 
