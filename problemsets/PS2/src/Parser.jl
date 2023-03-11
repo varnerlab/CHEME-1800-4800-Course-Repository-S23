@@ -33,10 +33,10 @@ function _recursive_compound_parser(q::Queue, atoms::Queue{Char}, numbers::Queue
             enqueue!(atoms, next_char)
             
             # next, we need to check: do we already have some numbers in the numbers queue? If so, then join then and
-            # capture the results in the result dictionary
+            # capture the results in the result dictionary. Why does this work?
             word = join(numbers)
             if (isempty(word) == false)
-                key = dequeue!(atoms)
+                key = dequeue!(atoms) 
                 result[key] = parse(Int64,word)
             end
 
@@ -44,9 +44,9 @@ function _recursive_compound_parser(q::Queue, atoms::Queue{Char}, numbers::Queue
             empty!(numbers);
         else
 
-            # if we get here, next_char is a number, so push next_char into the numbers queue
-            # Why? we are collecting all the next_char's that are numbers  until we hit an element or hit the base case
-            # When we hit an element the characters in numbers can be joined to make a number
+            # if we get here, next_char is a number, so enqueue next_char into the numbers queue
+            # Why? we are collecting all the next_char's that are numbers until we hit an element or hit the base case
+            # When we hit an element the characters in the numbers queue can be joined to make a number
             enqueue!(numbers, next_char)
         end
 
