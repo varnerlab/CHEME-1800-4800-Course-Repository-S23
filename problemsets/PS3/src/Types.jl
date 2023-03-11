@@ -23,7 +23,7 @@ mutable struct MyChemicalDecayModel <: AbstractSystemModel
     # data -
     κ::Float64                  # decay constant
     h::Float64                  # step size
-    T::Int64                    # number of time steps
+    N::Int64                    # number of time steps
     Cₒ::Float64                 # Initial concentration of compound A
     A::Array{Float64,2}         # System matrix T x T
     b::Array{Float64,1}         # System right-hand side vector

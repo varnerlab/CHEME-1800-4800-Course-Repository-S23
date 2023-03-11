@@ -9,10 +9,10 @@ $$
 where $\kappa$ denotes the first-order rate constant governing the rate of decay (units: 1/time), where the initial condition is given by $C_{A,0}$. Discretize the concentration balance using a [forward finite difference](https://en.wikipedia.org/wiki/Finite_difference) approximation of the time derivative:
 
 $$
-C_{A,j+1} = C_{A,j} - h\kappa{C_{A,j}}\qquad{j=0,2,T}
+C_{A,j+1} = C_{A,j} - h\kappa{C_{A,j}}\qquad{j=0,2,N}
 $$
 
-where $h$ denotes the time step-size, $C_{A,\star}$ denotes the concentration of $A$ at time-step $\star$ and $T$ denotes the _number_ of time steps. Starting with $j=0$, construct a $T\times{T}$ matrix where each row is a time-step and each column is a concentration value:
+where $h$ denotes the time step-size, $C_{A,\star}$ denotes the concentration of $A$ at time-step $\star$ and $N$ denotes the _number_ of time steps. Starting with $j=0$, construct a $N\times{N}$ matrix where each row is a time-step and each column is a concentration value:
 
 $$
 \begin{pmatrix}
@@ -25,7 +25,7 @@ $$
 C_{A,1} \\
 C_{A,2} \\
 \vdots \\
-C_{A,T}
+C_{A,N}
 \end{pmatrix} = 
 \begin{pmatrix}
 C_{A,0}\left(1-h\kappa\right) \\
@@ -46,7 +46,7 @@ $$
     1. `_build_right_handside_vector` is an internal function (not meant to be called by the user directly) that builds the right-hand side vector $\mathbf{b}\in\mathbb{R}^{T\times{1}}$ given system parameters.
     1. `_build_system_matrix` is an internal function (not meant to be called by the user directly) that builds the system matrix $\mathbf{A}\in\mathbb{R}^{T\times{T}}$ given the system parameters.
 1. Modify the `solve` method in `Solvers.jl` to be compatible with the `MyChemicalDecayModel` type.
-1. Solve the system of equations using `Jacobi` and `Gauss-Seidel` iteration for the concentration of $A$ at the discrete time-points $C_{A,1},\dots, C_{A, T}$ for the parameters:
+1. Solve the system of equations using `Jacobi` and `Gauss-Seidel` iteration for the concentration of $A$ at the discrete time-points $C_{A,1},\dots, C_{A, N}$ for the parameters:
     1. Case 1: Let $C_{A,0} = 10~\text{mmol/L}$, $\kappa = 1.0~\text{hr}^{-1}$, $h = 0.1~\text{hr}$ and the final time $T_{f} = 20.0~\text{hr}$.
     1. Case 2: Let $C_{A,0} = 10~\text{mmol/L}$, $\kappa = 10.0~\text{hr}^{-1}$, $h = 0.1~\text{hr}$ and the final time $T_{f} = 20.0~\text{hr}$.
     1. Case 3: Let $C_{A,0} = 10~\text{mmol/L}$, $\kappa = 100.0~\text{hr}^{-1}$, $h = 0.1~\text{hr}$ and the final time $T_{f} = 20.0~\text{hr}$.
@@ -62,7 +62,7 @@ $$
 The number of time steps that we need to consider is:
 
 $$
-T = \frac{T_{f} - T_{\circ}}{h}
+N = \frac{T_{f} - T_{\circ}}{h}
 $$
 
 where $h$ denotes the step size, $T_{f}$ denotes the final time, and $T_{\circ}$ denotes the initial time (in this case $T_{\circ} = 0$).
