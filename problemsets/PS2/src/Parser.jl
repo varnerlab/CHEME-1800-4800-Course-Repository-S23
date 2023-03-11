@@ -1,22 +1,25 @@
 """
-    _recursive_compound_parser()
+    _recursive_compound_parser(q::Queue, atoms::Queue{Char}, numbers::Queue{Char}, result::Dict{Char,Int64})
 
-TODO: Describe what this function does, the args and what we expect it to return
+This function recursively processes each character in the Queue `q`, which holds the compound molecular formula.
+The composition for each compound is put into the `result` dictionary where the keys are elements, the values are the number of elements of that type in the compound.
 """
 function _recursive_compound_parser(q::Queue, atoms::Queue{Char}, numbers::Queue{Char}, result::Dict{Char,Int64})
     
     if (isempty(q) == true) # base case -
         
-        # if we have any remaing stuff in tmp, then join, and add
+        # This is the base case: we have processed all the characters in q
+
+        # If atoms and numbers have some stuff in them, then we have one final atom => count pair
         if (isempty(atoms) == false && isempty(numbers) == false)
             word = join(numbers)
             if (isempty(word) == false)
                key = dequeue!(atoms)
                result[key] = parse(Int64,word)
             end
-        elseif (isempty(atoms) == false && isempty(numbers) == true)
+        elseif (isempty(atoms) == false && isempty(numbers) == true) # this case handles the dangling element case
             key = dequeue!(atoms)
-            result[key] = parse(Int64,"1")
+            result[key] = 1
         end
         
         return nothing
@@ -26,25 +29,24 @@ function _recursive_compound_parser(q::Queue, atoms::Queue{Char}, numbers::Queue
         next_char = dequeue!(q)
         if (isnumeric(next_char) == false)
 
-            # enqueue
+            # if we get here, then we have hit a letter, this means we should store that letter in the atoms queue
             enqueue!(atoms, next_char)
             
-            # if we get here, then we have hit a letter, this means we should
-            # turn the characters in the s array into a word (the number of elements)
-            # join chars in the character array -
+            # next, we need to check: do we already have some numbers in the numbers queue? If so, then join then and
+            # capture the results in the result dictionary
             word = join(numbers)
             if (isempty(word) == false)
                 key = dequeue!(atoms)
                 result[key] = parse(Int64,word)
             end
 
-            # empty out the array of characters, because we may need it again
+            # empty out numbers queue, because we may need it again
             empty!(numbers);
         else
 
-            # if we get here, next_char is a number, so push next_char into the array
-            # Why? we are collecting next_char until we hit a delim or hit the base case
-            # When we hit a delim the characters in s can be joined to make a word
+            # if we get here, next_char is a number, so push next_char into the numbers queue
+            # Why? we are collecting all the next_char's that are numbers  until we hit an element or hit the base case
+            # When we hit an element the characters in numbers can be joined to make a number
             enqueue!(numbers, next_char)
         end
 
@@ -56,7 +58,7 @@ end
 """
     recursive_compound_parser(compounds::Dict{String, MyChemicalCompoundModel}) -> Dict{String, MyChemicalCompoundModel}
 
-TODO: Describe what this function does, the args and what we expect it to return 
+This function processes each compound in the `compounds` dictionary by calling the `_recursive_compound_parser` function.
 """
 function recursive_compound_parser(compounds::Dict{String, MyChemicalCompoundModel})
 
