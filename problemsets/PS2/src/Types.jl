@@ -9,7 +9,7 @@ mutable struct MyChemicalCompoundModel <: AbstractChemicalCompoundModel
 
     # data -
     name::String
-    compund::String
+    compound::String
     composition::Dict{Char,Int}
 
     # constuctor
