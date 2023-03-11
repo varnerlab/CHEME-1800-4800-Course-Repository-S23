@@ -1,4 +1,4 @@
-## Problem Set 3: Iterative Solution of Species Concentration Balances
+## Problem Set 3: Iterative Solution of a Species Concentration Balance
 
 Set up a system of linear algebraic equations whose solution describes concentration as a function of time for a compound $A$ that undergoes first-order decay in a constant volume, isothermal well-mixed batch reactor (no flow in or out). The concentration balance for compound $A$ is given by:
 
