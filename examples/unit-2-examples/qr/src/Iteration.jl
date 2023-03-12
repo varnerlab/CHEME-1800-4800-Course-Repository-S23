@@ -120,5 +120,5 @@ function qriteration(A::Array{Float64,2}; maxiter::Int64 = 10, tolerance::Float6
     end
 
     # return -
-    return (λ,eigenvectors)
+    return (λ, eigenvectors)
 end
