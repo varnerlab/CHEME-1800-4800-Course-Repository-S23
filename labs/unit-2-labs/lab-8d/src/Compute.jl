@@ -159,7 +159,11 @@ function ⊗(a::Array{Float64,1}, b::Array{Float64,1})::Array{Float64,2}
     # main loop -
     # Look at: https://varnerlab.github.io/CHEME-1800-Computing-Book/unit-2-data/vectors-matricies-nla.html#defn-vector-vector-multiplication-op
     # implement here ...
-
+    for i ∈ 1:m
+        for j ∈ 1:n
+            Y[i,j] = a[i]*b[j]
+        end
+    end
 
     # return 
     return Y
