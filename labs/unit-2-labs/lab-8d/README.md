@@ -23,8 +23,15 @@ $$\mathbf{F}_{i} = \left(\mathbf{u}_{i}\otimes\mathbf{v}_{i}\right)$$
 
 is an outer product between the left and right singular vectors.
 
+### Prerequisites
+There are no external packages required for `lab-8d`.
 
+### Tasks
+1. Start the Julia in the `lab-8d` folder with the `--project=.` argument
+1. __Duration__ (05 minutes): Break up into teams and familiarize yourself with the function calls in the `runme-case-1.jl` and `runme-case-2.jl` files in `lab-8d`. 
+1. __Duration__ (15 minutes): Implement the `modes` function in the `Modes.jl` file. The `modes` computes the modes $\mathbf{M}_{i}$:
 
+$$\mathbf{M}_{i} = \sigma_{i}\left(\mathbf{u}_{i}\otimes\mathbf{v}_{i}\right)\qquad{i=1,2,\dots,R}$$
 
 
 #### Additional resources

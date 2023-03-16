@@ -1,0 +1,191 @@
+// ----------------------------------------------------------------------------------- //
+// Copyright (c) 2017 Varnerlab
+// Robert Frederick Smith School of Chemical and Biomolecular Engineering
+// Cornell University, Ithaca NY 14850
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+// ----------------------------------------------------------------------------------- //
+
+// ----------------------------------------------------------------------------------- //
+// metabolic reactions -
+// #pragma::metabolic_reaction_handler
+//
+// Record:
+// name (unique),reactants,products,isreversible
+//
+// Notes:
+// [] = system (not tracked)
+// ----------------------------------------------------------------------------------- //
+
+// ADA::adenosine deaminase
+ADA,ADO,INO,false
+
+// adeex_e::adenine transport channel
+adeex_e,ADE,adeex_e,false
+
+// ADK::adenylate kinase
+ADK,2.0*ADP,AMP+ATP,false
+
+// adoex_e::adenosine transport channel
+adoex_e,ADO,adoex_e,false
+
+// ADPRT::adenosine phosphoribosyl transferase
+ADPRT,ADE+PRPP,AMP,false
+
+// AK::adenosine kinase
+AK,ADO+ATP,ADP+AMP,false
+
+// ALD::aldolase
+ALD,FDP,DHAP+GAP,false
+
+// AMPase::adenosine mono-phosphate phosphatase
+AMPase,AMP,ADO,false
+
+// AMPDA::adenosine mono-phosphate deaminase
+AMPDA,AMP,IMP,false
+
+// ATPase::adenosine tri-phosphate phosphatase
+ATPase,ATP,ADP,false
+
+// DPGase::diphosphoglycerate phosphatase
+DPGase,DPG23,PG3,false
+
+// DPGM::diphosphoglycerate mutase
+DPGM,DPG13,DPG23,false
+
+// EN::enolase
+EN,PG2,PEP,false
+
+// G6PDH::glucose 6 phosphate dehydrogenase
+G6PDH,G6P,GL6P+NADPH,false
+
+// GAPDH::glyceraldehyde phosphate dehydrogenase
+GAPDH,GAP,DPG13+NADH,false
+
+// GL6PDH::phosphogluconate dehydrogenase
+GL6PDH,GO6P,NADPH+RU5P,false
+
+// GSHR::glutathione oxidase
+GSHR,GSH,GSHex_e,false
+
+// GSSGR::glutathione reducatase
+GSSGR,NADPH,2.0*GSH,false
+
+// HGPRT::hypoxanthine-guanine phosphoribosyl transferase
+HGPRT,HX+PRPP,IMP,false
+
+// HK::hexokinase
+HK,ATP,ADP+G6P,false
+
+// HXex_e::hypoxanthine transport channel
+HXex_e,HX,HXex_e,false
+
+// IMPase::inosine mono-phosphate phosphatase
+IMPase,IMP,INO,false
+
+// R_inoex_e
+inoex_e,INO,inoex_e,false
+
+// KLEak_e::potassium leak channel
+KLEak_e,KLEak_e,KI,false
+
+// LDH::lactate dehydrogenase
+LDH,NADH+PYR,LAC,false
+
+// LEX::lactate transport channel
+LEX,LAC,LACEXT_e,false
+
+// NALEak_e::sodium leak channel
+NALEak_e,NALEak_e,NAI,false
+
+// R_MGADPass
+MGADPass,ADP+MG,MGADP,false
+
+// R_MGAMPass
+MGAMPass,AMP+MG,MGAMP,false
+
+// R_MGATPass
+MGATPass,ATP+MG,MGATP,false
+
+// R_MGDPG23ass
+MGDPG23ass,DPG23+MG,MGDPG23,false
+
+// PEX::pyruvate transport channel
+PEX,PYR,PYREXT_e,false
+
+// PFK::phosphofructokinase
+PFK,ATP+F6P,ADP+FDP,false
+
+// PGI::phosphoglucoisomerase
+PGI,G6P,F6P,false
+
+// PGK::phosphoglycerate kinase
+PGK,ADP+DPG13,ATP+PG3,false
+
+// PGLase::6 phosphogluconolactonase
+PGLase,GL6P,GO6P,false
+
+// PGM::phosphoglycerate mutase
+PGM,PG3,PG2,false
+
+// PK::pyruvate kinase
+PK,ADP+PEP,ATP+PYR,false
+
+// PNPase::purine nucleotide phosphorylase
+PNPase,INO,HX+R1P,false
+
+// PRM::phosphoribomutase
+PRM,R1P,R5P,false
+
+// PRPPSYN::phosphoribosyl pyrophosphate synthase
+PRPPSYN,ATP+R5P,AMP+PRPP,false
+
+// PUMP::sodium/potassium ATPase pump
+PUMP,ATP+3.0*NAI,ADP+2.0*KI,false
+
+// RU5PI::ribulose 5 phosphate isomerase
+RU5PI,RU5P,R5P,false
+
+// TALD::transaldolase
+TALD,GAP+S7P,E4P+F6P,false
+
+// TKI::transketolase
+TKI,R5P+X5P,GAP+S7P,false
+
+// TKII::transketolase
+TKII,E4P+X5P,F6P+GAP,false
+
+// TPI::triose phosphate isomerase
+TPI,DHAP,GAP,false
+
+// XU5PE::xylulose 5 phosphate epimerase
+XU5PE,RU5P,X5P,false
+
+// -------------------------------------- //
+// Exchange reactions added by JV
+// -------------------------------------- //
+R_LACEXT_exchange,LACEXT_e,LACEXT_b,true
+R_PYREXT_exchange,PYREXT_e,PYREXT_b,true
+R_adoex_exchange,adoex_e,adoex_b,true
+R_adeex_exchange,adeex_e,adeex_b,true
+R_inoex_exchange,inoex_e,inoex_b,true
+R_GSHex_exchange,GSHex_e,GSHex_b,true
+R_HXex_exchange,HXex_e,HXex_b,true
+R_KLEak_exchange,KLEak_e,KLEak_b,true
+R_NALEak_exchange,NALEak_e,NALEak_b,true
