@@ -14,3 +14,7 @@ S = model.S;
 
 # compute the SVD -
 (U,Σ,V) = svd(S)
+
+# Analysis
+# TODO: implement a call to the important function for the first col of U (species) and V (reactions)
+# ...

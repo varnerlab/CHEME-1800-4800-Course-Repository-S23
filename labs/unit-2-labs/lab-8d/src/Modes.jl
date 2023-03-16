@@ -15,16 +15,7 @@ function modes(U::Array{Float64,2}, Σ::Array{Float64,1},
     Rₐ = length(Σ); 
 
     # main loop -
-    for i ∈ 1:Rₐ
-        
-        # get data from the U, Σ and V arrays
-        u = U[:,i];
-        v = V[:,i];
-        σ = Σ[i]
-
-        # compute and save -
-        modes_dictionary[i] = σ*(⊗(u,v));
-    end
+    # implement here
 
     # return -
     return modes_dictionary;

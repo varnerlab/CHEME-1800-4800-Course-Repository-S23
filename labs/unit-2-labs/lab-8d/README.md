@@ -1,5 +1,5 @@
 ## Lab 8d: Structural Decomposition Using Singular Value Decomposition
-Fill me in.
+The objective of `lab-8d` is to familiarize students with computing the [Singular value decomposition (SVD)](https://en.wikipedia.org/wiki/Singular_value_decomposition) and analyzing the properties of the resulting matrices. In particular, we'll use SVD to decompose and analyze two stoichiometric arrays. 
 
 ### Background
 [Singular value decomposition (SVD)](https://en.wikipedia.org/wiki/Singular_value_decomposition) is a powerful tool used in many applications, such as image and data compression, signal processing, and machine learning, that factors a matrix into a canonical form composed of an orthogonal matrix, a diagonal matrix, and another orthogonal matrix.
@@ -29,13 +29,14 @@ There are no external packages required for `lab-8d`.
 ### Tasks
 1. Start the Julia in the `lab-8d` folder with the `--project=.` argument
 1. __Duration__ (05 minutes): Break up into teams and familiarize yourself with the function calls in the `runme-case-1.jl` and `runme-case-2.jl` files in `lab-8d`. 
+1. __Duration__ (10 minutes): Implement the $\otimes$ function in the `Compute.jl` file. The $\otimes$ function computes the `outer product`; see [the course notes](https://varnerlab.github.io/CHEME-1800-Computing-Book/unit-2-data/vectors-matricies-nla.html#defn-vector-vector-multiplication-op).
 1. __Duration__ (15 minutes): Implement the `modes` function in the `Modes.jl` file. The `modes` computes the modes $\mathbf{M}_{i}$:
 
 $$\mathbf{M}_{i} = \sigma_{i}\left(\mathbf{u}_{i}\otimes\mathbf{v}_{i}\right)\qquad{i=1,2,\dots,R}$$
 
 ### Cases
-1. __Duration__ (10 minutes): Analyze the stoichiometric matrix built from `Test.net`. Update the `runme-case-1.jl` script to call the `important` function to estimate the most important species, and the most important reaction in the `Test` network.
-1. __Duration__ (10 minutes): Analyze the stoichiometric matrix built from `RBC.net`. Update the `runme-case-2.jl` script to call the `important` function to estimate the most important species, and the most important reaction in the `RBC` network. The `RBC` network is a model of the metabolism that is occuring in a [Red Blood Cell](https://pubmed.ncbi.nlm.nih.gov/2630803/).
+1. __Duration__ (10 minutes): Analyze the stoichiometric matrix built from `Test.net`. Update the `runme-case-1.jl` script to call the `important` function to estimate the most important species and reaction in the `Test` network.
+1. __Duration__ (10 minutes): Analyze the stoichiometric matrix built from `RBC.net`. The `RBC` network is a model of metabolism in a [Human Red Blood Cell](https://pubmed.ncbi.nlm.nih.gov/2630803/). Update the `runme-case-2.jl` script to call the `important` function to estimate the most important species and reaction in the `RBC` network.
 
 
 #### Additional resources
