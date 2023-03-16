@@ -17,11 +17,11 @@ $$
 \mathbf{A} = \sum_{i=1}^{R_{\mathbf{A}}}\sigma_{i}\left(\mathbf{u}_{i}\otimes\mathbf{v}_{i}\right)
 $$
 
-where $R_{\mathbf{A}}$ is the rank of matrix $\mathbf{A}$ and:
+where $R_{\mathbf{A}}$ is the rank of matrix $\mathbf{A}$ and the mode $\mathbf{M}_{i}$:
 
-$$\mathbf{F}_{i} = \left(\mathbf{u}_{i}\otimes\mathbf{v}_{i}\right)$$
+$$\mathbf{M}_{i} = \left(\mathbf{u}_{i}\otimes\mathbf{v}_{i}\right)$$
 
-is an outer product between the left and right singular vectors.
+is the outer product between the left and right singular vectors.
 
 ### Prerequisites
 There are no external packages required for `lab-8d`.
@@ -32,6 +32,10 @@ There are no external packages required for `lab-8d`.
 1. __Duration__ (15 minutes): Implement the `modes` function in the `Modes.jl` file. The `modes` computes the modes $\mathbf{M}_{i}$:
 
 $$\mathbf{M}_{i} = \sigma_{i}\left(\mathbf{u}_{i}\otimes\mathbf{v}_{i}\right)\qquad{i=1,2,\dots,R}$$
+
+### Cases
+1. __Duration__ (10 minutes): Analyze the stoichiometric matrix built from `Test.net`. Update the `runme-case-1.jl` script to call the `important` function to estimate the most important species, and the most important reaction in the `Test` network.
+1. __Duration__ (10 minutes): Analyze the stoichiometric matrix built from `RBC.net`. Update the `runme-case-2.jl` script to call the `important` function to estimate the most important species, and the most important reaction in the `RBC` network. 
 
 
 #### Additional resources
