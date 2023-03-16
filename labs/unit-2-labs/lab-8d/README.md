@@ -25,5 +25,7 @@ is an outer product between the left and right singular vectors.
 
 
 
+
+
 #### Additional resources
 * [MIT 18.065 Matrix Methods in Data Analysis, Signal Processing and Machine Learning, Spring 2018](https://www.youtube.com/watch?v=rYz83XPxiZo)
