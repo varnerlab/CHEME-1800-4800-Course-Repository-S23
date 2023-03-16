@@ -11,9 +11,7 @@ $$
 \mathbf{A} = \mathbf{U}\mathbf{\Sigma}\mathbf{V}^{T}
 $$
 
-where $\mathbf{U}\in\mathbb{R}^{n\times{n}}$ and $\mathbf{V}\in\mathbb{R}^{m\times{m}}$ are orthogonal matrices and $\mathbf{\Sigma}\in\mathbb{R}^{n\times{m}}$ is a diagonal matrix containing the singular values $\sigma_{i}=\Sigma_{ii}$ along the main diagonal. 
-
-The columns of $\mathbf{U}$ are called left-singular vectors, while the columns of $\mathbf{V}$ are called right-singular vectors. Singular vectors have a unique property: unlike eigenvectors, left- and right-singular vectors are linearly independent and orthogonal. Then, the matrix $\mathbf{A}\in\mathbb{R}^{m\times{n}}$ can be written as:
+where $\mathbf{U}\in\mathbb{R}^{n\times{n}}$ and $\mathbf{V}\in\mathbb{R}^{m\times{m}}$ are orthogonal matrices and $\mathbf{\Sigma}\in\mathbb{R}^{n\times{m}}$ is a diagonal matrix containing the singular values $\sigma_{i}=\Sigma_{ii}$ along the main diagonal. The columns of $\mathbf{U}$ are called left-singular vectors, while the columns of $\mathbf{V}$ are called right-singular vectors. Singular vectors have a unique property: unlike eigenvectors, left- and right-singular vectors are linearly independent and orthogonal. Then, the matrix $\mathbf{A}\in\mathbb{R}^{m\times{n}}$ can be written as:
 
 $$
 \mathbf{A} = \sum_{i=1}^{R_{\mathbf{A}}}\sigma_{i}\left(\mathbf{u}_{i}\otimes\mathbf{v}_{i}\right)
