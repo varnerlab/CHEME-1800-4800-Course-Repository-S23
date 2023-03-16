@@ -13,15 +13,13 @@ $$
 
 where $\mathbf{U}\in\mathbb{R}^{n\times{n}}$ and $\mathbf{V}\in\mathbb{R}^{m\times{m}}$ are orthogonal matrices and $\mathbf{\Sigma}\in\mathbb{R}^{n\times{m}}$ is a diagonal matrix containing the singular values $\sigma_{i}=\Sigma_{ii}$ along the main diagonal. 
 
-The columns of $\mathbf{U}$ are called left-singular vectors, while the columns of $\mathbf{V}$ are called right-singular vectors. Singular vectors have a unique property: unlike eigenvectors, left- and right-singular vectors are linearly independent and orthogonal.
-
-Then, the matrix $\mathbf{A}\in\mathbb{R}^{m\times{n}}$ can be written as:
+The columns of $\mathbf{U}$ are called left-singular vectors, while the columns of $\mathbf{V}$ are called right-singular vectors. Singular vectors have a unique property: unlike eigenvectors, left- and right-singular vectors are linearly independent and orthogonal. Then, the matrix $\mathbf{A}\in\mathbb{R}^{m\times{n}}$ can be written as:
 
 $$
 \mathbf{A} = \sum_{i=1}^{R_{\mathbf{A}}}\sigma_{i}\left(\mathbf{u}_{i}\otimes\mathbf{v}_{i}\right)
 $$
 
-where $R_{\mathbf{A}}$ is the rank of matrix $\mathbf{A}$, the vectors $\mathbf{u}_{i}$ and $\mathbf{v}_{i}$ are the ith left and right singular vectors, and $\sigma_{i}$ are the ordered singular values. The [outer-product](https://en.wikipedia.org/wiki/Outer_product) $\left(\mathbf{u}_{i}{\otimes}\mathbf{v}_{i}\right)$ is the separable component of the matrix $\mathbf{A}$.
+where $R_{\mathbf{A}}$ is the rank of matrix $\mathbf{A}$.
 
 
 
