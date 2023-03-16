@@ -35,8 +35,9 @@ $$\mathbf{M}_{i} = \sigma_{i}\left(\mathbf{u}_{i}\otimes\mathbf{v}_{i}\right)\qq
 
 ### Cases
 1. __Duration__ (10 minutes): Analyze the stoichiometric matrix built from `Test.net`. Update the `runme-case-1.jl` script to call the `important` function to estimate the most important species, and the most important reaction in the `Test` network.
-1. __Duration__ (10 minutes): Analyze the stoichiometric matrix built from `RBC.net`. Update the `runme-case-2.jl` script to call the `important` function to estimate the most important species, and the most important reaction in the `RBC` network. 
+1. __Duration__ (10 minutes): Analyze the stoichiometric matrix built from `RBC.net`. Update the `runme-case-2.jl` script to call the `important` function to estimate the most important species, and the most important reaction in the `RBC` network. The `RBC` network is a model of the metabolism that is occuring in a [Red Blood Cell](https://pubmed.ncbi.nlm.nih.gov/2630803/).
 
 
 #### Additional resources
 * [MIT 18.065 Matrix Methods in Data Analysis, Signal Processing and Machine Learning, Spring 2018](https://www.youtube.com/watch?v=rYz83XPxiZo)
+* [Joshi A, Palsson BO. Metabolic dynamics in the human red cell. Part I--A comprehensive kinetic model. J Theor Biol. 1989 Dec 19;141(4):515-28. doi: 10.1016/s0022-5193(89)80233-4. Erratum in: J Theor Biol 1991 Sep 21;152(2):285. PMID: 2630803.](https://pubmed.ncbi.nlm.nih.gov/2630803/)
