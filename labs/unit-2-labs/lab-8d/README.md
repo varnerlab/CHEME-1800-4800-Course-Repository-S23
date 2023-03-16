@@ -21,9 +21,9 @@ $$
 
 where $R_{\mathbf{A}}$ is the rank of matrix $\mathbf{A}$ and:
 
-$$\left(\mathbf{u}_{i}\otimes\mathbf{v}_{i}\right)$$
+$$\mathbf{F} = \left(\mathbf{u}_{i}\otimes\mathbf{v}_{i}\right)$$
 
-is an outer product.
+is an outer product between the left and right singular vectors.
 
 
 
