@@ -12,10 +12,11 @@ function modes(U::Array{Float64,2}, Σ::Array{Float64,1},
 
     # initialize
     modes_dictionary = Dict{Int64,Array{Float64,2}}()
-    Rₐ = length(Σ); 
+    number_of_modes = length(Σ); 
 
     # main loop -
-    # implement here
+    # implement here ...
+
 
     # return -
     return modes_dictionary;

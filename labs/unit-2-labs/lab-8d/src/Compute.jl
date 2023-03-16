@@ -149,17 +149,16 @@ end
 Outer product between vectors `a` and `b`. 
 See: https://varnerlab.github.io/CHEME-1800-Computing-Book/unit-2-data/vectors-matricies-nla.html#defn-vector-vector-multiplication-op
 """
-function ⊗(a::Array{Float64,1},b::Array{Float64,1})::Array{Float64,2}
-
-    # check: are the vectors compatible?
-    # in production we'd implement a check here
+function ⊗(a::Array{Float64,1}, b::Array{Float64,1})::Array{Float64,2}
 
     # initialize -
-    m = length(a)  # length the input vectors
-    Y = zeros(m,m) # holds the Outer product between a and b
+    m = length(a)  # length the input vector a
+    n = length(b)  # length of input vector b
+    Y = zeros(m,n) # holds the Outer product between a and b
 
     # main loop -
     # Look at: https://varnerlab.github.io/CHEME-1800-Computing-Book/unit-2-data/vectors-matricies-nla.html#defn-vector-vector-multiplication-op
+    # implement here ...
 
     # return 
     return Y
