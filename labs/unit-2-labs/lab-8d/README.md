@@ -19,7 +19,7 @@ $$
 \mathbf{A} = \sum_{i=1}^{R_{\mathbf{A}}}\sigma_{i}\left(\mathbf{u}_{i}\otimes\mathbf{v}_{i}\right)
 $$
 
-where $R_{\mathbf{A}}$ is the rank of matrix $\mathbf{A}$.
+where $R_{\mathbf{A}}$ is the rank of matrix $\mathbf{A}$ and $\left(\mathbf{u}_{i}\otimes\mathbf{v}_{i}\right)$ is the outer product.
 
 
 
