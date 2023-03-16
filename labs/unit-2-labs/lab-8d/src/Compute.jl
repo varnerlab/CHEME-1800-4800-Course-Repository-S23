@@ -160,6 +160,7 @@ function ⊗(a::Array{Float64,1}, b::Array{Float64,1})::Array{Float64,2}
     # Look at: https://varnerlab.github.io/CHEME-1800-Computing-Book/unit-2-data/vectors-matricies-nla.html#defn-vector-vector-multiplication-op
     # implement here ...
 
+
     # return 
     return Y
 end

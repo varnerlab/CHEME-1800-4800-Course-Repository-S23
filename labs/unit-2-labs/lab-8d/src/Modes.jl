@@ -16,7 +16,7 @@ function modes(U::Array{Float64,2}, Σ::Array{Float64,1},
 
     # main loop -
     # implement here ...
-
+    
 
     # return -
     return modes_dictionary;
@@ -25,13 +25,13 @@ end
 """
     important(data::Array{Float64,1}, labels::Array{String,1}) -> Dict{String,Int64}
 """
-function important(data::Array{Float64,1}, labels::Array{String,1})::Dict{String,Int64}
+function important(data::Array{Float64,1}, labels::Array{String,1})::Dict{Int64,String}
 
     # check: labels and data shold be the same size
     # real-life we need to do this .. but not now
 
     # initialize -
-    important_dict = Dict{String,Int64}();
+    important_dict = Dict{Int64, String}();
 
     # compute the ranking -
     idx_ranking = sortperm(abs.(data), rev = true);
@@ -39,7 +39,7 @@ function important(data::Array{Float64,1}, labels::Array{String,1})::Dict{String
     for index ∈ idx_ranking
         
         # store -
-        important_dict[labels[index]] = rank;
+        important_dict[rank] = labels[index];
         rank += 1;
     end
 
