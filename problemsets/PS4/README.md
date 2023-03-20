@@ -1,4 +1,4 @@
-## Problem Set 4: Principle Component Analysis (PCA) of synthetic patient data
+## Problem Set 4: Principle component analysis (PCA) of synthetic patient data
 Principal Component Analysis (PCA) is a statistical technique that reduces the dimensionality of a dataset while retaining as much of its variation as possible. PCA transforms the original dataset into a new set of uncorrelated variables called principal components, ranked by importance. 
 
 * Principal components are the directions in which the data varies the most. Principle components are the eigenvectors of the 
