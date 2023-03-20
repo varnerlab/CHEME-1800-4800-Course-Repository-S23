@@ -11,8 +11,8 @@ Principal Component Analysis (PCA) is a statistical technique that reduces the d
 1. Start the Julia in the `PS4` folder with the `--project=.` argument
 1. Install required packages using the [Julia package manager](https://docs.julialang.org/en/v1/stdlib/Pkg/).
 1. __Duration__ (05 minutes): Break up into teams and familiarize yourself with the files and functions in `PS4`.
-1. __Duration__ (10 minutes): Implement the `_mean` function in the `Compute.jl` file
-1. __Duration__ (20 minutes): Implement the `_std` function in the `Compute.jl` file
+1. __Duration__ (10 minutes): Implement the `_mean` function in the `Compute.jl` file. The `_mean` function computes the [arithmetic mean](https://en.wikipedia.org/wiki/Mean) $\mu$ of a data vector.
+1. __Duration__ (20 minutes): Implement the `_std` function in the `Compute.jl` file. The `_std` function computes the [sample standard deviation](https://en.wikipedia.org/wiki/Unbiased_estimation_of_standard_deviation) $\sigma$ of a data vector.
 1. __Duration__ (15 minutes): Compute the first two principle components using [Singular Value Decomposition (SVD)](https://en.wikipedia.org/wiki/Singular_value_decomposition) of the transpose of the standardized data array in the `Submit.jl` file.
 
 ### Assessment

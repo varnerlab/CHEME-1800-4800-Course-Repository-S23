@@ -1,9 +1,32 @@
 
+"""
+    _mean(data::Array{Float64,1}) -> Float64
 
+Computes the arithmetic mean μ of a data vector
+See: https://en.wikipedia.org/wiki/Mean
+"""
 function _mean(data::Array{Float64,1})::Float64
+
+    # initialize -
+    μ = 0.0;
+
+    # return -
+    return μ
 end
 
+"""
+    _std(data::Array{Float64,1}) -> Float64
+
+Computes the sample standard deviation σ of a data vector 
+See: https://en.wikipedia.org/wiki/Standard_deviation
+"""
 function _std(data::Array{Float64,1})::Float64
+
+    # initialize -
+    σ = 0.0;
+
+    # return 
+    return σ
 end
 
 
