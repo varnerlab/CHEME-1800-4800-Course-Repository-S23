@@ -10,3 +10,7 @@ Develop a linear regression model that computes the overall product score from t
 * The product samples are contained in the `sample.csv` file, where each row is a different product formulation, and each column is a feature score. 
 * The overall product scores are contained in the `score.cvs` file, where each row is a different overall product score. 
 
+### Model
+In this example we compute the minimum norm solution for the unknown regeression parameters $\mathbf{\beta}$.
+
+
