@@ -6,7 +6,7 @@ y = loaddatafiles(joinpath(_PATH_TO_DATA, "score.csv"));
 X = loaddatafiles(joinpath(_PATH_TO_DATA, "sample.csv"));
 
 # let's use 50% of the data for test, 50% for validation
-fraction = 0.50
+fraction = 0.70
 (X_train, X_test) = partition(X; trainfraction = fraction);
 (y_train, y_test) = partition(y; trainfraction = fraction);
 
