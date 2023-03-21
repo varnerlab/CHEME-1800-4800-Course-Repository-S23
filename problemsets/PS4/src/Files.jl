@@ -1,6 +1,8 @@
 
 """
     load_patient_data_file(path::String) -> Tuple{Array{Int,1}, Array{Float64,2}, Array{String,1}}
+
+Load the patient data file, and returns the visit labels, the data matrix, and measurement labels
 """
 function load_patient_data_file(path::String)::Tuple{Array{Int,1}, Array{Float64,2}, Array{String,1}}
 
@@ -15,5 +17,5 @@ function load_patient_data_file(path::String)::Tuple{Array{Int,1}, Array{Float64
     X = Matrix(df[:,3:end]) |> standardize
 
     # return -
-    return (Y, X, list_of_names)
+    return (Y, X, list_of_names[3:end])
 end

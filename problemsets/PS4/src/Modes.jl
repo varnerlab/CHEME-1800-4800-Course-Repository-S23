@@ -58,6 +58,8 @@ end
 
 """
     explained(Σ::Array{Float64,1}) -> Array{Float64,2}
+
+Computes the cumalative variance explained by each mode
 """
 function explained(Σ::Array{Float64,1})::Array{Float64,2}
 

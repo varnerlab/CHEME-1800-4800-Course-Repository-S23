@@ -4,6 +4,9 @@ Principal Component Analysis (PCA) is a statistical technique that reduces the d
 * Principal components are the directions in which the data varies the most. Principle components are the eigenvectors of the 
 [covariance matrix](https://en.wikipedia.org/wiki/Covariance_matrix) of the data.  The principal components are obtained from columns of the matrix $\mathbf{U}$, computed using [Singular Value Decomposition (SVD)](https://en.wikipedia.org/wiki/Singular_value_decomposition). The variance that each component explains is obtained from the singular values in $\mathbf{\Sigma}$.
 
+### Data
+The `Synthetic-Numerical-CoV-10K-Fibrinolysis-NoMLabels.csv` dataset holds clinical measurements for basal (V1), first-trimester (V2) and third-trimester (V3) synthetic patients (1000 each, for a total of 30k patient records).
+
 ### Prerequisites
 * Problem set 4 requires that the [CSV.jl](https://github.com/JuliaData/CSV.jl) and [DataFrames.jl](https://github.com/JuliaData/DataFrames.jl) packages be installed using the [Julia package manager included in the standard library](https://docs.julialang.org/en/v1/stdlib/Pkg/).
 
@@ -12,8 +15,8 @@ Principal Component Analysis (PCA) is a statistical technique that reduces the d
 1. Install required packages using the [Julia package manager](https://docs.julialang.org/en/v1/stdlib/Pkg/).
 1. __Duration__ (05 minutes): Break up into teams and familiarize yourself with the files and functions in `PS4`.
 1. __Duration__ (10 minutes): Implement the `_mean` function in the `Compute.jl` file. The `_mean` function computes the [arithmetic mean](https://en.wikipedia.org/wiki/Mean) $\mu$ of a data vector.
-1. __Duration__ (20 minutes): Implement the `_std` function in the `Compute.jl` file. The `_std` function computes the [unbiased sample standard deviation](https://en.wikipedia.org/wiki/Unbiased_estimation_of_standard_deviation) $\sigma$ of a data vector.
-1. __Duration__ (15 minutes): Compute the first two principle components using [Singular Value Decomposition (SVD)](https://en.wikipedia.org/wiki/Singular_value_decomposition) of the transpose of the standardized data array in the `Submit.jl` file.
+1. __Duration__ (10 minutes): Implement the `_std` function in the `Compute.jl` file. The `_std` function computes the [unbiased sample standard deviation](https://en.wikipedia.org/wiki/Unbiased_estimation_of_standard_deviation) $\sigma$ of a data vector.
+1. __Duration__ (25 minutes): Compute the first two principle components using [Singular Value Decomposition (SVD)](https://en.wikipedia.org/wiki/Singular_value_decomposition) of the transpose of the standardized data array in the `Submit.jl` file.
 
 ### Assessment
 * The teaching team will execute the `Submit.jl` script with your program functions. 
