@@ -9,7 +9,7 @@ using Colors
 
 # define my colors -
 negative_color = (1/255)*[187,187,187]
-positive_color = (1/255)*[238,119,51]
+positive_color = (1/255)*[0,119,187]
 # negative_color = colorant"#BBBBBB"
 # positive_color = colorant"#EE7733"
 
