@@ -12,7 +12,7 @@ Principal Component Analysis (PCA) is a statistical technique that reduces the d
 1. Install required packages using the [Julia package manager](https://docs.julialang.org/en/v1/stdlib/Pkg/).
 1. __Duration__ (05 minutes): Break up into teams and familiarize yourself with the files and functions in `PS4`.
 1. __Duration__ (10 minutes): Implement the `_mean` function in the `Compute.jl` file. The `_mean` function computes the [arithmetic mean](https://en.wikipedia.org/wiki/Mean) $\mu$ of a data vector.
-1. __Duration__ (20 minutes): Implement the `_std` function in the `Compute.jl` file. The `_std` function computes the [sample standard deviation](https://en.wikipedia.org/wiki/Unbiased_estimation_of_standard_deviation) $\sigma$ of a data vector.
+1. __Duration__ (20 minutes): Implement the `_std` function in the `Compute.jl` file. The `_std` function computes the [unbiased sample standard deviation](https://en.wikipedia.org/wiki/Unbiased_estimation_of_standard_deviation) $\sigma$ of a data vector.
 1. __Duration__ (15 minutes): Compute the first two principle components using [Singular Value Decomposition (SVD)](https://en.wikipedia.org/wiki/Singular_value_decomposition) of the transpose of the standardized data array in the `Submit.jl` file.
 
 ### Assessment
@@ -23,7 +23,7 @@ Principal Component Analysis (PCA) is a statistical technique that reduces the d
 ### Rules, deadlines, and submission guidelines
 * Problem Set 4 is due on __Saturday, March 25, 2023__ by __11:59 AM__ ITH time. 
 * You may use your course materials and any literature resources (as well as the internet) to formulate your solutions.
-* You may work in teams. All codes must be stored in a GitHub repository, and the link to that repository (and team information) must be entered into the [teaching team spreadsheet on box](https://cornell.box.com/s/hzioytetv3eb1trs4uoymo5kynbj13so) by the deadline. 
+* You may work in teams. All codes must be stored in a GitHub repository, and the link to that repository (and team information) must be entered into the [teaching team spreadsheet on box](https://cornell.box.com/s/md7wi4igt74d19ffc3gz11xx5kd0gwih) by the deadline. 
 
 #### Notes on the GitHub repository
 * Each student on the problem set team must be a collaborator on the problem set GitHub repository. 
