@@ -9,7 +9,7 @@ using Colors
 
 # define my colors -
 negative_color = (1/255)*[187,187,187]
-positive_color = (1/255)*[0,119,187]
+positive_color = (1/255)*[204,51,17]
 # negative_color = colorant"#BBBBBB"
 # positive_color = colorant"#EE7733"
 
@@ -79,7 +79,7 @@ function calculate_x_axis_tick_positions(data_array;box_width=1.0)
 
     # initialize -
     x_axis_points = Float64[]
-    epsilon = 0.30;
+    epsilon = 0.50;
 
     for col_index = 1:number_of_cols
 
@@ -135,7 +135,7 @@ function visualize(data_array,x_axis_ticks,y_axis_ticks,y_label_array,a,b)
 
     # create x-label array -
     x_label_array = ["PC$(x)" for x=1:number_of_cols]
-    ax.set_xticklabels(x_label_array, rotation=45)
+    ax.set_xticklabels(x_label_array, rotation=90.0)
     ax.spines["right"].set_visible(false)
     ax.spines["top"].set_visible(false)
     ax.spines["bottom"].set_visible(false)
@@ -167,7 +167,7 @@ function visualize(data_array,x_axis_ticks,y_axis_ticks,y_label_array,a,b)
                                1.0,          # width
                                1.0,          # height
                                facecolor=patch_face_color,
-                               edgecolor="grey",
+                               edgecolor="white",
                                linewidth=0.5,
                            )
                        )
@@ -186,9 +186,9 @@ function visualize(data_array,x_axis_ticks,y_axis_ticks,y_label_array,a,b)
                                1.0,          # width
                                1.0,          # height
                                facecolor=patch_face_color,
-                               edgecolor="grey",
+                               edgecolor="white",
                                linewidth=0.5,
-                               alpha = 1 - ((col_index-1)/number_of_cols)^0.8
+                               alpha = 1 - ((col_index-1)/number_of_cols)^0.99
                            )
                        )
             end
@@ -200,7 +200,7 @@ function visualize(data_array,x_axis_ticks,y_axis_ticks,y_label_array,a,b)
 end
 
 # load the sensitvity data -
-data_array = abs.(F.U[:,1:2]);
+data_array = abs.(F.U[:,1:10]);
 
 # read my case labels -
 case_labels_array = list_of_measurements;
@@ -209,7 +209,21 @@ case_labels_array = list_of_measurements;
 x_axis_points = calculate_x_axis_tick_positions(data_array)
 y_axis_points = calculate_y_axis_tick_positions(data_array)
 
+labels = [
+    case_labels_array ; # 1
+    case_labels_array ; # 2
+    case_labels_array ; # 3
+    case_labels_array ; # 4
+    case_labels_array ; # 5
+
+    case_labels_array ; # 6
+    case_labels_array ; # 7
+    case_labels_array ; # 8
+    case_labels_array ; # 9
+    case_labels_array ; # 10
+]
+
 # mean center -
 mean_centered_array = calculate_mean_centered_array(data_array)
 scaled_data_array = calculated_scaled_data_array(mean_centered_array, 0, 1)
-visualize(scaled_data_array, x_axis_points, y_axis_points, [case_labels_array ; case_labels_array], 0, 1)
+visualize(scaled_data_array, x_axis_points, y_axis_points, labels, 0, 1)

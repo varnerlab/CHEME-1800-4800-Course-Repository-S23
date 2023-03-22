@@ -9,6 +9,7 @@ function _mean(data::Array{Float64,1})::Float64
 
     # initialize -
     μ = 0.0;
+    μ = mean(data)
 
     # return -
     return μ;
@@ -24,6 +25,7 @@ function _std(data::Array{Float64,1})::Float64
 
     # initialize -
     σ = 0.0;
+    σ = std(data);
 
     # return 
     return σ
@@ -49,8 +51,8 @@ function standardize(data::Array{Float64,2}; μ₂::Float64 = 0.0, σ₂::Float6
         data_col = data[:,j];
         
         # compute the mean and std for this col
-        μ₁ = _mean(data_col)
-        σ₁ = _std(data_col)
+        μ₁ = mean(data_col)
+        σ₁ = std(data_col)
 
         # store -
         tmp[j] = (μ₁,σ₁)
