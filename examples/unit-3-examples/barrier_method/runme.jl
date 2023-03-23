@@ -41,6 +41,13 @@ function main()::Float64
             if (l < best_loss)
                 x̂ = x′;
                 best_loss = l;
+
+                # we have a new soln - print it out!
+                println("New soln found (λ,x̂,l) = ($(λ),$(x̂),$(l))");
+            else
+                if (mod1(max_number_of_iterations,i) == i)
+                    println("Oooops. No improvement at iteration $(i) with λ = $(λ)")
+                end
             end
 
             # generate a new guess for x -

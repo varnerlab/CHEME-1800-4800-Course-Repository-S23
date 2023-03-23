@@ -20,7 +20,8 @@ Runs an evolutionary algorithm to estimate x̂ (min of loss function).
 function main()::Float64
 
     # initialize -
-    Λ = [1e3,1e6,1e9];
+    # Λ = [1e3,1e6,1e9];
+    Λ = [0.01,1.0,68.0,613.0].*10000.0;
     xₒ = 20.0;
     best_loss = Inf;
     x̂ = xₒ;
@@ -32,7 +33,7 @@ function main()::Float64
         x′ = x̂ # initialize the current x, with the best value we have so far
 
         # refine our best guess
-        for _ ∈ 1:max_number_of_iterations
+        for i ∈ 1:max_number_of_iterations
             
             # compute the loss -
             l = _loss(x′, λ = λ);
@@ -41,6 +42,13 @@ function main()::Float64
             if (l < best_loss)
                 x̂ = x′;
                 best_loss = l;
+
+                # we have a new soln, print it out!
+                println("New soln found (λ,x̂,l) = ($(λ),$(x̂),$(l))");
+            else
+                if (mod1(max_number_of_iterations,i)==i)
+                    println("Oooops. No improvement at iteration $(i) with λ = $(λ)")
+                end
             end
 
             # generate a new guess for x -
