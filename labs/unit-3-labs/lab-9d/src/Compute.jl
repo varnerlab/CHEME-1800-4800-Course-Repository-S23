@@ -21,11 +21,19 @@ end
     errormodel(residuals::Array{Float64,1}) -> Normal
 
 Builds a Normal distribution error model given a vector of residuals.
+The errormodel is mean μ = 0, with standard deviation σ defined by the data.
 
 See: https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.Normal
 """
 function errormodel(residuals::Array{Float64,1})::Normal
     
+    # initialize -
+    μ = 0.0;
+    σ = 1.0; # default value for the standard deviation
+
+    # compute the standard deviation of the residuals
+    # ...
+
     # default behavior -
-    return Normal(0,1);
+    return Normal(μ,σ);
 end
