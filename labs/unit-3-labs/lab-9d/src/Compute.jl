@@ -11,8 +11,11 @@ function R(data::DataFrame; r::Float64 = 0.045)::Array{Float64,1}
     # initialize -
     number_of_trading_days = nrow(data);
     r̄ = (1+r)^(1/365) - 1; # convert the annual risk free rate to daily value
+
+    # TODO: compute the excess returns, store them in an array.
+    # ...
     
-    # default -
+    # default return: you'll need to change this to your array
     return zeros(10);
 end
 
@@ -31,9 +34,9 @@ function errormodel(residuals::Array{Float64,1})::Normal
     μ = 0.0;
     σ = 1.0; # default value for the standard deviation
 
-    # compute the standard deviation of the residuals
+    # TODO: compute the standard deviation of the residuals
     # ...
 
-    # default behavior -
+    # return N(μ,σ)
     return Normal(μ,σ);
 end
