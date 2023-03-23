@@ -4,8 +4,16 @@ The objective of `Lab-9d` is to familiarize students with the estimation of line
 ### Background
 A single index model describes the return of a firm’s stock in terms of a firm-specific return and the overall market return. Single index models are asset pricing models which measure the risk and the return of a stock relative to a risk-free alternative investment, e.g., [government treasury bonds](https://www.treasurydirect.gov/marketable-securities/treasury-bonds/). One of the simplest (yet still widely used) single index models was developed by [Sharpe, 1963](https://pubsonline.informs.org/doi/10.1287/mnsc.9.2.277). 
 
-Let $R_{i}(t)$ and $R_{m}(t)$ denote the firm-specific and market excess returns (random variables) 
-for period $t$. Further, let $\epsilon_{i}\left(t\right)$ denote a [stationary normally distributed random noise process](https://en.wikipedia.org/wiki/Normal_distribution) with mean zero and standard deviation $\sigma_{i}$. Then, the single index model for the excess return of firm $i$ is given by:
+Let $R_{i}(t)$ and $R_{m}(t)$ denote the firm-specific and market excess returns for period $t$:
+
+$$
+R_{i}\left(t\right) = \log\left(\frac{P_{i,t}}{P_{i,t-1}}\right) - \bar{r}
+$$
+
+The market return is approximated by the return of [SPY](https://www.google.com/finance/quote/SPY:NYSEARCA?sa=X&ved=2ahUKEwid6emuq_L9AhXVVDUKHQxjCSMQ3ecFegQIIxAg), an exchange traded fund designed to track the [S&P 500 stock market index](https://en.wikipedia.org/wiki/S&P_500). The quanity $P_{i,t}$ denotes the close price per share for firm $i$ (in the data set) at time $t$, and $\bar{r}$ denotes the daily risk-free rate (calculated for you). Further, let $\epsilon_{i}\left(t\right)$ denote a [stationary normally distributed random noise process](https://en.wikipedia.org/wiki/Normal_distribution) with mean zero and standard deviation 
+$\sigma_{i}$ (need to estimate). 
+
+Then, the single index model for the excess return of firm $i$ is given by:
 
 $$
 R_{i}\left(t\right) = \alpha_{i}+\beta_{i}R_{m}\left(t\right)+\epsilon_{i}\left(t\right)\qquad{t=1,2,\dots,T}
@@ -18,7 +26,11 @@ where $\alpha_{i}$ and $\beta_{i}$ are (unknown) model parameters:
 * The parameter $\beta_{i}$ can also be interpreted as a measure of the relative risk of investing in a firm $i$ relative to the overall market. 
 
 ### Prerequisites
-* `Lab-9d` requires that the [JLD2.jl](https://github.com/JuliaIO/JLD2.jl), [CSV.jl](https://github.com/JuliaData/CSV.jl) and [DataFrames.jl](https://github.com/JuliaData/DataFrames.jl) packages be installed using the [Julia package manager included in the standard library](https://docs.julialang.org/en/v1/stdlib/Pkg/).
+* `Lab-9d` requires that the [Distributions.jl], [CSV.jl](https://github.com/JuliaData/CSV.jl) and [DataFrames.jl](https://github.com/JuliaData/DataFrames.jl) packages be installed using the [Julia package manager included in the standard library](https://docs.julialang.org/en/v1/stdlib/Pkg/).
+
+### Tasks
+1. Start the Julia in the `PS4` folder with the `--project=.` argument
+1. Install required packages using the [Julia package manager](https://docs.julialang.org/en/v1/stdlib/Pkg/).
 
 
 #### Additional resources
