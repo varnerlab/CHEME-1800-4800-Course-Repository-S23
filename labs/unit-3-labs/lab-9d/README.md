@@ -39,4 +39,4 @@ where $\alpha_{i}$ and $\beta_{i}$ are (unknown) model parameters:
 
 #### Additional resources
 * [William F. Sharpe. A simplified model for portfolio analysis. Management Science, 9(2):277–293, 1963](https://pubsonline.informs.org/doi/10.1287/mnsc.9.2.277)
-* [The price data set was downloaded from Polygon.io](https://polygon.io).
+* The price data set was downloaded using [Polygon.io](https://polygon.io), a leading financial data provider.
