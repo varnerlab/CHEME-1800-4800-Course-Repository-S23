@@ -27,3 +27,17 @@ function R(data::DataFrame; r::Float64 = 0.045)::Array{Float64,1}
     # return -
     return log_excess_return_array;
 end
+
+
+"""
+    errormodel(residuals::Array{Float64,1}) -> Normal
+
+Builds a Normal distribution error model given a vector of residuals.
+
+See: https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.Normal
+"""
+function errormodel(residuals::Array{Float64,1})::Normal
+    
+    # default behavior -
+    return Normal(0,1);
+end
