@@ -31,7 +31,7 @@ where $\alpha_{i}$ and $\beta_{i}$ are (unknown) model parameters:
 ### Tasks
 1. Start the Julia in the `Lab-9d` folder with the `--project=.` argument
 1. Install required packages using the [Julia package manager](https://docs.julialang.org/en/v1/stdlib/Pkg/).
-1. __Duration__ (05 minutes): Break up into teams and familiarize yourself with the files and functions in `Lab-9d`.
+1. __Duration__ (10 minutes): Break up into teams, read the background and familiarize yourself with the files and functions in `Lab-9d`.
 1. __Duration__ (10 minutes): Break up into teams and develop a strategy to estimate the unknown $(\alpha_{i},\beta_{i})$ parameters. Sketch your plan as comments in the `runme.jl` file.
 1. __Duration__ (10 minutes): Implement the `R` function in the `Compute.jl` file. The `R` function computes the array of excess return values for firm $i$.
 1. __Duration__ (10 minutes): Implement your strategy to estimate the $(\alpha_{i},\beta_{i})$ parameters for the ticker symbol `AMD`.
