@@ -1,4 +1,4 @@
-## Example: Penalty method
+## Example: Barrier method
 
 In this example, we solve the problem:
 
@@ -10,4 +10,4 @@ x\leq{5} & &
 \end{eqnarray}
 $$
 
-using a quadratic penalty method. This example was reproduced from the [Mathematical Optimization course at Stanford](https://web.stanford.edu/group/sisl/k12/optimization/#!index.md).
+using a barrier method. This example was reproduced from the [Mathematical Optimization course at Stanford](https://web.stanford.edu/group/sisl/k12/optimization/#!index.md).
