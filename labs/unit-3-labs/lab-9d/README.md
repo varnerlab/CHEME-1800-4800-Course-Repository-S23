@@ -35,8 +35,7 @@ where $\alpha_{i}$ and $\beta_{i}$ are (unknown) model parameters:
 1. __Duration__ (10 minutes): Break up into teams and develop a strategy to estimate the unknown $(\alpha_{i},\beta_{i})$ parameters. Sketch your plan as comments in the `runme.jl` file.
 1. __Duration__ (10 minutes): Implement the `R` function in the `Compute.jl` file. The `R` function computes the array of excess return values for firm $i$.
 1. __Duration__ (10 minutes): Implement your strategy to estimate the $(\alpha_{i},\beta_{i})$ parameters for the ticker symbol `AMD`.
-1. __Duration__ (10 minutes): Estimate $\epsilon_{i}$ (the residual error model) for the ticker symbol `AMD`.
-
+1. __Duration__ (10 minutes): Estimate $\epsilon_{i}(t)$ (the residual error model) for the ticker symbol `AMD`.
 
 #### Additional resources
 * [William F. Sharpe. A simplified model for portfolio analysis. Management Science, 9(2):277–293, 1963](https://pubsonline.informs.org/doi/10.1287/mnsc.9.2.277)
