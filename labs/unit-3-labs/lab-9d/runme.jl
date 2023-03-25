@@ -20,8 +20,20 @@ for i ∈ 1:number_of_returns
 end
 
 # compute parameters -
-β̂ = pinv(X)*y;
+XINV = inv(transpose(X)*X)*transpose(X)
+β̂ = XINV*y;
 
 # Step 2: estimate the error model.
 errors = y - X*β̂; 
 ϵ = errormodel(errors);
+
+# compute uncertainty in the parameters -
+number_of_samples = 10000;
+number_of_parameters = 2;
+simulated_parameter_values = Array{Float64,2}(undef,number_of_samples,2)
+for s ∈ 1:number_of_samples
+    β = β̂ - XINV*rand(ϵ,number_of_returns);
+    for p ∈ 1:number_of_parameters
+        simulated_parameter_values[s,p] = β[p];
+    end
+end
