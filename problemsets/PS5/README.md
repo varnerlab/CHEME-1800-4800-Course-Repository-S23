@@ -32,7 +32,7 @@ The `PS5-dataset-w-repeats.csv` file contains measurements of the rate of reacti
 * The teaching team will evaluate whether the submission guidelines were followed.
 
 ### Rules, deadlines, and submission guidelines
-* Problem Set 5 is due on __Saturday, April 15, 2023__ by __11:59 PM__ ITH time. 
+* Problem Set 5 is due on __Saturday, April 1, 2023__ by __11:59 PM__ ITH time. 
 * You may use your course materials and any literature resources (as well as the internet) to formulate your solutions.
 * You may work in teams. All codes must be stored in a GitHub repository, and the link to that repository (and team information) must be entered into the [teaching team spreadsheet on box](https://cornell.box.com/s/77qu4ubry3wgkw8p7s0qrfl0lb5u0spb) by the deadline. 
 
