@@ -18,12 +18,12 @@ The `PS5-dataset-w-repeats.csv` file contains measurements of the rate of reacti
 * `PS5` requires that the [Distributions.jl](https://github.com/JuliaStats/Distributions.jl), [CSV.jl](https://github.com/JuliaData/CSV.jl), and [DataFrames.jl](https://github.com/JuliaData/DataFrames.jl) packages be installed using the [Julia package manager included in the standard library](https://docs.julialang.org/en/v1/stdlib/Pkg/).
 
 ### Tasks
-1. In `Submit.jl` load the experimental `PS5-dataset-w-repeats.csv` data set contained in the `data` directory
+1. In `Submit.jl` load the experimental `PS5-dataset-w-repeats.csv` data set contained in the `data` directory using the `loaddataset` function in `Files.jl`.
 1. Implement the `build_data_matrix` function in the `Compute.jl` file. The `build_data_matrix` function takes the experimental `DataFrame` and returns the system data matrix $\mathbf{X}$.
 1. Implement the `build_output_vector` function in the `Compute.jl` file. The `build_output_vector` function takes the experimental `DataFrame` and returns the output vector $\mathbf{y}$.
 1. In `Submit.jl` call your `build_data_matrix` and `build_output_vector` functions, and solve for the unknown parameter vector $\mathbf{\beta}$.
-1. Update the implementation of the `build_error_distribution` function in `Compute.jl`. The `build_error_distribution` function takes the model residual vector and returns a [Normal distribution error model](https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.Normal).
-1. In `Submit.jl` build an error model for the parameter estimates by calling your implementation of the `build_error_distribution` function.
+1. Update the implementation of the `build_error_distribution` function in `Compute.jl`. The `build_error_distribution` function takes the model residual vector and returns a [Normally distributed error model](https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.Normal).
+1. In `Submit.jl` build an error model by calling your implementation of the `build_error_distribution` function.
 1. In `Submit.jl` compute the mean and standard deviation for each model parameter by sampling your error model (see the `Lab-9d` solution).
 
 ### Assessment
