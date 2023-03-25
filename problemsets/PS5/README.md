@@ -12,8 +12,7 @@ $$
 \frac{1}{v} = \frac{K_{M}}{V_{max}}\left(\frac{1}{S}\right) + \frac{1}{V_{max}}
 $$
 
-### Data
-The `PS5-dataset-w-repeats.csv` dataset contains measurements of the rate of reaction $v$ as a function of substrate concentration. The substrate concentration has units of $\mu{M}$, while the rate measurements have units of $\mu{M}\cdot{s}^{-1}$. Each row contains a substrate concentration record, where each column following the substrate concentration value is a rate measurement. Three repeats were performed for each substrate value.
+The `PS5-dataset-w-repeats.csv` file contains measurements of the rate of reaction $v$ as a function of substrate concentration $S$. The substrate concentration has units of $\mu{M}$, while the rate measurements have units of $\mu{M}\cdot{s}^{-1}$. Each row contains a substrate concentration record, where each column (following the substrate concentration value) is a rate measurement. Three repeats were performed for each substrate value.
 
 ### Prerequisites
 * `PS5` requires that the [Distributions.jl](https://github.com/JuliaStats/Distributions.jl), [CSV.jl](https://github.com/JuliaData/CSV.jl), and [DataFrames.jl](https://github.com/JuliaData/DataFrames.jl) packages be installed using the [Julia package manager included in the standard library](https://docs.julialang.org/en/v1/stdlib/Pkg/).
