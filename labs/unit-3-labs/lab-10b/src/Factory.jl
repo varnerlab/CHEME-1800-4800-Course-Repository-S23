@@ -1,54 +1,118 @@
-function _build_adj_matrix(model::MyBatchProductionSchedulingProblem)::Array{Int,2}
+function _build_list_of_nodes(edges::Dict{Int, MyNetworkEdgeModel})::Array{String,1}
 
     # initialize -
-    number_of_products = model.number_of_products;
-    number_of_reactors = model.number_of_reactors;
-   
-    # what is the total number of vertices?
-    total_number_of_vertices = number_of_products + number_of_reactors + 2; 
-    A = Array{Int,2}(undef,total_number_of_vertices,total_number_of_vertices);
+    nodes = Array{String,1}()
 
-    # fill full of zeros -
-    fill!(A,0);
+    # process each edge in the model, and grab the nodes -
+    for (_,edge) ∈ edges
+        
+        # get the start, and the stop -
+        start = edge.start;
+        stop = edge.stop;
 
-    # Step 1: add edge from s to all nodes in the product set
-    s_index = 1 
-    for i ∈ 1:number_of_products
-        A[s_index,i] = 1
-        A[i,s_index] = 1
+        # add the start node
+        if (in(start,nodes) == false)
+            push!(nodes,start);
+        end
+
+        # add the stop node 
+        if (in(stop,nodes) == false)
+            push!(nodes,stop)
+        end
     end
 
-    # Step 2: add edge from all reactors in the reactor set to t
-    t_index = number_of_products+number_of_reactors + 2
-    for i ∈ (number_of_products+2):(number_of_products+number_of_reactors + 1)
-        A[i,t_index] = 1
-        A[t_index,i] = 1
+    # return sorted list 
+    return sort!(nodes)
+end
+
+function _build_edge_bounds_array(edges::Dict{Int,MyNetworkEdgeModel})::Array{Float64,2}
+
+    # initialize -
+    number_of_edges = length(edges)
+    bounds = Array{Float64,2}(undef, number_of_edges,2)
+
+    # fill -
+    for (i,edge) ∈ edges
+        bounds[i,1] = 0.0             # lower bound
+        bounds[i,2] = edge.capacity;  # upper bound
     end
 
-    # Step 3: connect every product to every reactor 
-    for i ∈ 2:(number_of_products+number_of_reactors + 1)
+    # return 
+    return bounds;
+end
+
+function _build_conservation_matrix(edges::Dict{Int, MyNetworkEdgeModel}, 
+    nodes::Array{String,1})::Array{Float64,2}
+
+    # initialize -
+    number_of_edges = length(edges);
+    number_of_nodes = length(nodes);
+
+    # build an empty array, then fill it 
+    A = Array{Float64,2}(undef,number_of_nodes,number_of_edges);
+    for i ∈ 1:number_of_nodes
+        
+        # get a node -
+        node = nodes[i]
+        
+        # check of the node is the 
+        for j ∈ 1:number_of_edges
+
+            # get the edge model -
+            edge_model = edges[j];
+
+            # connected?
+            if (edge_model.start == node)
+                A[i,j] = -1.0
+            elseif (edge_model.stop == node)
+                A[i,j] = 1.0
+            else
+                A[i,j] = 0.0
+            end
+        end
     end
 
-    # return -
+    # return the conservation array
     return A
 end
 
 
-
 function build(modeltype::Type{MyBatchProductionSchedulingProblem}, 
-    data::NamedTuple)::MyBatchProductionSchedulingProblem
+    edges::Dict{Int,MyNetworkEdgeModel})::MyBatchProductionSchedulingProblem
 
     # build an empty model -
     model = MyBatchProductionSchedulingProblem();
 
-    # set the values on the model (this is a new trick that is awesome!)
+    # get some data from the model -
+    nodes = _build_list_of_nodes(edges);
+    number_of_edges = length(edges);
+    number_of_nodes = length(nodes);
+
+    # set parameters on the model -
+    model.number_of_nodes = number_of_nodes;
+    model.number_of_edges = number_of_edges;
+    model.A = _build_conservation_matrix(edges, nodes);
+    model.bounds = _build_edge_bounds_array(edges);
+    model.c = ones(number_of_edges)
+    model.nodes = nodes;
+    
+    # return -
+    return model
+end
+
+function build(modeltype::Type{MyNetworkEdgeModel}, data::NamedTuple)::MyNetworkEdgeModel
+
+    # build an empty model
+    model = MyNetworkEdgeModel();
+
+    # if we have options, add them to the contract model -
     if (isempty(data) == false)
         for key ∈ fieldnames(modeltype)
             
-            # convert the key to a string
+            # convert the field_name_symbol to a string -
             field_name_string = string(key)
 
-            # check for the key, we have it then we are good to go. Otherwise, Boom!
+            # check the for the key -
             if (haskey(data, key) == false)
                 throw(ArgumentError("NamedTuple is missing: $(field_name_string)"))
             end
@@ -59,16 +123,7 @@ function build(modeltype::Type{MyBatchProductionSchedulingProblem},
             # set -
             setproperty!(model, key, value)
         end
-    else
-        
-        # set default values
-        model.number_of_products = 0;
-        model.number_of_reactors = 0;
-        model.max_number_products_per_reactor = 0;
     end
-
-    # build the adj matrix -
-    model.A = _build_adj_matrix(model);
 
     # return -
     return model
