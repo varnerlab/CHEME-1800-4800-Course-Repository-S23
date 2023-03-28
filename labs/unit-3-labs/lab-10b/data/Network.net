@@ -2,7 +2,7 @@
 # Example network file for lab10b
 #
 # record:
-# edge, weight, start, end
+# edge, capacity, start, end
 # ------------------------------------------------------ #
 1,1,s,N2
 2,1,s,N3

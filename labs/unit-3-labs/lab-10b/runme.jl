@@ -20,6 +20,11 @@ b = zeros(number_of_nodes);                 # Ax = b
 # remove the s and t -
 Â = A[1:(number_of_nodes - 2),:];
 b̂ = b[1:(number_of_nodes - 2)];
+
+# maximize the sum of e7 + e8 
+ĉ = zeros(number_of_edges)
+ĉ[7] = 1.0
+ĉ[8] = 1.0
 # ========================================================================================================== #
 
 # == Stage 2: build the LP model object ==================================================================== #
@@ -30,9 +35,9 @@ model = model = Model(GLPK.Optimizer)
 @variable(model, bounds[i,1] <= x[i=1:number_of_edges] <= bounds[i,2]) # this sets up the upper bound
 
 # Set the objective => maximize the profit -
-@objective(model, Max, transpose(c)*x);
+@objective(model, Max, transpose(ĉ)*x);
 
-# Setup the constraints - add them to the model 
+# Setup the capacity constraints - add them to the model 
 @constraints(model, 
     begin
         Â*x .== 0
