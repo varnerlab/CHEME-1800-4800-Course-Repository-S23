@@ -15,7 +15,7 @@ The objective in a maximum flow calculation is to maximize the flow (or sum of f
 * `Lab-10b` requires that the [JuMP](https://jump.dev/JuMP.jl/stable/) and [GLPK](https://github.com/jump-dev/GLPK.jl) packages be installed using the [Julia package manager included in the standard library](https://docs.julialang.org/en/v1/stdlib/Pkg/).
 
 ### Tasks
-1. Start the Julia in the `Lab-10d` folder with the `--project=.` argument
+1. Start the Julia in the `Lab-10b` folder with the `--project=.` argument
 1. Install required packages using the [Julia package manager](https://docs.julialang.org/en/v1/stdlib/Pkg/).
 1. __Duration__ (15 minutes): Read the background materials and familiarize yourself with the files and functions in `Lab-10b`.
 1. __Duration__ (10 minutes): Compute the maximum flow through the (default) toy network encoded in the `/data/Network.net` file by executing the `runme.jl` script. What is the meaning of the solution?
