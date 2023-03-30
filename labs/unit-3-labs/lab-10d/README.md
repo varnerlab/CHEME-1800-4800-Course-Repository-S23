@@ -1,4 +1,4 @@
-## Lab 10d: The Flux Balance Analysis and the Dual Problem
+## Lab 10d: The Primal Flux Balance Analysis Problem
 In `Lab 10d` students will become familiarized with flux balance analysis applications in chemical engineering and the interpretation of the dual problem in the context of flux balance analysis. 
 
 ### Background
@@ -33,6 +33,6 @@ This is an _undetermined problem_ in the sense that we have 17 unknowns (the flo
 1. Install any required packages using the [Julia package manager](https://docs.julialang.org/en/v1/stdlib/Pkg/).
 1. __Duration__ (20 minutes): Read the background materials and familiarize yourself with the files and functions in `Lab-10b`, particularly the `runme-primal.jl` script. This lab borrows heavily from `Lab 7b`.
 1. __Duration__ (10 minutes): Execute the `runme-primal.jl` script with the default values for the bounds (see the `bounds_array` on `L39`). Was an optimal solution found (execute the `solution_summary(model)` command), and if so, what is the solution suggesting we do?
-1. __Duration__ (10 minutes): Execute the `runme-primal.jl` script with the bounds $10.0\leq\dot{n}_{A1}\geq{10.0}$ and $0.0\leq\dot{n}_{B}\geq{0.0}$  (see the `bounds_array` on `L39`). What is the meaning of these constraints, and the solution obtained?
+1. __Duration__ (10 minutes): Execute the `runme-primal.jl` script with the bounds $10.0\leq\dot{n}_{A_1,1}\geq{10.0}$ and $0.0\leq\dot{n}_{B,1}\geq{0.0}$  (see the `bounds_array` on `L39`). What is the meaning of these constraints, and the solution obtained?
 1. __Duration__ (10 minutes): What bounds do we have to change to get flux through reaction 3? Implement your strategy. Does it work?
 
