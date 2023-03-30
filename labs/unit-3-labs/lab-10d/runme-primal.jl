@@ -38,17 +38,17 @@ A = hcat(T,S);
 # setup bounds -
 bounds_array = [
 
-    # stream 1
-    10.0 10.0 ; # 1 ṅ_A1_1 mol/s A1 in stream 1
+    # stream 1: input
+    0.0 100.0 ; # 1 ṅ_A1_1 mol/s A1 in stream 1
     0.0 100.0 ; # 2 ṅ_A2_1 mol/s A2 in stream 1
     0.0 100.0 ; # 3 ṅ_B_1 mol/s B in stream 1
     0.0 100.0 ; # 4 ṅ_C_1 mol/s C in stream 1
-    0.0 100.0 ; # 5 ṅ_P_1 mol/s P in stream 1
+    0.0 0.0 ; # 5 ṅ_P_1 mol/s P in stream 1 (we have no product in the input)
     0.0 100.0 ; # 6 ṅ_x_1 mol/s x in stream 1
     0.0 100.0 ; # 7 ṅ_y_1 mol/s y in stream 1
 
-    # stream 2
-    1.0 1.0 ; # 8 ṅ_A1_2 mol/s A1 in stream 2
+    # stream 2: output
+    0.0 100.0 ; # 8 ṅ_A1_2 mol/s A1 in stream 2
     0.0 100.0 ; # 9 ṅ_A2_2 mol/s A2 in stream 2
     0.0 100.0 ; # 10 ṅ_B_2 mol/s B in stream 2
     0.0 100.0 ; # 11 ṅ_C_2 mol/s C in stream 2
@@ -91,11 +91,7 @@ lp_model = model = Model(GLPK.Optimizer)
 optimize!(model)
 solution_summary(model)
 
-# show the solution
-# for i in 1:number_of_variables
-#     println("variable ", list_of_variables[i]," = ",value(x[i]), " mol per time.")
-# end
-
+# BELOW HERE: We are writing out the state and reaction tables ---
 # build state table -
 state_table_header = ["Species","ṅ₁ (mol/time)", "ṅ₂ (mol/time)", "Δ (mol/time)"]
 state_table = Array{Any,2}(undef, number_of_species, (number_of_input_streams + number_of_output_streams)+2)
@@ -117,6 +113,17 @@ for i ∈ 1:number_of_species
 end
 pretty_table(state_table; header=state_table_header)
 
-# print objective value -
-#println("Objective value for the primal is: ", objective_value(model))
+# print out the reaction table -
+reaction_table_header = ["Reaction","ϵ̇ᵢ (mol/time)"]
+reaction_table = Array{Any,2}(undef, number_of_reactions, 2)
+reaction_list = reaction_model.reactions
+for i ∈ 1:number_of_reactions
+    
+    # index -
+    j = (number_of_input_streams+number_of_output_streams)*number_of_species + i
+
+    reaction_table[i,1] = reaction_list[i];
+    reaction_table[i,2] = value(x[j]);
+end
+pretty_table(reaction_table; header=reaction_table_header)
 # =================================================================================================================== #
