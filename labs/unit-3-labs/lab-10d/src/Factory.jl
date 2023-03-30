@@ -79,10 +79,41 @@ function _build_transport_matrix(inputs::Int, outputs::Int,species::Int)::Array{
     
     # initialize -
     total_number_of_streams = (inputs + outputs)
+    number_of_inputs = inputs;
+    number_of_outputs = outputs;
     number_of_species = species;
+    T = zeros(number_of_species, (total_number_of_streams*number_of_species));
+
+    # build a dictionary of blocks, starting with the inputs
+    block_dictionary = Dict{Int,Array{Float64,2}}()
+    for i ∈ 1:number_of_inputs
+        B = Matrix{Float64}(I, number_of_species, number_of_species);       
+        block_dictionary[i] = B;
+    end
     
-    # default
-    return zeros(number_of_species, (total_number_of_streams*number_of_species))
+    for j ∈ 1:number_of_outputs
+        output_block_index = (number_of_inputs + j);
+        B = -1*Matrix{Float64}(I, number_of_species, number_of_species);
+        block_dictionary[output_block_index] = B;
+    end
+
+    # put the blocks together -
+    T = nothing
+    for i ∈ 1:total_number_of_streams
+
+        # get the block -
+        B = block_dictionary[i]
+
+        # add the block to T 
+        if (i == 1)
+            T = B;
+        else
+            T = hcat(T,B)
+        end
+    end
+
+    # return the transport matrix -
+    return T
 end
 
 
