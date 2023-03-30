@@ -18,7 +18,11 @@ $$
 The matrix $\mathbf{T}$ is the $|\mathcal{M}| \times |\mathcal{M}||\mathcal{S}|$ _transport matrix_, the matrix $\mathbf{S}$ is the $|\mathcal{M}| \times |\mathcal{R}|$ _stoichiometric matrix_, $\dot{\mathbf{n}}$ denotes the $|\mathcal{M}||\mathcal{S}| \times {1}$ species flow vector and $\mathbf{\epsilon}$ denotes the $|\mathcal{R}| \times {1}$ reaction vector. In this case, let's define the $\dot{\mathbf{n}}$ as:
 
 $$
-\dot{\mathbf{n}} = \left(\dot{n}_{A_{1},1}, \dot{n}_{A_{2},1}, \dot{n}_{B,1}, \dot{n}_{C,1}, \dot{n}_{P,1}, \dot{n}_{x,1},\dot{n}_{y,1} \right)
+\dot{\mathbf{n}} = 
+\left(
+    \dot{n}_{A_{1},1}, \dot{n}_{A_{2},1}, \dot{n}_{B,1}, \dot{n}_{C,1}, \dot{n}_{P,1}, \dot{n}_{x,1},\dot{n}_{y,1},
+    \dot{n}_{A_{1},2}, \dot{n}_{A_{2},2}, \dot{n}_{B,2}, \dot{n}_{C,2}, \dot{n}_{P,2}, \dot{n}_{x,2},\dot{n}_{y,2}
+\right)
 $$
 
 ### Prerequisites
@@ -27,5 +31,4 @@ $$
 ### Tasks
 1. Start the Julia in the `Lab-10d` folder with the `--project=.` argument
 1. Install required packages using the [Julia package manager](https://docs.julialang.org/en/v1/stdlib/Pkg/).
-1. 
 
