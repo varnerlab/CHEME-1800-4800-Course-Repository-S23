@@ -23,7 +23,7 @@ $$
 \right)
 $$
 
-This is an _undetermined problem_ in the sense that we have 17 unknowns (the flow rates and the reaction extents) and only 7 equations (the species mole balances; $7\times{17}$ system). However, linear programming can be used to explore the properties of this underdetermined system, even if we have no information.
+This is an _undetermined problem_ in the sense that we have 17 unknowns (the flow rates and the reaction extents) and only 7 equations (the species mole balances; $7\times{17}$ system). However, linear programming can be used to explore the properties of this underdetermined system, even if we have no information! 
 
 ### Prerequisites
 * `Lab-10d` requires that the [JuMP](https://jump.dev/JuMP.jl/stable/) and [GLPK](https://github.com/jump-dev/GLPK.jl) packages be installed using the [Julia package manager included in the standard library](https://docs.julialang.org/en/v1/stdlib/Pkg/).
