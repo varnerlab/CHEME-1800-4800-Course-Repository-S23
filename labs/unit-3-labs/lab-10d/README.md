@@ -1,12 +1,12 @@
 ## Lab 10d: The Primal Flux Balance Analysis Problem
-In `Lab 10d` students will become familiarized with flux balance analysis applications in chemical engineering and the interpretation of the dual problem in the context of flux balance analysis. 
+In `Lab 10d` students will become familiarized with flux balance analysis (a specific type of maximum flow problem) and its application in chemical engineering.
 
 ### Background
 Flux balance analysis (FBA) is an approach to estimate _flows_ through [trees and graphs](https://varnerlab.github.io/CHEME-1800-Computing-Book/unit-2-data/trees.html#trees), e.g., social graphs, communication networks, or other structures that can be represented as a network. Flux balance analysis is a type of [maximum flow problem](https://en.wikipedia.org/wiki/Maximum_flow_problem).  Today, let's consider the reaction scheme:
 
 ![alt text](./figs/Fig-FBA-ToyNetwork.png)
 
-is occurring in a well-mixed reactor with a single input and a single output stream. Then, we can write the system of species mole balances at steady-state in matrix-vector form as:
+is occurring in a well-mixed reactor with a single input and output stream. Then, we can write the system of species mole balances at steady-state in matrix-vector form as:
 
 $$
 \mathbf{T}\dot{\mathbf{n}} + \mathbf{S}\dot{\mathbf{\epsilon}} = \mathbf{0}
@@ -34,5 +34,5 @@ This is an _undetermined problem_ in the sense that we have 17 unknowns (the flo
 1. __Duration__ (20 minutes): Read the background materials and familiarize yourself with the files and functions in `Lab-10b`, particularly the `runme-primal.jl` script. This lab borrows heavily from `Lab 7b`.
 1. __Duration__ (10 minutes): Execute the `runme-primal.jl` script with the default values for the bounds (see the `bounds_array` on `L39`). Was an optimal solution found (execute the `solution_summary(model)` command), and if so, what is the solution suggesting we do?
 1. __Duration__ (10 minutes): Execute the `runme-primal.jl` script with no $A_{1}$ and $B$ in the input stream (set values on the `bounds_array` on `L39`). What is the meaning of these constraints, and the solution obtained?
-1. __Duration__ (10 minutes): What bounds do we have to change to get flux through reaction 3? Implement your strategy. Does it work?
+1. __Duration__ (10 minutes): What bounds must we change to get flux through reaction 3? Implement your strategy. Does it work?
 
