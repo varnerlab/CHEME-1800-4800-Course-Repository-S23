@@ -92,10 +92,31 @@ optimize!(model)
 solution_summary(model)
 
 # show the solution
-for i in 1:number_of_variables
-    println("variable ", list_of_variables[i]," = ",value(x[i]), " mol per time.")
+# for i in 1:number_of_variables
+#     println("variable ", list_of_variables[i]," = ",value(x[i]), " mol per time.")
+# end
+
+# build state table -
+state_table_header = ["Species","ṅ₁ (mol/time)", "ṅ₂ (mol/time)", "Δ (mol/time)"]
+state_table = Array{Any,2}(undef, number_of_species, (number_of_input_streams + number_of_output_streams)+2)
+species_list = reaction_model.species
+for i ∈ 1:number_of_species
+
+    # setup index -
+    j = i; # index for input stream 1
+    k = i + number_of_species
+    
+    in_val = value(x[j])
+    out_val = value(x[k])
+    Δ = out_val - in_val
+
+    state_table[i,1] = species_list[i];
+    state_table[i,2] = in_val
+    state_table[i,3] = out_val
+    state_table[i,4] = Δ
 end
+pretty_table(state_table; header=state_table_header)
 
 # print objective value -
-println("Objective value for the primal is: ", objective_value(model))
+#println("Objective value for the primal is: ", objective_value(model))
 # =================================================================================================================== #
