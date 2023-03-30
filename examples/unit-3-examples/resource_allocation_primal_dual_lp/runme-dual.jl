@@ -46,4 +46,4 @@ for i in 1:number_of_processes
 end
 
 # print objective value -
-println("Objective value for the dual is: ", objective_value(model), " \$ per week")
+println("Objective value for the dual is: ", objective_value(model))
