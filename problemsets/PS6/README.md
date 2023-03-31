@@ -15,7 +15,7 @@ The _E.coli_ model is contained in the `e_coli_core.json` file downloaded from [
     1. Finish implementing the `_build_stoichiometric_matrix` function in `Factory.jl`. The `_build_stoichiometric_matrix` function returns the $|\mathcal{M}|\times|\mathcal{R}|$ stoichiometric matrix $\mathbf{S}$.
 1. In `Submit.jl` build a model dictionary holding information from the `e_coli_core.json` file by calling the `readreactionfile` function in `Files.jl`
 1. In `Submit.jl` build an instance of the `MyStoichiometricNetworkModel` type by calling your `build` method in `Factory.jl`
-1. In `Submit.jl` call the `compute_maximum_growth_rate` function and compute the maximum possible cellular growth rate.
+1. In `Submit.jl` call the `compute_maximum_growth_rate` function and compute the maximum possible cellular growth rate. The id for cellular growth is `BIOMASS_Ecoli_core_w_GAM`. What value did you obtain?
 
 ### Assessment
 * The teaching team will execute the `Submit.jl` script with your program functions. 
