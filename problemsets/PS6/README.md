@@ -2,7 +2,7 @@
 
 [_E.coli_ is a widely used industrial bacteria](https://en.wikipedia.org/wiki/Protein_production) for producing a wide variety of commercial products. The biochemical reaction network used by _E.coli_ has been widely studied because of its commercial relevance. In this problem set, let's explore an _E. coli_ metabolic reaction network constructed by [Palsson and coworkers](https://pubmed.ncbi.nlm.nih.gov/26443778/). In particular, let's compute the maximum growth rate of an _E.coli_ cell.
 
-The _E.coli_ model is contained in the `e_coli_core.json` file downloaded from [BiGG models database](http://bigg.ucsd.edu/models/e_coli_core).
+The _E.coli_ model is contained in the `e_coli_core.json` file downloaded from the [BiGG models database](http://bigg.ucsd.edu/models/e_coli_core) and stored in the `data` subdirectory.
 
 ### Prerequisites
 * `PS6` requires that the [JuMP](https://jump.dev/JuMP.jl/stable/), [GLPK](https://github.com/jump-dev/GLPK.jl) and [JSON](https://github.com/JuliaIO/JSON.jl) packages be installed using the [Julia package manager included in the standard library](https://docs.julialang.org/en/v1/stdlib/Pkg/).
