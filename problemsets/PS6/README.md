@@ -25,7 +25,7 @@ The _E.coli_ model is contained in the `e_coli_core.json` file downloaded from t
 ### Rules, deadlines, and submission guidelines
 * Problem Set 6 is due on __Friday, April 14, 2023__ by __11:59 AM__ ITH time. 
 * You may use your course materials and any literature resources (as well as the internet) to formulate your solutions.
-* You may work in teams. All codes must be stored in a GitHub repository, and the link to that repository (and team information) must be entered into the [teaching team spreadsheet on box](https://cornell.box.com/s/77qu4ubry3wgkw8p7s0qrfl0lb5u0spb) by the deadline. 
+* You may work in teams. All codes must be stored in a GitHub repository, and the link to that repository (and team information) must be entered into the [teaching team spreadsheet on box](https://cornell.box.com/s/qaaismzp18ohahqctvdeedeludl2kybl) by the deadline. 
 
 #### Notes on the GitHub repository
 * Each student on the problem set team must be a collaborator on the problem set GitHub repository. 
