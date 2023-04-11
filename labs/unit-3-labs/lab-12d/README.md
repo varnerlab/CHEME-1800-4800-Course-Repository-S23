@@ -1,2 +1,2 @@
-## Lab 12d: Dynamic Programming Sequence Alignment Algorithm
+## Lab 12d: Let's implement a Genetic Algorithm
 Fill me in.
