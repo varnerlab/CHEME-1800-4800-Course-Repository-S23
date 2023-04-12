@@ -27,7 +27,11 @@ function _build_metabolite_id_array(data::Dict{String,Any})::Array{String,1}
     metabolite_id_array = Array{String,1}()
 
     # TODO: fill the metabolite_id_array with the metabolite id's from the data dictionary
-    # ....
+    metabolites = data["metabolites"];
+    for metabolite ∈ metabolites
+        id_value = metabolite["id"];
+        push!(metabolite_id_array, id_value);
+    end
 
     # return -
     return metabolite_id_array;
@@ -42,7 +46,11 @@ function _build_reaction_id_array(data::Dict{String,Any})::Array{String,1}
     reaction_id_array = Array{String,1}()
 
     # TODO: fill the reaction_id_array with the reaction id's from the data dictionary
-    # ....
+    reactions = data["reactions"];
+    for reaction ∈ reactions
+        id_value = reaction["id"]
+        push!(reaction_id_array, id_value);
+    end
 
     # return -
     return reaction_id_array;
@@ -59,7 +67,13 @@ function _build_bounds_array(data::Dict{String,Any})::Array{Float64,2}
     bounds_array = Array{Float64,2}(undef,number_of_reactions,2)
 
     # TODO: fill in the entries of the bounds array, first col is the lower bound, second col is the upper bound
-    # ...
+    for i ∈ 1:number_of_reactions
+        reaction = list_of_reactions[i];
+        L = reaction["lower_bound"];
+        U = reaction["upper_bound"];
+        bounds_array[i,1] = L
+        bounds_array[i,2] = U
+    end
 
     # return -
     return bounds_array
