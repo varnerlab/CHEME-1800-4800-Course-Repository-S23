@@ -12,7 +12,42 @@ function _build_stoichiometric_matrix(data::Dict{String,Any})::Array{Float64,2}
     S = Array{Float64,2}(undef, number_of_metabolites, number_of_reactions);
     
     # TODO: fill in the entries of the stochiometric matrix 
-    # ...
+    # for i ∈ 1:number_of_metabolites
+
+    #     metablite_dict = list_of_metabolites[i];
+    #     key_id = metablite_dict["id"];
+
+    #     for j ∈ 1:number_of_reactions
+
+    #         reaction_dict = list_of_reactions[j];
+    #         reaction_metabolites_dict = reaction_dict["metabolites"];
+    #         if (haskey(reaction_metabolites_dict, key_id) == true)
+    #             st_value = reaction_metabolites_dict[key_id];
+    #             S[i,j] = st_value;
+    #         else
+    #             S[i,j] = 0.0;
+    #         end
+    #     end
+    # end
+
+    # fill w/zeros -
+    fill!(S,0.0);
+
+    # build the stochiometric matrix -
+    for i ∈ 1:number_of_metabolites
+        
+        # get a metabolite -
+        metabolite_id = list_of_metabolites[i]["id"]
+        
+        for j ∈ 1:number_of_reactions
+
+            # grab the reaction object, and then metabolites dictionary -
+            metabolite_dictionary = list_of_reactions[j]["metabolites"]
+            if (haskey(metabolite_dictionary, metabolite_id) == true)
+                S[i,j] = metabolite_dictionary[metabolite_id];
+            end
+        end
+    end
 
     # return -
     return S
