@@ -1,5 +1,5 @@
 ## Lab 13b: Estimate an optimal decision subject to a budget constraint
-The objective of `Lab-13b` is to familiarize students with solving the optimal decision-making problem, e.g., maximizing the utility function subject to a budget constraint. 
+The objective of `Lab-13b` is to familiarize students with solving the optimal simple decision-making problem, e.g., maximizing the utility function subject to a budget constraint. 
 
 ### Background
 A decision making agent has a utility function $U\left(x_{1},\dots,x_{n}\right)$ and $I$ dollars to spend between $t\rightarrow{t+dt}$. An optimal agent maximizes its utility subject to its budget:
