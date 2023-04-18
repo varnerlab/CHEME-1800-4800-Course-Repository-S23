@@ -25,9 +25,10 @@ INC = indifference(problem,Uopt,xlim)
 BC = budget(problem,xlim)
 
 # make the plots -
-plot(INC[:,1],INC[:,2],xlim=xlim,ylim=[0.01,1.2*BC[1,2]], label="U = $(Uopt)", lw=2, c=colors[2]);
-plot!(BC[:,1],BC[:,2], label="Budget", lw=2,c=colors[4])
-scatter!([xopt[1]], [xopt[2]], ms=4, label="opt: ($(x1_opt),$(x2_opt))", c=colors[1])
+plot(INC[:,1],INC[:,2],xlim=xlim,ylim=[0.01,1.2*BC[1,2]], label="U: $(Uopt)", lw=3, c=colors[1], 
+    bg="floralwhite", background_color_outside="white", framestyle = :box, fg_legend = :transparent);
+plot!(BC[:,1],BC[:,2], label="Budget", lw=3,c=colors[4])
+scatter!([xopt[1]], [xopt[2]], ms=4, label="opt: ($(x1_opt),$(x2_opt))", c="white", mec=colors[1])
 xlabel!("Units of Good or Service 1 Consumed", fontsize=18)
 ylabel!("Units of Good or Service 2 Consumed", fontsize=18)
 
