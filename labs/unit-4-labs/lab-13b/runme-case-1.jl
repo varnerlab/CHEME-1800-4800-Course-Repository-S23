@@ -11,7 +11,7 @@ problem = build(MySimpleCobbDouglasChoiceProblem, (
     
     # how much of x₁ and x₂ can be we buy?
     bounds = [
-        0.0 100.0; # L U`
+        0.0 100.0; # L U
         0.0 100.0; # L U
     ]
 ));

@@ -6,7 +6,7 @@ problem = build(MySimpleCobbDouglasChoiceProblem, (
     
     initial = 0.1*ones(2), # initial guess
     α = [0.5, 0.5], # coefficients
-    c = [20.0, 40.0], # price of x₁ and x₂
+    c = [20.0, 10.0], # price of x₁ and x₂
     I = 100.0, # income
     
     # how much of x₁ and x₂ can be we buy?
@@ -17,5 +17,5 @@ problem = build(MySimpleCobbDouglasChoiceProblem, (
 ));
 
 # solve problem -
-results = solve(problem)
+results = solve(problem);
 
