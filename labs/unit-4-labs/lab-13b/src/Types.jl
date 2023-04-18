@@ -11,7 +11,8 @@ mutable struct MySimpleCobbDouglasChoiceProblem <: AbstractSimpleChoiceProblem
     c::Array{Float64,1}
     I::Float64
     bounds::Array{Float64,2}
+    initial::Array{Float64,1}
 
     # constructor
-    MySimpleChoiceProblem() = new();
+    MySimpleCobbDouglasChoiceProblem() = new();
 end
