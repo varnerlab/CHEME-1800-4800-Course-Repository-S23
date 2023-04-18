@@ -29,4 +29,4 @@ Today, let's assume the agent is using the [Cobb-Douglas utility function](https
 1. __Duration__ (5 minutes): Wow! You just got a massive raise; congratulations! Your budget to purchase $x_{1}$ and $x_{2}$ just went from $I = 100.0~\text{USD}$ to $I=500.0~\text{USD}$. Implement the new budget constraint in the `runme-case-3.jl` script. What happens to the optimal values of $x_{1}$, $x_{2}$ and the utility?
 
 ## Advanced:
-1. __Duration__ (10 minues): Plot the budget constraint and the optimal indifference curve on the $x_{1}$ and $x_{2}$ plane by executing the `plotme-opt-soln.jl` script. What is the relationship between the optimal value, the optimal indifference curve, and the budget constraint?
+1. __Duration__ (10 minutes): Plot the budget constraint and the optimal indifference curve on the $x_{1}$ and $x_{2}$ plane. What is the relationship between the optimal value, indifference curve, and budget constraint?
