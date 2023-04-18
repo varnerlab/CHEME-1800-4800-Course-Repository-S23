@@ -18,8 +18,7 @@ Today, let's assume the agent is using the [Cobb-Douglas utility function](https
 
 ### Prerequisites
 * `Lab-13b` requires that the [JuMP](https://jump.dev/JuMP.jl/stable/), [MadNLP](https://github.com/MadNLP/MadNLP.jl), and the [PrettyTables](https://github.com/ronisbr/PrettyTables.jl) packages be installed using the [Julia package manager included in the standard library](https://docs.julialang.org/en/v1/stdlib/Pkg/). 
-
-Note: the _advanced task_ requires plotting. Thus, we must install the [Plots.jl](https://docs.juliaplots.org/stable/) and [Colors.jl](https://github.com/JuliaGraphics/Colors.jl) packages. However, if these give errors during installation, then skip installing these packages, and comment out the `using XXX` statements in `Include.jl`.
+* __Note__: the _advanced task_ requires plotting. Thus, we must install the [Plots.jl](https://docs.juliaplots.org/stable/) and [Colors.jl](https://github.com/JuliaGraphics/Colors.jl) packages. However, if these give errors during installation, then skip installing these packages, and comment out the `using XXX` statements in `Include.jl`.
 
 # Tasks
 1. Start the Julia in the `Lab-13b` folder with the `--project=.` argument
