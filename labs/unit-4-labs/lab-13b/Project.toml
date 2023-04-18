@@ -1,0 +1,4 @@
+[deps]
+JuMP = "4076af6c-e467-56ae-b986-b466b2749572"
+MadNLP = "2621e9c9-9eb4-46b1-8089-e8c72242dfb6"
+PrettyTables = "08abe8d2-0d0c-5749-adfa-8a2ac140af0d"
