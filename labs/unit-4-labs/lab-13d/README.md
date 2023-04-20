@@ -1,2 +1,2 @@
-## Lab 13d: Decision making under uncertainty
-The objective of `Lab-13d` is to familiarize students with solving the optimal decision-making problem with uncertain outco,es, e.g., maximizing theexpected value of the utility function subject to a budget constraint. 
+## Lab 13d: Future price prediction using a Binomial Lattice Model
+The objective of `Lab-13d` is to familiarize students with the application of simple probability mass functions to predict future uncertain quantities such as commodity prices, interest rates, etc. 
