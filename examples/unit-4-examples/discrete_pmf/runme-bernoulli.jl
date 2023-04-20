@@ -8,7 +8,7 @@ using PrettyTables
 
 # setup constants -
 p = 0.64;
-number_of_samples = 100;
+number_of_samples = 10000;
 
 # build a Bernoulli distribution
 d = Bernoulli(p)

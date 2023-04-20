@@ -9,7 +9,7 @@ using PrettyTables
 # setup constants -
 number_of_trials = 100;
 p = 0.64;
-number_of_samples = 100;
+number_of_samples = 1000;
 
 # build a Bernoulli distribution
 d = Binomial(number_of_trials,p)
