@@ -4,13 +4,13 @@ include("Include.jl");
 # initialize -
 Sₒ = 100.0;
 T = 3;
-up = 1.01;
-pvalue = 0.51;
+u = 1.01;
+p = 0.51;
 
 # build CRR model -
 my_crr_model = build(MyCRRPriceLatticeModel, (
-    u = up, # a 1% increase in the price
-    p = pvalue  # bias toward price increase
+    u = u, # a 1% increase in the price
+    p = p  # bias toward price increase
 ));
 
 # solve -

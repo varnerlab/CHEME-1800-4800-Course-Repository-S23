@@ -25,10 +25,10 @@ where $\mu$ denotes a _return parameter_. In the [CRR model](https://en.wikipedi
 * The return parameter $\mu$ is a _risk-free_ rate of return; the _risk-free_ rate $\bar{r}$ can be approximated by the [yield on T = 10-year United States Treasury debt security](https://ycharts.com/indicators/10_year_treasury_rate). 
 * The volatility parameter $\sigma$ is the [implied volatility](https://www.investopedia.com/terms/i/iv.asp); the implied volatility is the market's view of the likelihood of changes in a given security's price.
 
-Today, let's assume some values for the tuple $(u,d,p)$ and compute the entropy of the future distributions; in particular, let's use the `log2` information entropy $H(X)$:
+However, today, let's assume some values for the tuple $(u,d,p)$ and compute the entropy of the future distributions; in particular, let's use the `log2` information entropy $H(X)$:
 
 $$
-H(X) - \sum_{i=1}^{n}p_{X}(x_{i})\cdot\log_{2}p_{X}(x_{i})
+H(X) - \sum_{i=1}^{n}p_{X}(x_{i})\cdot\log_{2}\left(p_{X}(x_{i})\right)
 $$
 
 which will have units of `bits`.
@@ -45,4 +45,4 @@ which will have units of `bits`.
 1. __Duration__ (10 minutes): Break up into teams and implement the `entropy` method in `Compute.jl`. The `entropy` method computes the entropy of the lattice for different values of `T`. 
 
 #### Advanced:
-1. __Duration__ (10 minutes): Break up into teams and modify the `runme.jl` script to compute an array of entropy values for each `0,...,T`. Plot the entropy array as a function of `T`, i.e., `T` on the horizontal axis and entropy on the vertical axis.
+1. __Duration__ (10 minutes): Break up into teams and modify the `runme.jl` script to compute an array of entropy values for each `T = 30`. Plot the entropy array as a function of `T`, i.e., `T` on the horizontal axis and entropy on the vertical axis.
