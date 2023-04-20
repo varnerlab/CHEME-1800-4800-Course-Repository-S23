@@ -45,4 +45,4 @@ which will have units of `bits`.
 1. __Duration__ (10 minutes): Break up into teams and implement the `entropy` method in `Compute.jl`. The `entropy` method computes the entropy of the lattice for different values of `T`. 
 
 #### Advanced:
-1. __Duration__ (10 minutes): Break up into teams and modify the `runme.jl` script to compute an array of entropy values for each `T = 30`. Plot the entropy array as a function of `T`, i.e., `T` on the horizontal axis and entropy on the vertical axis.
+1. __Duration__ (10 minutes): Break up into teams and modify the `runme.jl` script to compute an array of entropy values for `T = 30`. Plot the entropy array as a function of `T`, i.e., `T` on the horizontal axis and entropy on the vertical axis.

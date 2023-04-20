@@ -14,7 +14,7 @@ my_crr_model = build(MyCRRPriceLatticeModel, (
 ));
 
 # solve -
-result = solve(my_crr_model, Sₒ, T);
+results = solve(my_crr_model, Sₒ, T);
 
 # compute the entropy -
-H = entropy(result, 2);
+H = entropy(results, 0);
