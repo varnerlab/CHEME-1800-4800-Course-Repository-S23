@@ -28,7 +28,7 @@ function solve(model::MyCRRPriceLatticeModel, Sₒ::Float64, T::Int)::Dict{Int,A
             # create a NamedTuple that holds values
             price = (
                 S = price,
-                P = P,
+                P = P
             );
         
             # push this into the array -
