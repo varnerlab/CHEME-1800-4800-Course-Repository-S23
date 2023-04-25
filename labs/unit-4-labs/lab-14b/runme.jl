@@ -17,7 +17,21 @@ for i ∈ 1:number_of_sample_paths
     s = Stack{MyCoinFlipGameModel}()
 
     # TODO: Implement the coin flip game logic here
-    # ...
+    # set flag
+    # set count = 1
+    # while (flag == true)
+        # flip = rand(d)
+        # if (flip == 1)
+            # we hit a heads
+            # current_payout = current_payout + 2^{count}
+
+            
+        # else
+            # we hit a tails
+
+        # end
+    
+    # end
 
 
     # store the stack for this instance of the game
