@@ -25,7 +25,7 @@ for i ∈ 1:number_of_sample_paths
             # we hit a heads
             # current_payout = current_payout + 2^{count}
 
-            
+
         # else
             # we hit a tails
 
