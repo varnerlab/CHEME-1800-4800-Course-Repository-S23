@@ -1,5 +1,38 @@
 # include the include -
 include("Include.jl");
 
+# compute -
+# Setup some constants -
+B = 365.0    # Days in a year (all values are per year)
+DTE = 58.0   # Days to expiration
+μ = 0.04065  # risk free rate: https://www.cnbc.com/quotes/US10Y
+L = 4;     # number of levels on the tree
+Sₒ = 57.92;  # AMD close price on 10/18/22
+
+# Set the volatility -
+IV = 57.3    # AMD implied volatility for K = 62 USD/share Put
+σₘ = (IV/100.0);
+
 # build a tree -
-lattice_tree = build(MyAdjacencyBasedCRREquityPriceTree, μ = 0.01, σ = 0.01, T = (45.0/100.0), h = 45, Sₒ = 100.0)
+model = build(MyAdjacencyBasedCRREquityPriceTree, μ = μ, σ = σₘ, T = (DTE/365.0), h = L, Sₒ = Sₒ)
+
+# build a contract -
+# ticker::String
+# strike_price::Float64
+# expiration_date::Date
+# premium::Float64
+# current_price::Float64
+# direction::Int64
+# number_of_contracts::Int64
+put_contract_model = build(MyPutContractModel,(
+    ticker = "XYZ",
+    strike_price = 55.0,
+    direction = 1,
+    premium = 0.0, # we are computing this, set tmp value 0.0
+    expiration_date = nothing,
+    number_of_contracts = 1,
+    current_price = Sₒ
+));
+
+# compute the premium for this contract -
+premium_value = premium(put_contract_model, model)

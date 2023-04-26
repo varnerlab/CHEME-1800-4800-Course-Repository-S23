@@ -4,6 +4,8 @@ const _PATH_TO_SRC = joinpath(_ROOT, "src");
 
 # load packages -
 using Distributions
+using LinearAlgebra
+using Dates
 
 # load my codes -
 include(joinpath(_PATH_TO_SRC, "Types.jl"))
