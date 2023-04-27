@@ -33,7 +33,7 @@ where $\mu$ denotes a _return parameter_. In the [CRR model](https://en.wikipedi
 1. Install required packages using the [Julia package manager](https://docs.julialang.org/en/v1/stdlib/Pkg/).
 1. __Together__: Execute the `testme-datafile-load.jl` script. Let's look at the structure and the contents of the data (options chain for Jun-16 `AMD` contracts pulled on Apr-26).
 1. __Together__: Execute the `testme-tree-build.jl` script. We get a premium value, but is our model correct?
-1. __Duration__ (30 minutes): Develop a `testme.jl` script that computes the premium values for all of the options contracts in the options chain dataset. Is the simulated price between the somewhere the [bid-ask spread](https://en.wikipedia.org/wiki/Bid–ask_spread)?
+1. __Duration__ (35 minutes): Develop a `testme.jl` script that computes the premium values for the options contracts in the options chain dataset. Is the simulated price between the [bid-ask spread](https://en.wikipedia.org/wiki/Bid–ask_spread)?
 
 ### Additional resources
 * The data for this lab was downloaded using the [Options chain endpoint](https://polygon.io/docs/options/get_v3_snapshot_options__underlyingasset) from the [Polygon.io Application Programming Interface (API)](https://polygon.io) using the [PQPolygonSDK.jl package](https://github.com/Paliquant/PQPolygonSDK.jl).

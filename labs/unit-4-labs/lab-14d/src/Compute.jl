@@ -80,7 +80,7 @@ end
 # === PRIVATE ABOVE HERE ============================================================================================= #
 
 
-
+# === PUBLIC METHODS BELOW HERE ====================================================================================== #
 """
     E(model::MyAdjacencyBasedCRREquityPriceTree; level::Int = 0) -> Float64
 """
@@ -143,6 +143,10 @@ function Var(model::MyAdjacencyBasedCRREquityPriceTree; level::Int = 0)::Float64
     return variance_value;
 end
 
+"""
+    premium(contract::T, model::MyAdjacencyBasedCRREquityPriceTree; 
+        choice::Function=_rational) -> Float64 where {T<:AbstractDerivativeContractModel}
+"""
 function premium(contract::T, model::MyAdjacencyBasedCRREquityPriceTree; 
     choice::Function=_rational)::Float64 where {T<:AbstractDerivativeContractModel}
 
@@ -150,7 +154,6 @@ function premium(contract::T, model::MyAdjacencyBasedCRREquityPriceTree;
     data = model.data
     connectivity = model.connectivity
     levels = model.levels
-    premium_value = 0.0;
 
     # get stuff from the model -
     p = model.p
@@ -182,31 +185,12 @@ function premium(contract::T, model::MyAdjacencyBasedCRREquityPriceTree;
             # compute the future_payback, and current payback
             current_payback = data[i].intrinsic
             future_payback = dfactor*((p*data[up_node_index].extrinsic)+(1-p)*(data[down_node_index].extrinsic))
-            node_price = choice(current_payback, future_payback)
+            node_price = choice(current_payback, future_payback) # encode the choice
             data[i].extrinsic = node_price;
         end
     end
 
-
-    # # Last: compute the option price -
-    # reverse_node_index_array = range(number_of_nodes_to_evaluate, stop=1, step=-1) |> collect
-    # for (_, parent_node_index) ∈ enumerate(reverse_node_index_array)
-
-    #     # ok, get the connected node indexes -
-    #     up_node_index = connectivity_index_array[parent_node_index, 2]
-    #     down_node_index = connectivity_index_array[parent_node_index, 3]
-
-    #     # ok, let's compute the payback *if* we continue -
-    #     future_payback = dfactor * (p * tree_value_array[up_node_index, 3] + (1 - p) * tree_value_array[down_node_index, 3])
-    #     current_payback = tree_value_array[parent_node_index, 2]
-
-    #     # use the decision logic to compute price -
-    #     node_price = choice(current_payback, future_payback)
-
-    #     # capture -
-    #     tree_value_array[parent_node_index, 3] = node_price
-    # end
-
     # # return -
     return data[0].extrinsic
 end
+# === PUBLIC METHODS ABOVE HERE ====================================================================================== #
