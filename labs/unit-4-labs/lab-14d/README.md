@@ -26,10 +26,15 @@ where $\mu$ denotes a _return parameter_. In the [CRR model](https://en.wikipedi
 * The volatility parameter $\sigma$ is the [implied volatility](https://www.investopedia.com/terms/i/iv.asp); the implied volatility is the market's view of the likelihood of changes in a given security's price.
 
 ### Prerequisites
-* `Lab-14b` requires the [Distributions.jl](https://github.com/JuliaStats/Distributions.jl) and the [DataStructures.jl](https://github.com/JuliaCollections/DataStructures.jl) packages.
-* __Note__: the _advanced task_ requires plotting. Thus, we must install the [Plots.jl](https://docs.juliaplots.org/stable/) and [Colors.jl](https://github.com/JuliaGraphics/Colors.jl) packages. However, if these give errors during installation, skip installing these packages, and comment out the `using XXX` statements in `Include.jl`.
+* `Lab-14d` requires the [Distributions.jl](https://github.com/JuliaStats/Distributions.jl), [JLD2.jl](https://github.com/JuliaIO/JLD2.jl) and the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) and packages.
 
 ### Tasks
 1. Start the Julia in the `Lab-13d` folder with the `--project=.` argument
 1. Install required packages using the [Julia package manager](https://docs.julialang.org/en/v1/stdlib/Pkg/).
+1. __Together__: Execute the `testme-datafile-load.jl` script. Let's look at the structure and the contents of the data (options chain for Jun-16 `AMD` contracts pulled on Apr-26).
+1. __Together__: Execute the `testme-tree-build.jl` script. We get a premium value, but is our model correct?
+1. __Duration__ (30 minutes): Develop a `testme.jl` script that computes the premium values for all of the options contracts in the options chain dataset. Is the simulated price between the somewhere the [bid-ask spread](https://en.wikipedia.org/wiki/Bid–ask_spread)?
+
+### Additional resources
+* The data for this lab was downloaded using the [Options chain endpoint](https://polygon.io/docs/options/get_v3_snapshot_options__underlyingasset) from the [Polygon.io Application Programming Interface (API)](https://polygon.io) using the [PQPolygonSDK.jl package](https://github.com/Paliquant/PQPolygonSDK.jl).
 
