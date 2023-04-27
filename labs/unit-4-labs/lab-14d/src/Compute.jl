@@ -149,6 +149,7 @@ function premium(contract::T, model::MyAdjacencyBasedCRREquityPriceTree;
     # initialize -
     data = model.data
     connectivity = model.connectivity
+    levels = model.levels
     premium_value = 0.0;
 
     # get stuff from the model -
@@ -180,7 +181,7 @@ function premium(contract::T, model::MyAdjacencyBasedCRREquityPriceTree;
 
             # compute the future_payback, and current payback
             current_payback = data[i].intrinsic
-            future_payback = dfactor*((p*data[up_node_index].intrinsic)+(1-p)*(data[down_node_index].intrinsic))
+            future_payback = dfactor*((p*data[up_node_index].extrinsic)+(1-p)*(data[down_node_index].extrinsic))
             node_price = choice(current_payback, future_payback)
             data[i].extrinsic = node_price;
         end
@@ -207,5 +208,5 @@ function premium(contract::T, model::MyAdjacencyBasedCRREquityPriceTree;
     # end
 
     # # return -
-    return premium_value
+    return data[0].extrinsic
 end
