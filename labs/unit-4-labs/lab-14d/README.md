@@ -29,7 +29,7 @@ where $\mu$ denotes a _return parameter_. In the [CRR model](https://en.wikipedi
 * `Lab-14d` requires the [Distributions.jl](https://github.com/JuliaStats/Distributions.jl), [JLD2.jl](https://github.com/JuliaIO/JLD2.jl) and the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) and packages.
 
 ### Tasks
-1. Start the Julia in the `Lab-13d` folder with the `--project=.` argument
+1. Start the Julia in the `Lab-14d` folder with the `--project=.` argument
 1. Install required packages using the [Julia package manager](https://docs.julialang.org/en/v1/stdlib/Pkg/).
 1. __Together__: Execute the `testme-datafile-load.jl` script. Let's look at the structure and the contents of the data (options chain for Jun-16 `AMD` contracts pulled on Apr-26).
 1. __Together__: Execute the `testme-tree-build.jl` script. We get a premium value, but is our model correct?
