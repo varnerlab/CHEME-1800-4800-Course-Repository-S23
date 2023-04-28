@@ -10,7 +10,7 @@ L = 100;     # number of levels on the tree
 Sₒ = 86.18;  # AMD close price on 10/18/22
 
 # Set the volatility -
-IV = 0.544301    # AMD implied volatility for K = 62 USD/share Put
+IV = 0.844301    # AMD implied volatility for K = 62 USD/share Put
 σₘ = (IV/1.0);
 
 # build a tree -
