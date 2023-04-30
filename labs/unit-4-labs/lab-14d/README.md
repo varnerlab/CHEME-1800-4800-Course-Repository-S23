@@ -26,7 +26,7 @@ where $\mu$ denotes a _return parameter_. In the [CRR model](https://en.wikipedi
 * The volatility parameter $\sigma$ is the [implied volatility](https://www.investopedia.com/terms/i/iv.asp); the implied volatility is the market's view of the likelihood of changes in a given security's price.
 
 ### Prerequisites
-* `Lab-14d` requires the [Distributions.jl](https://github.com/JuliaStats/Distributions.jl), [JLD2.jl](https://github.com/JuliaIO/JLD2.jl) and the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) and packages.
+* `Lab-14d` requires the [Distributions.jl](https://github.com/JuliaStats/Distributions.jl), [JLD2.jl](https://github.com/JuliaIO/JLD2.jl) and the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) packages.
 
 ### Tasks
 1. Start the Julia in the `Lab-14d` folder with the `--project=.` argument
