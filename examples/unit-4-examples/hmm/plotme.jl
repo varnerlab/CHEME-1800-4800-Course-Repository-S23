@@ -3,7 +3,6 @@ include("runme.jl") # loads packages, computes simulation_dict -
 
 # Setup -
 Sₒ = 100.0;
-Δ = [0.01, 0.0, -0.01];
 S = Dict{Int,Float64}()
 S[0] = Sₒ
 
@@ -16,6 +15,13 @@ colors[4] = colorant"#88CCEE"
 
 # sim loop -
 for i ∈ 1:number_of_simulation_steps
+
+    # generate random up and down moves -
+    lb = 0.0;
+    ub = 0.1; # in %
+    μ = (1/100)*(lb + (ub - lb)*rand());
+    Δ = [μ,0,-μ];
+
 
     # market state -
     market_state_index = simulation_dict[i]
