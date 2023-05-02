@@ -13,13 +13,14 @@ L = 2
 σₘ = log(u);
 μ = log(p*(u-d)+d);
 
-# Advanced feature -
-b = 10.0;
+# Advanced features - functions as args, and "compact" function syntax
+b = 1000.0;
 U(x) = x/(x+b);
+UINV(val) = (val*b)/(1-val);
 
 # build a tree -
 model_1 = build(MyAdjacencyBasedCRREquityPriceTree, μ = μ, σ = σₘ, T = (DTE), h = L, Sₒ = Sₒ)
-model_2 = build(MyAdjacencyBasedCRREquityPriceTree, μ = μ, σ = σₘ, T = (DTE), h = L, Sₒ = Sₒ, utility=U)
+# model_2 = build(MyAdjacencyBasedCRREquityPriceTree, μ = μ, σ = σₘ, T = (DTE), h = L, Sₒ = Sₒ, utility=U)
 
 # compute the price of a PUT -
 # build a contract -
@@ -52,7 +53,7 @@ put_contract_model_2 = build(MyPutContractModel,(
 
 # compute the premium for this contract -
 premium_value_1 = premium(put_contract_model_1, model_1)
-premium_value_2 = premium(put_contract_model_2, model_2)
+# premium_value_2 = premium(put_contract_model_2, model_2)
 
 # print -
-println("PV1 = $(U(premium_value_1)) and PV2 = $(U(premium_value_2))")
+println("PV1 = $(premium_value_1) USD and PV2 = $(UINV(premium_value_2)) USD")
