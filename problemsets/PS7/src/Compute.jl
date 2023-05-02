@@ -3,6 +3,7 @@
 _rational(a, b) = max(a, b)
 _encode(array,value) = findfirst(x->x>=value, array)
 _E(X::Array{Float64,1}, p::Array{Float64,1}) = sum(X.*p)
+_identity(price::Float64) = price
 
 # compute the intrinsic value 
 function _intrinsic(model::T, underlying::Array{Float64,1})::Array{Float64,1} where {T<:AbstractAssetModel}
@@ -193,7 +194,4 @@ function premium(contract::T, model::MyAdjacencyBasedCRREquityPriceTree;
     # # return -
     return data[0].extrinsic
 end
-
-# Let's add some utility methods -
-ln(x) = log(x); 
 # === PUBLIC METHODS ABOVE HERE ====================================================================================== #

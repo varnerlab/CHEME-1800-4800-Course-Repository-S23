@@ -23,12 +23,6 @@ function _build_nodes_level_dictionary(levels::Int64)::Dict{Int64,Array{Int64,1}
     return index_dict
 end
 
-"""
-
-"""
-function _identity(price::Float64)::Float64
-    return price
-end
 
 """
     build(modeltype::Type{MyCRRBinomialLatticeModel}, data::NamedTuple) -> MyCRRBinomialLatticeModel

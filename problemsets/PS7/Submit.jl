@@ -13,8 +13,13 @@ L = 2
 σₘ = log(u);
 μ = log(p*(u-d)+d);
 
+# Advanced feature -
+b = 10.0;
+U(x) = x/(x+b);
+
 # build a tree -
-model = build(MyAdjacencyBasedCRREquityPriceTree, μ = μ, σ = σₘ, T = (DTE), h = L, Sₒ = Sₒ)
+model_1 = build(MyAdjacencyBasedCRREquityPriceTree, μ = μ, σ = σₘ, T = (DTE), h = L, Sₒ = Sₒ)
+model_2 = build(MyAdjacencyBasedCRREquityPriceTree, μ = μ, σ = σₘ, T = (DTE), h = L, Sₒ = Sₒ, utility=U)
 
 # compute the price of a PUT -
 # build a contract -
@@ -25,9 +30,19 @@ model = build(MyAdjacencyBasedCRREquityPriceTree, μ = μ, σ = σₘ, T = (DTE)
 # current_price::Float64
 # direction::Int64
 # number_of_contracts::Int64
-put_contract_model = build(MyPutContractModel,(
+put_contract_model_1 = build(MyPutContractModel,(
     ticker = "XYZ",
-    strike_price = log(52.0),
+    strike_price = 52.0,
+    direction = 1,
+    premium = 0.0, # we are computing this, set tmp value 0.0
+    expiration_date = nothing,
+    number_of_contracts = 1,
+    current_price = Sₒ
+));
+
+put_contract_model_2 = build(MyPutContractModel,(
+    ticker = "XYZ",
+    strike_price = U(52.0),
     direction = 1,
     premium = 0.0, # we are computing this, set tmp value 0.0
     expiration_date = nothing,
@@ -36,4 +51,8 @@ put_contract_model = build(MyPutContractModel,(
 ));
 
 # compute the premium for this contract -
-premium_value = premium(put_contract_model, model_2)
+premium_value_1 = premium(put_contract_model_1, model_1)
+premium_value_2 = premium(put_contract_model_2, model_2)
+
+# print -
+println("PV1 = $(U(premium_value_1)) and PV2 = $(U(premium_value_2))")
