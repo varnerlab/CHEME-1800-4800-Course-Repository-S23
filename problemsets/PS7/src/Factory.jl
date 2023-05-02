@@ -23,11 +23,17 @@ function _build_nodes_level_dictionary(levels::Int64)::Dict{Int64,Array{Int64,1}
     return index_dict
 end
 
+"""
+
+"""
+function _identity(price::Float64)::Float64
+    return price
+end
 
 """
     build(modeltype::Type{MyCRRBinomialLatticeModel}, data::NamedTuple) -> MyCRRBinomialLatticeModel
 """
-function build(modeltype::Type{MyAdjacencyBasedCRREquityPriceTree}; 
+function build(modeltype::Type{MyAdjacencyBasedCRREquityPriceTree}; utility::Function = _identity,
     h::Int = 1, μ::Float64 = 0.01, σ::Float64 = 0.1, T::Float64 = (1.0/365.0), Sₒ::Float64 = 1.0)::MyAdjacencyBasedCRREquityPriceTree
      
     # initialize -
@@ -83,7 +89,7 @@ function build(modeltype::Type{MyAdjacencyBasedCRREquityPriceTree};
             k′ = big(k)
 
             # compute the prices and P for this level
-            price = Sₒ*(u^(t-k))*(d^(k));
+            price = utility(Sₒ*(u^(t-k))*(d^(k)));
             P = binomial(t′,k′)*(p^(t-k))*(1-p)^(k);
 
             # create a node model -

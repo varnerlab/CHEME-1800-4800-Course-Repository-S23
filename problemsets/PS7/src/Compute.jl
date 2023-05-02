@@ -193,4 +193,7 @@ function premium(contract::T, model::MyAdjacencyBasedCRREquityPriceTree;
     # # return -
     return data[0].extrinsic
 end
+
+# Let's add some utility methods -
+ln(x) = log(x); 
 # === PUBLIC METHODS ABOVE HERE ====================================================================================== #
