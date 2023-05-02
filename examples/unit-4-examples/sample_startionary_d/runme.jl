@@ -3,7 +3,7 @@ using Distributions
 
 # setup -
 π = [ 0.857, 0.143];
-number_of_samples = 1000;
+number_of_samples = 10000;
 
 # build a categorical distribution 
 d = Categorical(π);
