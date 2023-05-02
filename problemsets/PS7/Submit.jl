@@ -1,6 +1,10 @@
 # include the include -
 include("Include.jl")
 
+# initialize -
+premium_value_1 = 0.0
+premium_value_2 = 0.0
+
 # extract parameters from Hull 13.4/5 example in the notes
 u = 1.2;
 d = 1/u; # CRR is symmetric
@@ -14,7 +18,7 @@ L = 2
 μ = log(p*(u-d)+d);
 
 # Advanced features - functions as args, and "compact" function syntax
-b = 1000.0;
+b = 1.0;
 U(x) = x/(x+b);
 UINV(val) = (val*b)/(1-val);
 
