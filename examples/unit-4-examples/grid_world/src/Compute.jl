@@ -2,18 +2,18 @@
 """
     lookahead(model::MyQLearningModel, s::Int, a::Int) = model.Q[s,a];
 """
-lookahead(model::MyQLearningModel, s::Int, a::Int) = model.Q[s,a];
+lookahead(model::MyQLearningAgentModel, s::Int, a::Int) = model.Q[s,a];
 
 """
     update!(model::MyQLearningModel, data::NamedTuple) -> MyQLearningModel
 """
-function update!(model::MyQLearningModel, data::NamedTuple)::MyQLearningModel
+function update!(model::MyQLearningAgentModel, data::NamedTuple)::MyQLearningAgentModel
 
     # grab the s,a,reward and next state from the data tuple
     s = data[:s];
     a = data[:a];
     r = data[:r];
-    s′ = data[:sprime];
+    s′ = data[:s′];
 
     # grab parameters from the model -
     γ, Q, α = model.γ, model.Q, model.α
@@ -26,10 +26,11 @@ function update!(model::MyQLearningModel, data::NamedTuple)::MyQLearningModel
 end
 
 """
-    simulate(model::MyQLearningModel, startstate::Int, maxsteps::Int, policy::Function, world::Function) -> MyQLearningModel
+    simulate(model::MyQLearningModel, environment::T, startstate::Int, maxsteps::Int;
+        ϵ::Float64 = 0.2) -> MyQLearningModel where T <: AbstractWorldModel
 """
-function simulate(model::MyQLearningModel, environment::MyGridWorldModel, startstate::Int, maxsteps::Int;
-    ϵ::Float64 = 0.2)::MyQLearningModel
+function simulate(model::MyQLearningAgentModel, environment::T, startstate::Int, maxsteps::Int;
+    ϵ::Float64 = 0.2)::MyQLearningAgentModel where T <: AbstractWorldModel
 
     # initialize -
     s = startstate
@@ -71,17 +72,22 @@ function simulate(model::MyQLearningModel, environment::MyGridWorldModel, starts
     return model
 end
 
-function world(model::MyWorldModel, s::Int, a::Int)::Tuple{Int,Float64}
+"""
+    world(model::MyRectangularGridWorldModel, s::Int, a::Int) -> Tuple{Int,Float64}
+"""
+function world(model::MyRectangularGridWorldModel, s::Int, a::Int)::Tuple{Int,Float64}
 
     # initialize -
     s′ = nothing
     r = nothing
-
+    
     # get data from the model -
     coordinates = model.coordinates;
     moves = model.moves
     states = model.states;
     rewards = model.rewards;
+    number_of_rows = model.number_of_rows
+    number_of_cols = model.number_of_cols
 
     # where are we now?
     current_position = coordinates[s];
@@ -90,9 +96,19 @@ function world(model::MyWorldModel, s::Int, a::Int)::Tuple{Int,Float64}
     Δ = moves[a];
     new_position = current_position .+ Δ
 
-    # lookup the new state -
-    s′ = states[new_position];
-    r = rewards[s′];
+    # before we go on, have we "driven off the grid"?
+    if (new_position[1] >= 1 && new_position[1] <= number_of_rows 
+        && new_position[2] >= 1 && new_position[2] <= number_of_cols)
+
+        # lookup the new state -
+        s′ = states[new_position];
+        r = rewards[s′];
+    else
+       
+        # ok: so we are all the grid. Bounce us back to to the current_position, and charge a huge penalty 
+        s′ = states[current_position];
+        r = -1000000.0
+    end
 
     # return -
     return (s′,r);

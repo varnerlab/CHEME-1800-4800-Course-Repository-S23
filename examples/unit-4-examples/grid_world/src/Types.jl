@@ -6,7 +6,7 @@ abstract type AbstractWorldModel end
 
 Holds data for the Q learning problem
 """
-mutable struct MyQLearningModel <: AbstractLearningModel
+mutable struct MyQLearningAgentModel <: AbstractLearningModel
 
     # data -
     states::Array{Int,1}
@@ -16,17 +16,19 @@ mutable struct MyQLearningModel <: AbstractLearningModel
     Q::Array{Float64,2}
 
     # constructor
-    MyQLearningModel() = new();
+    MyQLearningAgentModel() = new();
 end
 
-mutable struct MyGridWorldModel <: AbstractWorldModel
+mutable struct MyRectangularGridWorldModel <: AbstractWorldModel
 
     # data -
+    number_of_rows::Int
+    number_of_cols::Int
     coordinates::Dict{Int,Tuple{Int,Int}}
     states::Dict{Tuple{Int,Int},Int}
     moves::Dict{Int,Tuple{Int,Int}}
     rewards::Dict{Int,Float64}
 
     # constructor -
-    MyGridWorldModel() = new();
+    MyRectangularGridWorldModel() = new();
 end
