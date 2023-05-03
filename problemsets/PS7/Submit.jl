@@ -18,9 +18,11 @@ L = 2
 μ = log(p*(u-d)+d);
 
 # Advanced features - functions as args, and "compact" function syntax
-b = 50000.0;
+b = 1000
 U(x) = x/(x+b);
 UINV(val) = (val*b)/(1-val);
+# U(x) = log(x+b)
+# UINV(val) = exp(val) - b
 
 # build a tree -
 model_1 = build(MyAdjacencyBasedCRREquityPriceTree, μ = μ, σ = σₘ, T = (DTE), h = L, Sₒ = Sₒ)
