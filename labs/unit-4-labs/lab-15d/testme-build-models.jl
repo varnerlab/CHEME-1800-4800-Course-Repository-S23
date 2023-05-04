@@ -1,6 +1,7 @@
 # include -
 include("Include.jl")
 
+
 # Step 1: Build a model of the world -
 number_of_rows = 4
 number_of_cols = 4
@@ -29,29 +30,4 @@ agent_model = build(MyQLearningAgentModel, (
     α = α,
     γ = γ,
     Q = zeros(nstates,nactions)
-))
-
-# Step 3: Let the agent learn the world for itself ...
-startstate = 1; # start at the (1,1) position
-number_of_iterations = 100;
-result = simulate(agent,world_model, startstate, number_of_iterations);
-
-# compute the policy -
-policy_dictionary = Dict{Tuple{Int,Int},String}()
-action_labels = ["u","d","l","r"];
-Q = result.Q;
-for i ∈ 1:nstates
-
-    # get coordinate -
-    coordinate = world_model.coordinates[i];
-
-    # get action -
-    action = argmax(Q[i,:]);
-
-    # populate policy dictionary
-    if (coordinate ∈ absorbing_state_set)
-        policy_dictionary[coordinate] = "∅"
-    else
-        policy_dictionary[coordinate] = action_labels[action];
-    end
-end
+));
