@@ -26,7 +26,7 @@ $$
 1. __Duration__ 15 min: Execute the `testme-build-models.jl` script. Discuss/analyze the `world_model` and `agent_model` instances.
 1. __Duration__ 10 min (together): Review the [Greedy Q-learning Algorithm](https://varnerlab.github.io/CHEME-1800-Computing-Book/unit-4-decisions/multi-arm-bandits.html#algo-e-greedy-q-learning), and implementation in the `simulate` method found in `Compute.jl`.
 1. __Duration__ 20 min (together): Execute the `runme.jl` script with `number_of_iterations = 10`. Look at the `policy_dictionary`. Does the policy of the agent make sense? 
-    1. Increase the `number_of_iterations` parameter and re-run the simulation. What is the impact of the proposed policy?
+    1. Increase the `number_of_iterations` parameter and re-run the simulation. What is the impact on the proposed policy?
 
 ### Additional resources
 * [Introduction to Bandit problems and Reinforcement Learning](https://varnerlab.github.io/CHEME-1800-Computing-Book/unit-4-decisions/multi-arm-bandits.html)
