@@ -1,7 +1,6 @@
 # include -
 include("Include.jl")
 
-
 # Step 1: Build a model of the world -
 number_of_rows = 4
 number_of_cols = 4
@@ -27,7 +26,6 @@ nactions = 4;
 agent_model = build(MyQLearningAgentModel, (
     states = range(1,stop=nstates,step=1) |> collect,
     actions = range(1,stop=nactions,step=1) |> collect,
-    α = α,
-    γ = γ,
+    α = α, γ = γ,
     Q = zeros(nstates,nactions)
 ));

@@ -19,8 +19,8 @@ push!(absorbing_state_set, (3,3));
 world_model = build(MyRectangularGridWorldModel, number_of_rows, number_of_rows, rewards);
 
 # Step 2: Build a model of the agent -
-α = 0.1;  # learning rate
-γ = 0.95; # discount rate
+α = 0.70;  # learning rate
+γ = 0.0; # discount rate
 nstates = (number_of_rows*number_of_cols);
 nactions = 4; 
 agent_model = build(MyQLearningAgentModel, (
@@ -33,8 +33,8 @@ agent_model = build(MyQLearningAgentModel, (
 
 # Step 3: Let the agent learn the world for itself ...
 startstate = 1; # start at the (1,1) position
-number_of_iterations = 100;
-result = simulate(agent,world_model, startstate, number_of_iterations);
+number_of_iterations = 1000;
+result = simulate(agent_model, world_model, startstate, number_of_iterations);
 
 # compute the policy -
 policy_dictionary = Dict{Tuple{Int,Int},String}()
