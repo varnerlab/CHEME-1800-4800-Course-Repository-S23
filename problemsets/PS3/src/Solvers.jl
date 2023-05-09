@@ -77,3 +77,18 @@ function solve(type::T, A::Array{Float64,2}, b::Array{Float64,1}, xₒ::Array{Fl
         throw("Incorrect solver type has been requested!")
     end
 end
+
+"""
+solve(type::T, A::Array{Float64,2}, b::Array{Float64,1}, xₒ::Array{Float64,1};
+    tolerance::Float64 = 0.001, maxiter::Int64 = 10000) -> Array{Float64,1} where T <: AbstractIterativeSolver
+"""
+function solve(type::T, model::MyChemicalDecayModel, xₒ::Array{Float64,1};
+    tolerance::Float64 = 0.001, maxiter::Int64 = 10000)::Array{Float64,1} where T <: AbstractIterativeSolver
+    
+    # grab stuff from model - we need, A and B -
+    A = model.A
+    b = model.b
+
+    # call the "old" solve method, w/A and b -
+    return solve(type,A,b,xₒ,tolerance = tolerance, maxiter = maxiter)
+end
