@@ -2,7 +2,6 @@
 # === PRIVATE BELOW HERE ============================================================================================= #
 _rational(a, b) = max(a, b)
 _encode(array,value) = findfirst(x->x>=value, array)
-_E(X::Array{Float64,1}, p::Array{Float64,1}) = sum(X.*p)
 
 # compute the intrinsic value 
 function _intrinsic(model::T, underlying::Array{Float64,1})::Array{Float64,1} where {T<:AbstractAssetModel}
@@ -81,67 +80,6 @@ end
 
 
 # === PUBLIC METHODS BELOW HERE ====================================================================================== #
-"""
-    E(model::MyAdjacencyBasedCRREquityPriceTree; level::Int = 0) -> Float64
-"""
-function E(model::MyAdjacencyBasedCRREquityPriceTree; level::Int = 0)::Float64
-
-    # initialize -
-    expected_value = 0.0;
-    X = Array{Float64,1}();
-    p = Array{Float64,1}();
-
-    # get the levels dictionary -
-    levels = model.levels;
-    nodes_on_this_level = modes.data[levels];
-    for node ∈ nodes_on_this_level
-        
-        # get the data -
-        x_value = node.price;
-        p_value = node.probability;
-
-        # store the data -
-        push!(X,x_value);
-        push!(p,p_value);
-    end
-
-    # compute -
-    expected_value = _E(X,p) # inner product
-
-    # return -
-    return expected_value
-end
-
-"""
-    Var(data:::MyAdjacencyBasedCRREquityPriceTree; level::Int = 0) -> Float64
-"""
-function Var(model::MyAdjacencyBasedCRREquityPriceTree; level::Int = 0)::Float64
-
-    # initialize -
-    variance_value = 0.0;
-    X = Array{Float64,1}();
-    p = Array{Float64,1}();
-
-    # get the levels dictionary -
-    levels = model.levels;
-    nodes_on_this_level = modes.data[levels];
-    for node ∈ nodes_on_this_level
-        
-        # get the data -
-        x_value = node.price;
-        p_value = node.probability;
-
-        # store the data -
-        push!(X,x_value);
-        push!(p,p_value);
-    end
-
-    # update -
-    variance_value = (_E(X.^2,p) - (_E(X,p))^2)
-
-    # return -
-    return variance_value;
-end
 
 """
     premium(contract::T, model::MyAdjacencyBasedCRREquityPriceTree; 
