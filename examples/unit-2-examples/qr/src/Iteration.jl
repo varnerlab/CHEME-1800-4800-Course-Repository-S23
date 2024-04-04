@@ -49,7 +49,8 @@ end
 """
     qriteration(A::Array{Float64,2}; maxiter::Int64 = 10, tolerance::Float64 = 1e-9) -> Tuple
 """
-function qriteration(A::Array{Float64,2}; maxiter::Int64 = 10, tolerance::Float64 = 1e-9)
+function qriteration(A::Array{Float64,2}; 
+    maxiter::Int64 = 10, tolerance::Float64 = 1e-9)::Tuple
 
     # initialize 
     number_of_rows = size(A,1);
